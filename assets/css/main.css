@@ -1711,8 +1711,8 @@ input, select, textarea {
 
 		.image.featured {
 			display: flex;
-			width: 800px;
-			height: 400px;
+			width: auto;
+			height: 240px;
 			margin: 0 0 2em 0;
 		}
 
