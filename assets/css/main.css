@@ -1914,7 +1914,7 @@ input, select, textarea {
 				width: 3em;
 				height: 3em;
 				text-align: center;
-				border-radius: 10px;
+				border-radius: 20px;
 				background: #d52349;
 				-moz-transition: background-color .25s ease-in-out;
 				-webkit-transition: background-color .25s ease-in-out;
@@ -1943,14 +1943,21 @@ input, select, textarea {
 					ul.social li a.fa-linkedin:hover {
 						background: #1075a9;
 					}
-
-				ul.social li a.fa-google-plus {
-					background: #da2713;
-				}
-
-					ul.social li a.fa-google-plus:hover {
-						background: #ea3723;
+				
+				ul.social li a.fa-github {
+						background: #d52349;
 					}
+	
+						ul.social li a.fa-github:hover {
+							background: #1f1f1f;
+						}
+						
+				ul.social li a.fa-instagram {
+							background: #d52349;
+						}
+						ul.social li a.fa-instagram:hover {
+								background: #1f1f1f;
+							}
 
 /* Icons */
 
