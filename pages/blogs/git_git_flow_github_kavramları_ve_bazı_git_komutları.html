@@ -1,0 +1,707 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Kağan Can Şit</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../../assets/css/main.css" />
+    <link rel="icon" href="../../images/site_icon.png" type="image/x-icon">
+</head>
+
+<body class="homepage is-preload">
+    <div id="page-wrapper">
+
+        <!-- Header -->
+        <section id="header">
+            <!-- Logo -->
+            <h1><a href="../index.html">Merhaba!👋<br>Ben Kağan Can Şit.🏹</a></h1>
+
+            <!-- Nav -->
+            <nav id="nav">
+                <ul>
+                    <li><a href="../../index.html">Anasayfa</a></li>
+                    <li><a href="../../pages/design.html">Tasarım</a></li>
+                    <li><a href="../../pages/aboutme.html">Hakkımda</a></li>
+                    <li><a href="../../pages/contactme.html">İletişim</a></li>
+                </ul>
+            </nav>
+        </section>
+
+        <section id="main">
+            <div class="container">
+                <div class="row">
+                    <!-- Giriş Resmi -->
+                    <div class="col-12 col-12-medium">
+                        <section>
+                            <div style="text-align:center;">
+                                <img width="100%" height="100%"
+                                    src="../../images/git_gitflow_github_kavramlari_ve_bazi_git_komutlari/header_image" />
+                            </div>
+                        </section>
+                    </div>
+
+                    <!-- Social Media -->
+                    <div class="col-12 col-12-medium">
+                        <section>
+                            <!-- Giriş -->
+                            <header>
+                                <h2>Git, Git Flow, Github Kavramları ve Bazı Git Komutları</h2>
+                                <p>Temmuz 30, 2022</p>
+                            </header>
+                            <p>
+                                Hoşgeldin, nasılsın? Bugün yazılımcıların baş köşesinde bulunan “Git” kavramı ve
+                                Github’a dair birkaç içeriği seninle paylaşmak istiyorum.
+                                Bu yazı içerisinde elbette hatalarım eksiklerim olabilir. Bana iletirsen, beraber
+                                düzeltebiliriz. 👋<br><br>
+
+                                Yazılım başlı başına ekip olarak gerçekleştirilmesi gereken bir iştir. Kendi içerisinde
+                                kapsadığı alanın her bir noktasında uzman olmanız
+                                maalesef söz konusu bile olamaz. Bu yüzden beraber çalışma, ekip anlayışı, kademeli
+                                geliştirme her büyük projenin vazgeçilmezidir.<br><br>
+
+                                Git, bu çalışma karmaşısını engellemek, ekip olarak geliştirmenizi desteklemek ve ayrıca
+                                size güvenilir, gelişime açık bir geliştirme ortamı sunar.
+                                Git’e dair birçok içerik anlatılabilir. Bu yüzden genel kapsamı bir miktar büyük blog
+                                içeriği seni bekliyor. Buradaki terimleri temel alarak araştırmalarına
+                                bir başlangıç noktası oluşturabilirsin. Umarım bu blog gönderisi sana yeni bilgiler
+                                katar.<br><br>
+
+                                Hadi başlayalım!<br><br>
+
+                                🏹 Tüm Git kavramı hakkında bilgi alabilmek için aşağıdaki link üzerindeki dokümanı
+                                mutlaka incelemeni öneririm.<br>
+                                <a href="https://stk.bilgi.edu.tr/media/uploads/2015/01/12/git101.pdf">Türkçe Git 101
+                                    (bilgi.edu.tr)</a><br>
+                                <a href="https://git-scm.com/book/tr/v2">Git Book</a>
+                                <hr>
+                            </p>
+                            <p>
+                                <h3>Git Nedir?</h3>
+                                Basit bir biçimde ele alacak olursak “Versiyon Kontrol Sistemi”dir. Linux’un
+                                geliştiricisi olan Linus
+                                Torvalds tarafından dosyaların etkin takipinin yapılması ve projenin hızlı
+                                geliştirilmesi için oluşturulmuştur.
+                            </p>
+                            <p>
+                                <h3>Versiyon Kontrol Sistemi Nedir?</h3>
+                                <p>(Kaynak Kod Yönetim Sistemi adı da verilir.)</p>
+                                Bir döküman (yazılım projesi, ofis belgesi vb.) üzerinde yaptığınız degişiklikleri adım
+                                adım izleyen, istediğinizde kayıt eden,
+                                güvence altına alan, herhangi bir hata durumunda geri dönebilmenizi sağlayan ve
+                                isterseniz bunu internet üzerindeki bir bilgisayarda
+                                veya yerel bir cihazda (respository / repo / depo) saklamanızı ve yönetmenizi sağlayan
+                                bir sistemdir.
+                            </p>
+                            <p>
+                                <h3>Git’in Alternatifleri Nedir? Ne için Kullanılması Gerekir?</h3>
+                                Git’in birçok alternatifleri bulunmaktadır. Fakat sektör içerisinde bulunan taleplere en
+                                efektif, etkili cevabı veren ve genel kullanımı
+                                bulunan versiyon sistemi Git’tir.
+                                <p>
+                                    Git’in birçok alternatifleri bulunmaktadır. Fakat sektör içerisinde bulunan
+                                    taleplere en efektif, etkili cevabı veren ve genel kullanımı bulunan versiyon
+                                    sistemi Git’tir.
+                                </p>
+                                <ul>
+                                    <li>
+                                        <h4>Esnek ve Dağınık Bir Yapısı</h4>
+                                        <p>
+                                            Bu durumu açıklayacak olursak Git sistemi içerisinde projemizi kendi
+                                            local’imizde, sunucu üzerinde ve projeler içerisinde branch (dal) yapıları ile
+                                            birçok küçük parçaya ayırabilir, güvenilir bir şekilde proje geliştirme süreci
+                                            sürdürebiliriz.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <h4>Çoklu Kişi Desteği / Ekip Yapısına Uygunluk</h4>
+                                        <p>
+                                            Yukarıda bahsettiğimiz esnek yapı birçok kişinin bir proje üzerinde aktif olarak
+                                            farklı kısımlarda çalışma esnekliği sağlar. Örneğin siz kullanıcı giriş
+                                            işlemleri ile uğraşırken, takım arkadaşınız sizinle çakışmayan ana menü işlemleri 
+                                            ile yakından ilgilene bilir. Oluşturduğunuz kod tüm ekip üyeleri tarafından her yönden
+                                            incelenebilir.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <h4>Zaman</h4>
+                                        <p>
+                                            Geliştirme ortamına kolay ve güvenilir ulaşım ile birlikte hatalar olması
+                                            sonucunda geriye dönük güvence sağlar. Bu da bir hatanın veya projeye ulaşımın
+                                            aldığı süreyi kısaltmada etkilidir.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <h4>Güvenilirlik</h4>
+                                        <p>Dosyalarınızı hata durumunda eski versiyonlarına geri döndürebilir veya sunucudan
+                                        tekrar eski versiyonu edinebilirsiniz.</p>
+                                    </li>
+                                    <li>
+                                        <h4>Hata Payında Azalma, Etkin Gelişim</h4>
+                                        <p>Yapmış olduğunuz geliştirmeler sizden bilgili ekip liderleniz, takım
+                                        arkadaşlarınız tarafından aktif olarak rahatlıkla incelenebilir.
+                                        Bu durum projenizin test edilebilirliğini arttırmasının yanı sıra maliyetleri en
+                                        aza indirgeyecektir.</p>
+                                    </li>
+                                    <li>
+                                        <h4>Deneme ve Yanılmaya Açık</h4>
+                                        <p>Projeniz içerisinde dosya ve bilgi kaybetme korkusu olmadan yeni fikirleri
+                                        deneyebilir, sınayabilirsiniz.</p>
+                                    </li>
+                                </ul>
+                                <p>Bunun gibi birçok duruma dair eklemeler yapılabilir. Fakat ne için kullandığımız
+                                    bence anlaşıldı. Çok sıkılmadan devam edelim.</p>
+                            </p>
+
+                            <p>
+                                <h3>Github Nedir?</h3>
+                                <p>
+                                    Github ise Git sistemi ile birlikte çalışan dosyaları depoladığımız host
+                                    servisidir.<br>
+                                    Yazılımcıların savaş alanıdır ! 😂 Şaka şaka. Birçok kişinin çalışmalarını ve
+                                    içeriklerini paylaştığı,
+                                    bir yandan da projelerini saklayabildiği bir depolama servisidir.<br>
+
+                                    Örneğin: <a href="https://github.com/KaganCanSit">KaganCanSit (Kağan Can Şit)
+                                        (github.com)</a>
+                                </p>
+                            </p>
+
+                            <p>
+                                <h3>Git Bize Ne Sağlar?</h3>
+                                <p>
+                                    Birden fazla yerde (dağıtık olarak) dosyalarınızı ve versiyon kontrol bilgilerinizi
+                                    depolayabilirsiniz.
+                                    Böylelikle cihaz bağımsız olarak dosyalarınıza erişebilirsiniz.<br><br>
+
+                                    “commit” yaparak SnapShot (anlık görüntü) özelliği ile istediğiniz zaman proje veya
+                                    dosyaların o anki halini kayıt altına alabilirsiniz.
+                                    Böylelikle ileride bir hata ile karşılaşırsanız herhangi bir zamandaki herhangi bir
+                                    versiyona dönüş yapabilirsiniz.
+                                    SnapShot alındıktan sonra değişiklik yapılan dosyaları görebilirsiniz. Bu durum
+                                    gerçekleştirilen proje içerisinde farklıklıklar ve
+                                    gelişim aşamalarını görmenizi sağlar.<br><br>
+
+                                    Takımların aynı projede beraber çalışmasına imkan verir. “Kim neyi düzenledi? Ne
+                                    ekledi? Ne çıkarttı? Son değişiklik ne zaman yapıldı?”
+                                    gibi bilgilere erişebilirsiniz. Bu sayede topluluk ile proje geliştirme süreçlerini
+                                    kolaylaştırabilirisiniz.<br><br>
+
+                                    Projede versiyonlanmasını istemediğiniz dosyaları belirtebilirsiniz.(node_modules,
+                                    .mp4, .log, .env gibi)
+                                    Bu sayede temiz bir biçimde dosya yönetimi de sağlayabilirsiniz. Boyut içinde birçok
+                                    avantajı bulunur. Bu dosyaları ise ”git ignore” dosyası içerisinde uzantılarını
+                                    belirtmeniz yeterlidir.
+                                </p>
+                            </p>
+
+                            <p>
+                                <h3>UYARI:</h3>
+                                <p>
+                                    Bu aşamadan sonra anlatacaklarım “Git” kavramının açıklanmasından daha çok Git’in
+                                    nasıl kullanılacağına dair temel komutlar ve kavramlar
+                                    üzerine ilerleyecektir eğer “Git” kullanmak için yeni başlıyorsanız, kafa
+                                    karıştırıcı olabilir. Bunun için aşağıdaki ücretsiz eğitimlere mutlaka göz atın.
+                                    Bu içerikler sizlere iyi derecede bilgi sağlayacaktır.<br><br>
+                                    <a href="https://youtube.com/playlist?list=PLPrHLaayVkhnNstGIzQcxxnj6VYvsHBHy">Git,
+                                        GitHub ve GitLab Kullanımı — YouTube</a><br>
+                                    <a href="https://app.patika.dev/courses/git/git-versiyon-kontrol-sistemi-nedir">GIT
+                                        Versiyon Kontrol Sistemi Nedir? Dersi | Patika.dev</a><br>
+                                    <a href="https://app.patika.dev/courses/ileri-seviye-git">İleri Seviye GIT Dersi |
+                                        Patika.dev</a><br>
+                                    <a
+                                        href="https://www.youtube.com/watch?v=WLPgBUpAcrA&list=PLGrTHqyRDvx4WAg9LPX_GKk7cKF7KBXOg">GIT
+                                        | Versiyon Kontrol Sistemi Olmadan Projelerimizi Düzenleyebilir miyiz? #1 —
+                                        YouTube</a><br>
+                                    <b> Şimdi anlaştıysak devam edebilirsin.</b>
+                                </p>
+                                <hr>
+                            </p>
+
+                            <p>
+                                <h3>Git Flow Mekanizması</h3>
+                                <p>
+                                    Yazılım geliştirme baştan sona büyük bir kapsama sahip olan bir süreçtir.
+                                    Geliştirilen
+                                    projeye göre kapsam ve derinliği değişse de hizmet veren bir yazılım geliştirmek
+                                    için
+                                    çoğu zaman bir yaşam döngüsü, çeşitli geliştirme ve test araçlarını bünyesinde
+                                    barındırır.
+                                    Bu gelişimin ana yapılarından biri de” Git Flow” mekanizmasıdır.<br><br>
+
+                                    Genel olarak kullanılan flow yaklaşımı;<br><br>
+
+                                    Yazılım geliştirme süreci içerisinde yazılım yaşayan bir yapıya sahiptir. Anlık
+                                    olarak hem kullanılan,
+                                    hem geliştirilmeye devam eden, hem de sektörde kendisinden beklenenleri karşılamaya
+                                    çalışan bir yapıya
+                                    sahiptir. Bu sebepler doğrultusunda geliştirme sürecinde karmaşıklık çıkmaması adına
+                                    geliştirme süreci
+                                    “Git” gibi araçlar yardımıyla yürütülür.
+                                </p>
+                                <div style="text-align: center;">
+                                    <img
+                                        src="../../images/git_gitflow_github_kavramlari_ve_bazi_git_komutlari/01.png" />
+                                </div>
+                                <hr>
+                            </p>
+
+                            <p>
+                                <p>
+                                    Genel olarak geliştirme süreci <b>Master, Hotfix, Develop, Remove</b> olmak üzere 4
+                                    adet geliştirme branch
+                                    (dal) ‘ına sahiptir. Fakat kesinlikle bu şekilde olacak diye resmi bir kural yok.
+                                    Projeden projeye farklılık gösterebilir.
+                                </p>
+                                <ul>
+                                    <li>
+                                        <b>Master→</b> Bu branch (dal) kararlı ve belirli bir süreç sonucunda pişmiş
+                                        olan aktif olarak kullanıcığının kullandığı
+                                        versiyonları barındırır. Bu branch(dal) için genellikle geliştiricilerin yetkisi
+                                        bulunmaz. Master’a sürüm çıkma ve yeni
+                                        bir içerik ekleme görevi ekip yöneticilerinin sorumluluğundadır.
+                                        Geliştiricilerin bu dal ile yakından ilişkisi bulunmaz.
+                                    </li>
+                                    <li>
+                                        <b>Hotfix →</b> Aktif olarak kullanıcıya sunulan sürümde bulunan hatayı
+                                        düzeltmek amacıyla kullanılır. Genellikle küçük çaplı
+                                        anlık geliştirmelerde etkilir. Hotfix sonucu ulaşılan versiyon hem master hem
+                                        developer branch(dal)’larına eklenir, güncellenir.
+                                    </li>
+                                    <li>
+                                        <b>Develop→</b> Geliştiricilerin temel olarak baz aldığı ana versiyon sürümü
+                                        olarak kullanıcıya sunulmadan önce geliştirilmeye devam
+                                        ettiği ve sınama, test, dokümantasyon düzenlemelerini aktif olarak sürdürdüğü
+                                        branch(dal)’dır. Fakat bu dal içerisine eklemeler
+                                        direk olarak yapılmaz veya direk bu dal içerisinde geliştirme aktif değildir.
+                                        Gelişim “Feature” brach(dal)’ları aracılığıyla ilerler.
+                                    </li>
+                                    <li>
+                                        <b>Feature→</b> Geliştirici bir geliştirme yapmak istediğinde develop
+                                        branch(dal)’ın son halinden bir yeni dal oluşturarak burada çalışır.
+                                        Bu geliştirmenin aktif olarak yapıldığı dala “Feature” adı verilir. Özellik
+                                        geliştirmesi sonrası test ve diğer ekiplerin sınaması sonrasında
+                                        merge(birleştirme) işlemi gerçekleştirilerek oluşturulan ek feature dalı
+                                        silinir. Bu geliştirme ve özellik ekleme dallarının ömürlerinin
+                                        kısa olması gereklidir. İşlem sonrası silinerek karmaşıklık önlenmelidir.
+                                    </li>
+                                </ul>
+                                <p>
+                                    ! Yukarıdaki şekilde developer ve feature dallarının (branch) kullanımı develop
+                                    branch’ının her daim testleri ve içeriği ile hazır durumda
+                                    olmasını, sürüme çıkmaya hazır bir şekilde bulunması sağlar. Çünkü yazılım
+                                    geliştirme, özellik ekleme süreçlerinde kademeli olarak birden
+                                    fazla kişinin kontrolü, ek olarak bilgi birikim desteği bulunur.
+                                </p>
+                            </p>
+
+                            <p>
+                                <div style="text-align: center;">
+                                    <img src="../../images/git_gitflow_github_kavramlari_ve_bazi_git_komutlari/02.jfif" />
+                                    <hr>
+                                </div>
+                                <h2>Git En Çok Kullanılan Komutlar</h2>
+                                <p>
+                                    Git’e biraz hakimim, duruma özel kullanabileceğim komutu arıyorum diyorsan aşağıdaki
+                                    adrese direk göz atabilirsin.<br>
+                                    <a href="https://gitexplorer.com/">Git Explorer</a>
+                                </p>
+                                <div style="text-align: center;">
+                                    <img
+                                        src="../../images/git_gitflow_github_kavramlari_ve_bazi_git_komutlari/03.png" />
+                                </div>
+                            </p>
+
+                            <v>
+                                <div>
+                                    Git’in bir çok konfigürasyon ayarı vardır, bunlardan ikisi user.name ve user.email
+                                    olanıdır. Bu ayarları yapılandırmak için aşağıdaki komutları kullanırız.
+                                    <ul>
+                                        <li>git config — global user.name “Name Surname”</li>
+                                        <li>git config — global user.email “test@gmail.com”</li>
+                                        Bu ayarlara dair bilgileri görüntülemek için aşağıdaki komutu kullanabilirsin;
+                                        <li>git config — list</li>
+                                    </ul>
+                                </div>
+                                <p>
+                                    <b>git:</b> Git’in kurulu olduğunun kontrolü ve kullanılabilir bazı komutları
+                                    console üzerinde döndürür.
+                                    Bu sayede git’in kurulmuş olduğuna emin olabilir, ek olarak listelenen komutlar
+                                    hakkında bilgi alabilirsin.
+                                </p>
+                                <p><b>git version:</b> Git’in versiyonunu öğrenmenizi sağlar.</p>
+                                <p>
+                                    <b>git init:</b> Proje başlatma komutudur. Versiyon kontrolü altında olmayan bir
+                                    projenin dizininde, boş bir git deposu oluşturmak için kullanılır.
+                                    Bu sayede klasör içerisinde geliştirme yaparken “commit” komutu yardımıyla kendi
+                                    versiyonlarınızı saklayabilir ve tutabilirsiniz.
+                                </p>
+
+                                <div>
+                                    <b>git add “dosya veya klasor_name”: </b>Herhangi bir dosyayı takip sistemine
+                                    eklememizi sağlar. Yukarıda bahsettiğim oluşan git
+                                    deposu içerisine takip edilmesi için belirttiğiniz dosyanın adresini ekler. Bu
+                                    sayede siz her “commit” işlemi uyguladığınızda versiyon “Git” farklılıkları
+                                    saklanır.
+                                    <ul>
+                                        <li>Tek seferde bütün dosyaları eklemek için ise; git add . veya git add * , git
+                                            — all veya git add -A gibi komutlar kullanılabilir.</li>
+                                        <li>git add -p > İnteraktif bir şekilde depoya eklenecek dosya içeriklerinin
+                                            seçilmesini sağlar.</li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <b>git commit -m “Başlık” -m “Açıklama”:</b> “Commit” etmek istediğiniz versiyona
+                                    dair başlık ve açıklama eklemenizi sağlar. Kesinlikle kullanılması
+                                    önerilir. Çünkü hangi özelliği eklediğinizi belirtebilir, açıklama yazabilirseniz
+                                    bir hata durumunda hangi noktaya döeneceğinizi rahatlıkla seçebilirsiniz.<br>
+                                    <li>git commit -m "Title" -m "Description ..........";</li>
+                                </div>
+                                <p>
+                                    <b>git rm “dosya veya klasor_name”:</b> Depo içerisinde bulunan bir dosyayı
+                                    silmemizi sağlar.
+                                </p>
+                                <p>
+                                    <b>git remote -v:</b> Remote bağlantı adresimizi belirtir. (https://github.com…..)
+                                    Git sistemi ile kendi Github adresinizi bağladığınız oluşturmuş
+                                    olduğunuz proje dosyalarını Github kod deponuza gönderebilirsiniz. Bu komut ikisi
+                                    arasında bağ oluşturduktan sonra kontrol etmek amacıyla kullanılabilir.
+                                </p>
+                                <hr>
+                                </p>
+
+                                <!-- Branch Kısmı-->
+                                <div>
+                                    <b>git branch:</b> Local veya remote repository üzerinde yeni bir branch (dal)
+                                    eklemek, silmek veya listelemek için kullanılır.
+                                    <ul>
+                                        <li>git branch branch_name”: Projenize yeni bir branch eklemek için kullanılır.
+                                        </li>
+                                        <li>git branch -a / git branch: Tüm uzak ve yerel branch’ları listelemek için
+                                            kullanılır.</li>
+                                        <li>git branch -r: İlişkili, kullandığımız brach’ı döndürür.</li>
+                                        <li>git branch -d “branch_name”: Branch silmek için kullanılır.</li>
+                                    </ul>
+                                    <hr>
+                                </div>
+
+                                <!-- Checkout Kısmı-->
+                                <div>
+                                    <b>git checkout:</b>  Proje dalları arası geçiş yapmak için kullanılır.
+                                    <ul>
+                                        <li>git checkout “branch_name” : Mevcutta var olan branch’a geçiş yapmak için
+                                            kullanılır.</li>
+                                        <li>git checkout -b “branch_name” : Yeni bir branch oluşturup, bu branch’a geçiş
+                                            yapmak için kullanılır.</li>
+                                        <li>git checkout “commit_ID” : Commitler arası geçiş yapmak için kullanılır.
+                                            (Eski bir versiyona dönmek istediğimiz zaman)</li>
+                                    </ul>
+                                    <hr>
+                                </div>
+
+                                <!-- Merge Kısmı-->
+                                <div>
+                                    <b>git merge “branch_name”:</b> Başka bir branch’da olan değişiklikleri,
+                                    bulunduğumuz branch ile birleştirmek istediğimizde kullanılır.
+                                    <ul>
+                                        <li>
+                                            Eğer iki ağaç birleştirilirken aynı noktalarda değişim bulunursa bu
+                                            durumlara conflict ismi verilmektedir.
+                                            Bunun gibi oluşan durumlarda çakışan kısımların düzeltilmesi ve gözden
+                                            geçirilmesi gerekir. (release)
+                                        </li>
+                                    </ul>
+                                    <hr>
+                                </div>
+
+                                <!-- Status Kısmı-->
+                                <div>
+                                    <b>git status:</b> Versiyonlar arası (etiketler) farklarını gösterir. Ya da genel
+                                    commit ve işlev bilgelerini döndürür.
+                                    <ul>
+                                        <li>On branch main -> Main branch’ınde olduğumuzu,</li>
+                                        <li>Changes to be commited -> Commit’lenmeye hazır değişiklikler olduğunu,</li>
+                                        <li>Modified: index.html -> index.html dosyasında değişiklik yaptığımızı,</li>
+                                        <li>Deleted: styles.css -> styles.css dosyasını sildiğimizi,</li>
+                                        <li>Changes not staged for commit -> Üzerinde değişiklik yapılan ama staged
+                                            ortamına gönderilmemiş dosyaları ifade eder.</li>
+                                        <li>Untracked files -> Takibi yapılmayan dosyaları ifade eder.</li>
+                                    </ul>
+                                    <hr>
+                                </div>
+
+                                <div>
+                                    <p><b>git reflog:</b> Yerel bir deponun tarihçesini yani dal bünyesinde olup
+                                        bitenlerin listesini bizlere gösterir.</p>
+                                    <p><b>git log — graph:</b> Genel bilgilendirmeleri bir ağaç yapısı ile bize sunar.
+                                    </p>
+                                    <hr>
+                                </div>
+
+
+                                <!-- Push Kısmı-->
+                                <div>
+                                    <b>git push:</b> Uzak sunucuya, Github’a gönder.
+                                    <ul>
+                                        <li>git remote add origin http://uzak_deponun_adresi.git</li>
+                                        <li>git push origin feature</li>
+                                        <li>Diğer bir kullanım ise ağaca yönelik olabilir. git push origin “branch_name”
+                                        </li>
+                                        <li>git push push — force: Sunucu üzerindekini ezerek bizim local’imizdekini baz
+                                            alır.</li>
+                                    </ul>
+
+                                    <p><b>git pull:</b> Uzak bilgisayardan proje klasorünü getir. (Geri getir.) Github
+                                        üzerindeki bulunan haline bulunan mevcut kodu eşitler.</p>
+                                    <p>
+                                        <b>git fetch “remote-repo” “branch”:</b> Bu komut uzak sunucudaki dosyaları
+                                        local’e getirir. Fakat var olan kodumuz ile pull
+                                        gibi birleştirme yapmaz. Local olarak tutar. Bu sayede commit’lemeden önce
+                                        branch’lar ve kod arasındaki olabilecekleri bakmamıza sağlar.
+                                    </p>
+                                    <p><b>git log:</b> Projedeki commit geçmişini görüntülememizi sağlar. Bütün
+                                        commit’ler, id’si, yazarı, tarihi ve mesajı ile beraber listelenir. (git log —
+                                        oneline)</p>
+                                    <p><b>git clone:</b> Projenin kopyasını kendi local’inize almanızı sağlar.</p>
+
+                                    <b>git rm “dosya ve klasor_name”:</b> Dosya ve klasör silmek için kullanılır.
+                                    <ul>
+                                        <li>git rm — cached “dosya ve klasor_name”: Git sistemine eklenmiş ve takip
+                                            edilen bir dosyayı, takip edilmez olarak işaretler.
+                                            Bu sayede bu dosyaya dair değişikliklerin takibi bırakılır.</li>
+                                    </ul>
+                                    <hr>
+                                </div>
+
+                                <div>
+                                    <b>git ignore:</b> Dosyaları versiyonlama dışında bırakmaya yarar. Bazı dosya ve
+                                    içerikleri depo içerisinde barındırmak istemeyebiliriz.
+                                    Bunun için ignore ile işaretlenmesi yeterlidir.
+                                    <ul>
+                                        <li>Örneğin bir uygulama derlendikten sonra oluşan .dll ya da .class ekli
+                                            dosyaların depoya eklenmemesi gerekir, çünkü bu tür dosyalar
+                                            yapılandırma (build) işlemleri esnasında sürekli yeniden oluşturulurlar.
+                                        </li>
+                                    </ul>
+                                    <hr>
+                                </div>
+
+                                <div>
+                                    <p><b>git diff:</b> Repository üzerinde yapılan değişikliklerden sonra dosyalar
+                                        arasında oluşan farklılıkları gösterir.</p>
+                                    <p><b>git diff “commit_id_1”..”commit_id_2":</b> İki commit arasındaki farklılıkları
+                                        görmek için kullanılır.</p>
+
+                                    <b>git clean:</b> Clean komutu ile dizin içinde bulunan ve indexe henüz eklenmemiş
+                                    tüm değişiklikleri yok edebiliriz.
+                                    <ul>
+                                        <li>git clean -n: Hangi dosyaların silineceğini görmemizi sağlar.</li>
+                                        <li>git clean -f: Listelenen dosyaları siler.</li>
+                                        <li>git clean -f “dizin_ismi/”: Dizin silmek için kullanılabilir.</li>
+                                    </ul>
+                                    <p><b>git commit — amend:</b> Belirli önceden oluşturulmuş bir commit’e ek yapmak
+                                        için kullanılır.</p>
+                                    <p><b>git commit — amend -m “Bu yeni bir mesaj”:</b> Var olan commit’in açıklamasını
+                                        değiştirmek için kullanılır.</p>
+
+
+                                    <b>git revert “hash_degeri”:</b> Yanlışlıkla atılan commit’i nasıl geri alırız?
+                                    <ul>
+                                        <li>Geri almak istediğimiz commit’in HashID’sini git log ile bakarız.</li>
+                                        <li>Daha sonra git revert 165194161(HashID) yazarak atılmış olan commit’i geri
+                                            alabiliriz.</li>
+                                        <li>Geri alınmış commit’i tekrar geri alarak eski haline getirebiliriz. Yine
+                                            aynı şekilde log’dan bakarak HashID ile gerçekleştireceğiz.</li>
+                                    </ul>
+                                    <hr>
+                                </div>
+
+                                <div>
+                                    Var olan commit’lerin bazılarını geri alarak log içerisinde görünmesini
+                                        istemiyorum. Nasıl yaparım?
+                                    <ul>
+                                        <li><b>git log</b> kullandıktan sonra silinmesini istediğimiz yerin bir
+                                            öncesinde commit’in HashID’sini alıyoruz.</li>
+                                        <li>Daha sonra <b>“git reset — hard HashID”</b> ile bu işlemi
+                                            gerçekleştirebiliriz. Seçtiğimiz yere kadar olan log’lar silinecektir.</li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    Commit’ler arasındaki farklılıklara bakmak için iki commit’in HashID’sini aldıktan
+                                    sonra
+                                    <ul>
+                                        <li>git diff HashID1 . . HashID2 index.md</li>
+                                        <li>git diff HashID1 . . HashID2: Daha az bilgi içeren kaba karşılaştırma.</li>
+                                    </ul>
+                                    <hr>
+                                </div>
+
+                                <div>
+                                    <b>git stash:</b> Geçici olarak sadece en son olan committen itibaren değişiklikleri
+                                    tutar. Bu acil durumlarda geri dönme ve düzenleme için gereklidir.
+                                    <ul>
+                                        <li>“git stash list”le de tüm kayıtları görebiliriz.</li>
+                                        <li>“git stash list”le de tüm kayıtları görebiliriz.</li>
+                                        <li>“git stash apply” en üstteki kayıdı getirir. Kayıtı bellekten silmez.</li>
+                                    </ul>
+                                    <hr>
+                                </div>
+
+                                <div>
+                                    <b>git tag:</b> git checkout yardımıyla yapmış olduğumuz commitlerin id’sini
+                                    alabiliyorduk. Almış olduğumuz
+                                    id bilgisindeki commit üzerine giderek tag ile etiket de verilebilir. Örneğin
+                                    attığımız 2. komuta v1.0 demek gibi.
+                                    <ul>
+                                        <li>“git tag” ile var olan etiketleri görüntüleyebiliriz.</li>
+                                        <li>Örnek kullanım > git tag -a v3.0.0 -m “3.0.0 version created” > -a
+                                            parametresi verilen tag’ı belirtir. -m ise açıklama eklememizi sağlar.</li>
+                                    </ul>
+                                    <hr>
+                                </div>
+
+                                <p><b>git show “hash_degeri”:</b> Belirli bir commit bilgisini görüntülememizi sağlar.
+                                </p>
+
+                                <div>
+                                    <b>git rebase “branch_name”:</b> Rebase komutu çalışan brach’ı belirtilen branch ile
+                                    birleştirme işlemi sağlar. develop | feature gibi düşünülebilir. Feature branch
+                                    üzerinden yapılan geliştirmelerden sonra feature brach develop’a rebase edilebilir.
+                                    Bu çözümün problemi daha önce pull çektiğimiz esnada oluşmuş ve çözmüş
+                                    olabileceğimiz conflict’leri bu esnada tekrar çözmemiz gerekiyor ve bu durum zaman
+                                    zaman can sıkıcı olabiliyor. Bu gibi birden fazla commit farkı olan durumlarda
+                                    feature branch’ı için eski bir noktadan fork yapmak yerine daha yakın bir develop
+                                    versiyonu üzerinden rebase edilmesi daha mantıklı olabilir.<br>
+
+                                    Interactive rebase kavramı nedir?
+
+                                    <ul>
+                                        <li>
+                                            Bir branch üzerinde var olan commit’ler üzerinde mesajların, dropların
+                                            değişmesi gibi olsa da asıl önemli kullanımı
+                                            brach üzerinde var olan bütün commit’lerin tek commit haline getirilerek
+                                            birleştirilmesi. Bu durum bizlerin var olan
+                                            branch’dan ana branch’a merge etme işimiz sırasında tüm commit’leri kontrol
+                                            etme durumumuzu ortadan kaldırır. Çakışma
+                                            bulunmayan veya önlenebilir noktalarda tercih edilmelidir.
+                                        </li>
+                                        <li>Bu yöntemin problemleri yukarıdaki rebase kavramı üzerinde incelenebilir.
+                                        </li>
+                                    </ul>
+                                    <hr>
+                                </div>
+
+                                <div>
+                                    <b>Başlıca bilmemiz gereken bazı terimler;</b>
+                                    <ul>
+                                        <li><b>untracked (izlenmeyen):</b> Git tarafından henüz takip edilmeyen, yani
+                                            yeni oluşturulmuş dosyaları ifade eder.</li>
+                                        <li><b>unstaged (hazırlanmamış):</b> Güncellenmiş ancak commit’lenmek için
+                                            hazırlanmamış dosyaları ifade eder.</li>
+                                        <li><b>staged (hazırlanmış):</b> Commit’lenmeye hazır olan dosyaları ifade eder.
+                                        </li>
+                                        <li><b>deleted (silinmiş):</b> Projeden silinmiş ama Git üzerinden kaldırılmamış
+                                            dosyaları ifade eder.</li>
+                                        <li>
+                                            <b>branch (dal):</b> Geliştirme ortamı içerisinde bulunan dosyalama ve
+                                            yönetim yapısı olarak düşünülebilir.
+                                            Ağaç dalları ile aynı mantıkta değerlendirilebilir. Bir daldan üretilen
+                                            ayrılan dal, üretildiği ağacın içeriğini barındırır.
+                                            Ağaç mantığından farklı olarak birleştirme işlemi uygulanabilir.
+                                        </li>
+                                        <li><b>flow:</b> Akış ve ilerleyiş anlamına gelir.</li>
+                                    </ul>
+                                    <br>
+                                </div>
+
+                                <div>
+                                    <h3>Kaynakça;</h3>
+                                    <ul>
+                                        <a href="https://app.patika.dev/moduller/git/git-bash-ile-git-temel-komutlari">Git
+                                            Bash Komutları</a><br>
+                                        <a href="https://app.patika.dev/moduller/ileri-seviye-git">İleri Seviye
+                                            Git</a><br>
+                                        <a
+                                            href="https://app.patika.dev/moduller/git/gitignore-dosyasi-ne-i̇se-yarar-nasil-kullaniriz">Git
+                                            İgnore Dosyası Ne İşe Yarar?</a><br>
+                                        <a href="https://www.mobilhanem.com/git-tag-ile-commit-etiketleme/">Git Tag İle
+                                            Commit Etiketleme</a><br>
+                                        <a href="https://developpaper.com/git-flow-workflow-summary/">Git Flow Workflow
+                                            Summary</a>
+                                    </ul>
+                                </div>
+
+                                <div style="text-align: center;">
+                                    <br>
+                                    <a href="/index.html">Anasayfaya Dön!</a>
+                                </div>
+                        </section>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <section id="footer">
+            <div class="container">
+                <div class="row">
+                    <!-- Social Media -->
+                    <div style="text-align: center;" class="contact col-12" id="contact">
+                        <section>
+                            <header>
+                                <h2>Bana Ulaş</h2>
+                            </header>
+                            <ul class="social">
+                                <li><a class="icon brands fa-github" href="https://github.com/KaganCanSit"><span
+                                            class="label">Github</span></a></li>
+                                <li><a class="icon brands fa-twitter" href="https://twitter.com/kagancansit"><span
+                                            class="label">Twitter</span></a></li>
+                                <li><a class="icon brands fa-instagram"
+                                        href="https://www.instagram.com/kagancansit/"><span
+                                            class="label">Instagram</span></a></li>
+                                <li><a class="icon brands fa-linkedin"
+                                        href="https://www.linkedin.com/in/kagancansit/"><span
+                                            class="label">Linkedin</span></a></li>
+                            </ul>
+                            <p><a href="mailto::kagancansit@hotmail.com">kagancansit@hotmail.com</a></p>
+                        </section>
+                    </div>
+
+                    <!-- Copyright -->
+                    <div class="col-12">
+                        <div id="copyright">
+                            <ul class="links">
+                                <li>&copy;Copyright 2022 - Kağan Can Şit | Merhaba!👋 Umarım sana katkı sağlayacak
+                                    içerikler bulursun.🏹 </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Scripts -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2BLQV2M3JL"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-2BLQV2M3JL');
+    </script>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/jquery.dropotron.min.js"></script>
+    <script src="../assets/js/browser.min.js"></script>
+    <script src="../assets/js/breakpoints.min.js"></script>
+    <script src="../assets/js/util.js"></script>
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>
