@@ -7,6 +7,7 @@ You can access ready-made HTML templates from this [site](https://html5up.net/).
 ![Design Page](https://github.com/KaganCanSit/kagancansit.github.io/blob/main/Readme_Images/Design_Page.JPG)
 ![AboutMe Page](https://github.com/KaganCanSit/kagancansit.github.io/blob/main/Readme_Images/About_Me_Image.JPG)
 ![Contact Page](https://github.com/KaganCanSit/kagancansit.github.io/blob/main/Readme_Images/Contact_Page.JPG)
+![404 Page](https://github.com/KaganCanSit/kagancansit.github.io/blob/main/Readme_Images/404-Image.png)
 
 There may be differences after updates. I look forward to your feedback so that I can develop it.
 Stay well.
