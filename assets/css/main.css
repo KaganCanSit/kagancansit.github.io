@@ -2156,15 +2156,14 @@ input, select, textarea {
 			}
 
 /* Banner */
-
 	#banner {
-		background: #CCE8F4 url("../../images/mainPageImage.png");
+		background: url("https://media1.giphy.com/media/u7D5EyS2EFlpC/giphy.gif?cid=790b7611263ba0693335d45385f1bafb332a6ce3382ec1f7&rid=giphy.gif&ct=g");
 		background-position: inherit;
 		background-size: 100%;
 		background-repeat: no-repeat;
 		text-align: center;
 		position: relative;
-		padding: 5.5em 0;
+		padding: 4em 4em;
 		margin: 2em 0 0 0;
 	}
 
@@ -2185,9 +2184,9 @@ input, select, textarea {
 			#banner header p {
 				color: #d52349;
 				padding: 0;
-				font-style: normal;
+				font-style: italic;
 				margin: 0;
-				font-size: 1.5em;
+				font-size: 1.15em;
 			}
 
 /* Main */
