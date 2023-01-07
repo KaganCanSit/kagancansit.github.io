@@ -656,7 +656,7 @@ input, select, textarea {
 				}
 
 					.row > * {
-						padding: 50px 0 0 50px;
+						padding: 15px 0 0 15px;
 					}
 
 					.row.gtr-uniform {
@@ -2053,8 +2053,8 @@ input, select, textarea {
 		position: relative;
 		background: #ffffff;
 		border-bottom: solid 1px #ccc;
-		padding: 5em 0 4em 0;
-		text-align: center;
+		padding: 0.1em 0 0 0;
+		text-align: none;
 	}
 
 		#header h1 {
@@ -2068,7 +2068,7 @@ input, select, textarea {
 /* Nav */
 
 	#nav {
-		margin: 2.5em 0 0 0;
+		margin: 1.5em 0 0 0;
 	}
 
 		#nav > ul {
@@ -2163,8 +2163,8 @@ input, select, textarea {
 		background-repeat: no-repeat;
 		text-align: center;
 		position: relative;
-		padding: 4em 4em;
-		margin: 2em 0 0 0;
+		padding: 8em 4em;
+		margin: 0 0 0 0;
 	}
 
 		#banner header {
