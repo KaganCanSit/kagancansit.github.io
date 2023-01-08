@@ -128,8 +128,8 @@ input, select, textarea {
 	}
 
 	blockquote {
-		border-left: solid 0.75em #dddddd;
-		padding: 1em 0 1em 1.5em;
+		border-left: solid 0.25em #f56a6a;
+		padding: 1em 0em 0em 1.5em;
 		font-style: italic;
 	}
 
@@ -2102,7 +2102,7 @@ input, select, textarea {
 				}
 
 				#nav > ul > li.current > a {
-					background: #d52349;
+					background: #f56a6a;
 					color: #fff !important;
 					font-weight: 700;
 				}
