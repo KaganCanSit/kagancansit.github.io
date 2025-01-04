@@ -2,18 +2,31 @@
 <html lang="en">
 
 <head>
-  <!-- Meta Tags -->
+  <!-- Primary Meta Tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Kağan Can Şit | Personal Site - Projects, blog posts, designs and more...">
+  <meta name="description" content="Kağan Can Şit | Software Engineer - Projects, blog posts, designs and more...">
   <meta name="author" content="Kağan Can Şit">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kagancansit.com/">
+  <meta property="og:title" content="Kağan Can Şit - Software Engineer">
+  <meta property="og:description" content="Software Engineer focusing on security and server software development">
+  <meta property="og:image" content="/images/base_site_images/og-image.webp">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@kagancansit">
+  <meta name="twitter:title" content="Kağan Can Şit - Software Engineer">
+  <meta name="twitter:description" content="Software Engineer focusing on security and server software development">
+  <meta name="twitter:image" content="/images/base_site_images/og-image.webp">
 
   <!-- Title and Favicon -->
   <title>Kağan Can Şit</title>
   <link rel="icon" href="/images/base_site_images/designPng.webp" type="image/x-icon" />
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <!-- Preload Critical Resources -->
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
@@ -32,7 +45,10 @@
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-    gtag('config', 'G-2BLQV2M3JL');
+    gtag('config', 'G-2BLQV2M3JL', {
+      'anonymize_ip': true,
+      'cookie_flags': 'SameSite=None;Secure'
+    });
   </script>
 </head>
 
@@ -218,7 +234,7 @@
                   <summary>Learn More</summary>
                   <div class="details-content">
                     <p>In the National Public Key Infrastructure (MA3) team, I started as an intern and continued as a
-                      “Candidate Engineer” for two months.</p>
+                      "Candidate Engineer" for two months.</p>
                   </div>
                 </details>
               </div>
@@ -346,20 +362,16 @@
 
   <!-- Companies -->
   <section class="full-screen companies-section">
-    <div class="container h-100">
-      <div class="row h-100 align-items-center">
-        <div class="col-12 text-center">
-          <h2 class="mb-5">Companies</h2>
-          <div class="company-logos">
-            <div class="company-logo-container">
-              <a href="https://bilgem.tubitak.gov.tr/">
-                <img src="/images/resume/TUBITAK-Bilgem-DarkMode.webp" loading="lazy" title="Tübitak Bilgem'in Logosu"
-                  class="company-logo dark-logo">
-                <img src="/images/resume/TUBITAK-Bilgem.webp" loading="lazy" title="Tübitak Bilgem'in Logosu"
-                  class="company-logo light-logo">
-              </a>
-            </div>
-          </div>
+    <div class="container">
+      <div class="companies-content">
+        <h2 class="section-title mb-5">Companies</h2>
+        <div class="company-grid">
+          <a href="https://bilgem.tubitak.gov.tr/" target="_blank" rel="noopener noreferrer" class="company-link">
+            <img src="/images/resume/TUBITAK-Bilgem-DarkMode.webp" loading="lazy" alt="Tübitak Bilgem Logo Dark Mode"
+              class="company-logo dark-logo">
+            <img src="/images/resume/TUBITAK-Bilgem.webp" loading="lazy" alt="Tübitak Bilgem Logo Light Mode"
+              class="company-logo light-logo">
+          </a>
         </div>
       </div>
     </div>
@@ -456,7 +468,8 @@
         <div class="col-lg-6">
           <h1><span>Tasarım</span></h1>
           <p>
-            Grafik tasarım, bilgisayarla tanıştığım ilk zamanlarda edindiğim hobilerimden biriydi. "Dijital Sürreal" ve
+            Grafik tasarım, bilgisayarla tanıştığım ilk zamanlardan beri edindiğim hobilerimden biriydi. "Dijital
+            Sürreal" ve
             katmanlama yöntemiyle farklı bakış açıları oluşturmaya çalıştığım, film sahnelerini kopyaladığım veya kitap
             bölümleri oluşturduğum çalışmalarım oldu. Okul harçlıklarımı kazanmak için çalıştığım zamanlarda Onedio'da
             haber oldum.
