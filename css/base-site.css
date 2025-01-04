@@ -723,8 +723,7 @@ mark {
 .img-fluid {
     max-width: 100%;
     height: auto;
-    margin-top: 3%;
-    margin-bottom: 3%;
+    margin: 3%;
 }
 
 .img-thumbnail {

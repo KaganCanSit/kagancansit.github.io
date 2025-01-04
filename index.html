@@ -1,18 +1,32 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
+  <!-- Meta Tags -->
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Kağan Can Şit | Personal Site - Projects, blog posts, designs and more...">
   <meta name="author" content="Kağan Can Şit">
 
+  <!-- Title and Favicon -->
   <title>Kağan Can Şit</title>
   <link rel="icon" href="/images/base_site_images/designPng.webp" type="image/x-icon" />
+
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Preload Critical Resources -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preload" href="/css/base-site.css" as="style">
+  <link rel="preload" href="/css/tooplate-style.css" as="style">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="/css/base-site.css">
   <link rel="stylesheet" href="/css/tooplate-style.css">
 
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2BLQV2M3JL"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -77,7 +91,7 @@
   <section class="full-screen" id="about">
     <div class="container">
       <div class="row align-items-center">
-        <div class="col-lg-7">
+        <div class="col-lg-6">
           <h2>About Me</h2>
           <p>
             I am Kağan. I work as a software engineer in the defense industry, primarily focusing on security
@@ -109,7 +123,7 @@
             </a>
           </div>
         </div>
-        <div class="col-lg-5">
+        <div class="col-lg-6">
           <img src="../images/base_site_images/potraitImage.webp" loading="lazy" class="img-fluid">
         </div>
       </div>
@@ -117,21 +131,24 @@
   </section>
 
   <!-- Experience | Education -->
-  <section class="full-screen">
-    <div class="container mx-auto">
-      <div class="row">
+  <section class="timeline-section">
+    <div class="container">
+      <div class="row g-5">
+        <!-- Experience -->
         <div class="col-lg-6">
-          <h2 class="section-title">Experience</h2>
+          <h2 class="section-title mb-4">Experience</h2>
           <div class="timeline">
             <div class="timeline-item">
               <div class="timeline-year">2023</div>
               <div class="timeline-content">
-                <h3>Software Engineer</h3>
-                <small>TÜBİTAK BİLGEM - UEKAE | <i>June 2023 - Present</i></small>
+                <div class="timeline-header">
+                  <h3>Software Engineer</h3>
+                  <small>TÜBİTAK BİLGEM - UEKAE | <i>June 2023 - Present</i></small>
+                </div>
 
-                <details>
+                <details class="timeline-details">
                   <summary>Learn More</summary>
-                  <div>
+                  <div class="details-content">
                     <p>
                       I work as part of the National Public Key Infrastructure (MA3) team, focusing on the design and
                       development of high-performance and secure software solutions using C++.
@@ -178,15 +195,17 @@
                 <h3>Junior Software Engineer</h3>
                 <small>TÜBİTAK BİLGEM - UEKAE | <i>November 2022 - June 2023</i></small>
 
-                <details>
+                <details class="timeline-details">
                   <summary>Learn More</summary>
-                  <p>
-                    At UEKAE (National Electronics and Cryptology Research Institute) - TUBITAK, I worked full-time in
-                    the MA3 (National Public Key Infrastructure) team from my last year as a student until my
-                    graduation. During this time, I deepened my expertise in software development in accordance with
-                    national security standards. I also significantly improved my skills in creating, auditing and
-                    editing efficient and reliable software architectures.
-                  </p>
+                  <div class="details-content">
+                    <p>
+                      At UEKAE (National Electronics and Cryptology Research Institute) - TUBITAK, I worked full-time in
+                      the MA3 (National Public Key Infrastructure) team from my last year as a student until my
+                      graduation. During this time, I deepened my expertise in software development in accordance with
+                      national security standards. I also significantly improved my skills in creating, auditing and
+                      editing efficient and reliable software architectures.
+                    </p>
+                  </div>
                 </details>
               </div>
             </div>
@@ -195,10 +214,12 @@
               <div class="timeline-content">
                 <h3>Candidate Software Engineer</h3>
                 <small>TÜBİTAK BİLGEM - UEKAE | <i>September 2022 - October 20222</i></small>
-                <details>
+                <details class="timeline-details">
                   <summary>Learn More</summary>
-                  <p>In the National Public Key Infrastructure (MA3) team, I started as an intern and continued as a
-                    “Candidate Engineer” for two months.</p>
+                  <div class="details-content">
+                    <p>In the National Public Key Infrastructure (MA3) team, I started as an intern and continued as a
+                      “Candidate Engineer” for two months.</p>
+                  </div>
                 </details>
               </div>
             </div>
@@ -208,18 +229,21 @@
                 <h3>Software Engineer Summer Intern</h3>
                 <small>TÜBİTAK BİLGEM - UEKAE | <i>July 2022 - September 2022</i></small>
 
-                <details>
+                <details class="timeline-details">
                   <summary>Learn More</summary>
-                  <p>I worked as an intern in the National Public Key Infrastructure (MA3) team for a total of 40
-                    working days.</p>
+                  <div class="details-content">
+                    <p>I worked as an intern in the National Public Key Infrastructure (MA3) team for a total of 40
+                      working days.</p>
+                  </div>
                 </details>
               </div>
             </div>
           </div>
         </div>
 
+        <!-- Education -->
         <div class="col-lg-6">
-          <h2 class="section-title">Education</h2>
+          <h2 class="section-title mb-4">Education</h2>
           <div class="timeline">
             <div class="timeline-item">
               <div class="timeline-year">2023</div>
@@ -227,14 +251,17 @@
                 <h3>Software Engineering</h3>
                 <small>Manisa Celal Bayar University | <i>September 2020 - June 2023</i></small>
                 <small>GNO: 3.69</small>
-                <details>
+                <details class="timeline-details">
                   <summary>Learn More</summary>
-                  <p>
-                    I completed my undergraduate degree in Software Engineering at Manisa Celal Bayar University. During
-                    my education, I worked on various side projects to improve my competencies in the software field. In
-                    addition, I paid attention to expanding my professional network and gaining new perspectives by
-                    communicating with experienced people in the industry via e-mail and social media tools.
-                  </p>
+                  <div class="details-content">
+                    <p>
+                      I completed my undergraduate degree in Software Engineering at Manisa Celal Bayar University.
+                      During my education, I worked on various side projects to improve my competencies in the software
+                      field.
+                      In addition, I paid attention to expanding my professional network and gaining new perspectives by
+                      communicating with experienced people in the industry via e-mail and social media tools.
+                    </p>
+                  </div>
                 </details>
               </div>
             </div>
@@ -244,12 +271,15 @@
                 <h3>Mechatronics Engineering</h3>
                 <small>Düzce University | <i>November 2019 - June 2020</i></small>
                 <small>GNO: 3.60</small>
-                <details>
+                <details class="timeline-details">
                   <summary>Learn More</summary>
-                  <p>I participated in many events such as Python training and cyber security training given by HAVELSAN
-                    by taking part in the UAV team in Düzce Mekatek community.</p>
-                  <p>After completing the 1st year of Mechatronics Engineering at Düzce University, I transferred to
-                    Manisa Celal Bayar University, Software Engineering Department.</p>
+                  <div class="details-content">
+                    <p>I participated in many events such as Python training and cyber security training given by
+                      HAVELSAN
+                      by taking part in the UAV team in Düzce Mekatek community.</p>
+                    <p>After completing the 1st year of Mechatronics Engineering at Düzce University, I transferred to
+                      Manisa Celal Bayar University, Software Engineering Department.</p>
+                  </div>
                 </details>
               </div>
             </div>
@@ -261,8 +291,8 @@
 
   <!-- Technology -->
   <section class="full-screen">
-    <div class="container row align-items-center">
-      <div class="col-lg-5">
+    <div class="container row align-items-center mx-auto">
+      <div class="col-lg-6">
         <div class="text-center">
           <a href="https://www.freepik.com/designer">
             <img src="/images/resume/freepik-tools-illustration.webp" class="img-fluid" alt="Freepik Illustration">
@@ -270,7 +300,7 @@
         </div>
       </div>
 
-      <div class="col-lg-6 mx-auto">
+      <div class="col-lg-6">
         <h2>Technologies</h2>
         <p>
           I primarily use C++ in my software development processes, but I also work with other programming languages and
@@ -288,8 +318,8 @@
 
   <!-- Goals -->
   <section class="full-screen">
-    <div class="container row align-items-center">
-      <div class="col-lg-6 mx-auto">
+    <div class="container row align-items-center mx-auto">
+      <div class="col-lg-6">
         <h2>Goals</h2>
         <p>
           I want to have in-depth knowledge of the C++ language and further develop my skills. For this reason, I follow
@@ -303,11 +333,11 @@
         </p>
       </div>
 
-      <div class="col-lg-5 mx-auto">
-        <div style="text-align: center;">
+      <div class="col-lg-6">
+        <div class="text-center">
           <a href="https://www.freepik.com/designer">
             <img src="/images/resume/freepik-goals-illustration.webp" loading="lazy" class="img-fluid"
-              alt="Freepik Illsutration">
+              alt="Freepik Illustration">
           </a>
         </div>
       </div>
@@ -352,7 +382,7 @@
 
 
 
-  
+
   <!-- Project Content -->
   <section class="full-screen">
     <div class="container">

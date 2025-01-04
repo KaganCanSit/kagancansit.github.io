@@ -565,26 +565,22 @@ html {
 }
 
 /* Company Section Styles */
-.companies-section {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .company-logos {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    width: 100%;
+    margin: 2rem 0;
 }
 
 .company-logo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+    position: relative;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.company-logo-container:hover {
+    transform: translateY(-5px);
 }
 
 .company-logo {
@@ -630,5 +626,160 @@ html {
     .company-logos {
         gap: 1rem;
         margin: 1rem 0;
+    }
+}
+
+/* Timeline Section Styles */
+.timeline-section {
+    padding: 5rem 0;
+    background-color: var(--bg-color);
+}
+
+/* Timeline Container */
+.timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background-color: var(--themeColor);
+    opacity: 0.2;
+}
+
+/* Timeline Items */
+.timeline-item {
+    position: relative;
+    padding-bottom: 3rem;
+    margin-bottom: 1rem;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-year {
+    position: absolute;
+    left: -2.5rem;
+    background-color: var(--bg-color);
+    color: var(--themeColor);
+    font-weight: 600;
+    padding: 0.25rem 0;
+}
+
+/* Timeline Content */
+.timeline-content {
+    background-color: var(--bg-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(var(--themeColor-rgb), 0.1);
+}
+
+.timeline-content:hover {
+    border-color: rgba(var(--themeColor-rgb), 0.2);
+}
+
+[data-theme="dark"] .timeline-content {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .timeline-content:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.timeline-header {
+    margin-bottom: 1rem;
+}
+
+.timeline-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--headers-color);
+}
+
+.timeline-content small {
+    display: block;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+}
+
+/* Details Styling */
+.timeline-details {
+    margin-top: 1rem;
+}
+
+.timeline-details summary {
+    cursor: pointer;
+    color: var(--themeColor);
+    font-weight: 500;
+    outline: none;
+    padding: 0.5rem 0;
+}
+
+.timeline-details summary:hover {
+    opacity: 0.8;
+}
+
+.details-content {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-left: 2px solid var(--themeColor);
+    background-color: rgba(var(--themeColor-rgb), 0.05);
+}
+
+/* Details Section Content */
+.details-section {
+    margin-bottom: 1.5rem;
+}
+
+.details-section:last-child {
+    margin-bottom: 0;
+}
+
+.details-section .section-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--headers-color);
+}
+
+.details-list {
+    list-style: none;
+    padding-left: 1rem;
+    margin: 0;
+}
+
+.details-list li {
+    position: relative;
+    padding-left: 1rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.details-list li::before {
+    content: "•";
+    position: absolute;
+    left: -0.5rem;
+    color: var(--themeColor);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .timeline {
+        padding-left: 1.5rem;
+    }
+    
+    .timeline-year {
+        left: -2rem;
+    }
+    
+    .timeline-content {
+        padding: 1rem;
     }
 }
