@@ -904,7 +904,7 @@ html {
     color: var(--text-color);
     background-color: transparent;
     border: 2px solid var(--border-color);
-    font-size: 1.25rem;
+    font-size: 200%;
     transition: all 0.3s ease;
 }
 
