@@ -880,3 +880,97 @@ html {
         max-width: 120px;
     }
 }
+
+/* Social Links Styles */
+.social-links-container {
+    margin-top: 2rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    color: var(--text-color);
+    background-color: transparent;
+    border: 2px solid var(--border-color);
+    font-size: 1.25rem;
+    transition: all 0.3s ease;
+}
+
+/* Hover Effects */
+.social-link:hover {
+    color: var(--bg-color);
+    transform: translateY(-3px);
+}
+
+/* Specific social media colors on hover */
+.social-link:hover i.fa-envelope {
+    color: #EA4335;
+}
+
+.social-link:hover i.fa-linkedin {
+    color: #0A66C2;
+}
+
+.social-link:hover i.fa-github {
+    color: #171515;
+}
+
+.social-link:hover i.fa-twitter {
+    color: #1DA1F2;
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] .social-link {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="dark"] .social-link:hover {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .social-links {
+        gap: 1rem;
+    }
+    
+    .social-link {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+}
+
+/* Optional: Loading Animation */
+.social-link {
+    animation: fadeInUp 0.5s ease forwards;
+    opacity: 0;
+}
+
+.social-link:nth-child(1) { animation-delay: 0.1s; }
+.social-link:nth-child(2) { animation-delay: 0.2s; }
+.social-link:nth-child(3) { animation-delay: 0.3s; }
+.social-link:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
