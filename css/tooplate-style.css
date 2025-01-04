@@ -11,10 +11,8 @@ body {
 
 .full-screen {
   min-height: 100vh;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .small-text {
@@ -470,4 +468,167 @@ p {
     display: inline-block;
     vertical-align: top;
   }
+}
+
+/* Index page main header and subtitle */
+.hero-title {
+    font-size: clamp(3rem, 8vw, 8rem);
+    letter-spacing: 0.1em;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+    letter-spacing: 0.8em;
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+    margin-bottom: 2rem;
+    white-space: nowrap;
+}
+
+.hero-text {
+    letter-spacing: 0.5em;
+    font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+    line-height: 1.6;
+}
+
+/* Responsive düzenlemeler */
+@media (max-width: 1200px) {
+    .hero-title {
+        font-size: clamp(2.5rem, 6vw, 6rem);
+    }
+    
+    .hero-subtitle {
+        letter-spacing: 0.6em;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: clamp(2rem, 5vw, 5rem);
+        margin-top: 2rem;
+    }
+    
+    .hero-subtitle {
+        letter-spacing: 0.4em;
+        margin: 1rem 0;
+    }
+    
+    .hero-text {
+        letter-spacing: 0.3em;
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: clamp(1.8rem, 4vw, 4rem);
+    }
+    
+    .hero-subtitle {
+        letter-spacing: 0.2em;
+    }
+    
+    .hero-text {
+        letter-spacing: 0.2em;
+    }
+}
+
+@media (max-width: 991px) {
+    .full-screen {
+        padding-bottom: 4rem;
+    }
+    
+    .hero-text {
+        margin-top: 2rem;
+    }
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+.page-transition {
+    animation: fadeIn 0.5s ease-in;
+}
+
+.interactive-element {
+    transition: all 0.3s ease;
+}
+
+:root {
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 4rem;
+    --space-xl: 8rem;
+}
+
+/* Company Section Styles */
+.companies-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.company-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+}
+
+.company-logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.company-logo {
+    max-width: 200px;
+    height: auto;
+    transition: opacity 0.3s ease;
+}
+
+/* Dark/Light mode logo handling */
+.dark-logo {
+    display: none;
+}
+
+.light-logo {
+    display: block;
+}
+
+[data-theme="dark"] .dark-logo {
+    display: block;
+}
+
+[data-theme="dark"] .light-logo {
+    display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .company-logo {
+        max-width: 150px;
+    }
+    
+    .company-logos {
+        gap: 1.5rem;
+        margin: 1.5rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .company-logo {
+        max-width: 120px;
+    }
+    
+    .company-logos {
+        gap: 1rem;
+        margin: 1rem 0;
+    }
 }

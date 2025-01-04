@@ -37,7 +37,7 @@ section {
 }
 
 body {
-    font-family: 'Maven Pro', sans-serif;
+    /* font-family: 'Maven Pro', sans-serif; */
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -775,11 +775,9 @@ kbd kbd {
 }
 
 .container {
-    max-width: 75%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
+    max-width: 100%;
+    padding-right: 10%;
+    padding-left: 10%;
 }
 
 .container-fluid {
