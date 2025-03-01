@@ -14,7 +14,9 @@ By the way, you can also find plenty of useful resources on YouTube and Medium.
 
 # ! Warning
 
-I am attaching a few screenshots of the site below. Of course, it may change over time. Please visit the site and check before cloning. Also, after you update your own content after the cloning process, I would be happy if you publish your site with the help of repository settings.
+I am attaching a few screenshots of the site below. Of course, it may change over time. Please visit and check the site before cloning. Also, when you clone to the repository, publish your repository after you are done editing the contents and your own connection for Google Analytics.
+
+https://github.com/KaganCanSit/kagancansit.github.io/blob/9231e1baf041561fd6fb95285e4fd43a6bc10c63/index.html#L43
 
 Best regards.
 
