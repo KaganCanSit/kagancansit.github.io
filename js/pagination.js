@@ -1,73 +1,52 @@
-window.addEventListener('DOMContentLoaded', (event) => {
-  const blogsArea = document.getElementById('blog_content_area');
-  const paginationDiv = document.getElementById('pagination');
-  const blogList = Array.from(blogsArea.getElementsByClassName('card'));
+document.addEventListener('DOMContentLoaded', () => {
+  const blogContainer = document.getElementById('blog_content_area');
+  const paginationContainer = document.getElementById('pagination');
 
-  const blogDisplayOnePage = 10;
-  const totalPage = Math.ceil(blogList.length / blogDisplayOnePage);
+  if (!blogContainer || !paginationContainer) return;
 
-  for (let page = 1; page <= totalPage; page++) {
-    const pageLink = document.createElement('a');
-    pageLink.href = '#';
-    pageLink.textContent = page;
-    pageLink.classList.add('page-link');
-    pageLink.style.color = 'var(--text-light)';
+  const cards = Array.from(blogContainer.querySelectorAll('.card'));
+  const blogsPerPage = 10;
+  const totalPages = Math.ceil(cards.length / blogsPerPage);
 
-    pageLink.addEventListener('click', (event) => {
-      event.preventDefault();
-      blogPageUpdate(page);
+  const list = document.createElement('ul');
+  list.classList.add('pagination', 'justify-content-center');
+  paginationContainer.appendChild(list);
+
+  function showPage(page) {
+    const start = (page - 1) * blogsPerPage;
+    const end = start + blogsPerPage;
+
+    cards.forEach((card, index) => {
+      const wrapper = card.closest('.col-lg-6') || card.parentElement;
+      wrapper.style.display = index >= start && index < end ? '' : 'none';
     });
 
-    paginationDiv.appendChild(pageLink);
-  }
-
-  blogPageUpdate(1);
-
-  function blogPageUpdate(page) {
-    const firstIndex = (page - 1) * blogDisplayOnePage;
-    const lastIndex = firstIndex + blogDisplayOnePage;
-
-    for (let i = 0; i < blogList.length; i++) {
-      const parentDiv = blogList[i].parentElement;
-      if (i >= firstIndex && i < lastIndex) {
-        parentDiv.style.display = 'block';
+    Array.from(list.children).forEach((li, index) => {
+      if (index + 1 === page) {
+        li.classList.add('active');
       } else {
-        parentDiv.style.display = 'none';
+        li.classList.remove('active');
       }
-    }
+    });
   }
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-  const prContainer = document.querySelector('#pr-section .row');
-  const prItems = Array.from(prContainer.querySelectorAll('.timeline-item'));
-  const paginationDiv = document.getElementById('pr-pagination');
-  
-  const itemsPerPage = 10;
-  const totalPages = Math.ceil(prItems.length / itemsPerPage);
 
   for (let i = 1; i <= totalPages; i++) {
-    const pageLink = document.createElement('a');
-    pageLink.href = '#';
-    pageLink.textContent = i;
-    pageLink.classList.add('page-link');
-    pageLink.style.color = 'var(--text-light)';
+    const li = document.createElement('li');
+    li.classList.add('page-item');
 
-    pageLink.addEventListener('click', (e) => {
+    const link = document.createElement('a');
+    link.href = '#blog';
+    link.textContent = i;
+    link.classList.add('page-link');
+    link.style.color = 'var(--text-light)';
+    link.addEventListener('click', (e) => {
       e.preventDefault();
-      updatePage(i);
+      showPage(i);
     });
 
-    paginationDiv.appendChild(pageLink);
+    li.appendChild(link);
+    list.appendChild(li);
   }
 
-  function updatePage(page) {
-    const startIndex = (page - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-
-    prItems.forEach((item, index) => {
-      item.style.display = index >= startIndex && index < endIndex ? 'block' : 'none';
-    });
-  }
-  updatePage(1);
+  showPage(1);
 });
