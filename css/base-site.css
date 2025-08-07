@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 :root {
     --themeColor: #42EABD;
     --link-color-light-theme: #00c28e;
@@ -15,8 +17,6 @@
 ::before {
     box-sizing: border-box
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 html {
     font-family: 'Inter', 'Maven Pro', Arial, sans-serif;
@@ -5231,7 +5231,7 @@ input[type=submit].btn-block {
 .page-item.active .page-link {
     z-index: 1;
     color: #fff;
-    background-color: #007bff;
+    background-color: var(--themeColor);
     border-color: #007bff
 }
 
