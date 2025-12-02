@@ -1,0 +1,16 @@
+<div class="col-lg-6">
+    <div class="card">
+        <a href="{{ include.post.url | relative_url }}">
+            <div class="card__image-container">
+                <img src="{{ include.post.header_image | relative_url }}" 
+                     loading="lazy" 
+                     class="card__image" 
+                     alt="{{ include.post.title }}" />
+                <div class="card__overlay">
+                    <h4 class="card__title">{{ include.post.title }}</h4>
+                    <time class="card__date">{{ include.post.date | date: "%B %d, %Y" }}</time>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>

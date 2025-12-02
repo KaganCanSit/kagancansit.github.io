@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-sm navbar-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div style="background-color: transparent;" class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a href="{{ '/#project' | relative_url }}" class="nav-link">Project</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ '/#blog' | relative_url }}" class="nav-link">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ '/#design' | relative_url }}" class="nav-link">Design</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ '/#about' | relative_url }}" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ '/#contact' | relative_url }}" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link"><span class="color-mode color-mode-icon"></span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

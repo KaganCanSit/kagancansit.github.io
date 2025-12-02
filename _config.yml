@@ -1,0 +1,53 @@
+# Site settings
+title: "Kağan Can Şit"
+description: "Software Engineer - Projects, blos posts and more..."
+author: Kağan Can Şit
+url: "https://kagancansit.github.io"
+baseurl: ""
+lang: en
+
+# Social Links
+email: "kagancansit@hotmail.com"
+linkedin: "kagancansit"
+github: "KaganCanSit"
+twitter: "kagancansit"
+
+# Google Analytics
+google_analytics: "G-2BLQV2M3JL"
+
+# Build Settings
+markdown: kramdown
+highlighter: rouge
+permalink: /blog/:title/
+encoding: utf-8
+
+# Kramdown settings
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - README.md
+  - notes.md # Notes for me 
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Kağan Can Şit"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap

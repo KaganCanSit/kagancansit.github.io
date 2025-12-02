@@ -1,0 +1,34 @@
+<!-- Primary Meta Tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="{{ page.description | default: site.description }}">
+<meta name="author" content="{{ site.author }}">
+
+<!-- Title and Favicon -->
+<title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+<link rel="icon" href="{{ '/assets/images/base_site_images/designPng.webp' | relative_url }}" type="image/x-icon" />
+
+<!-- SEO Plugin -->
+{% seo %}
+
+<!-- Stylesheets -->
+<link rel="stylesheet" href="{{ '/assets/css/all.min.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/base-site.css' | relative_url }}">
+
+{% if page.custom_css %}
+<link rel="stylesheet" href="{{ page.custom_css | relative_url }}">
+{% endif %}
+
+<!-- Google Analytics -->
+{% if site.google_analytics %}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', '{{ site.google_analytics }}', {
+        'anonymize_ip': true,
+        'cookie_flags': 'SameSite=None;Secure'
+    });
+</script>
+{% endif %}

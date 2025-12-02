@@ -1,0 +1,30 @@
+<div class="social-links-container">
+    <div class="social-links">
+        {% if site.email %}
+        <a href="mailto:{{ site.email }}" class="social-link" aria-label="Email" title="Contact by email">
+            <i class="fas fa-envelope"></i>
+        </a>
+        {% endif %}
+
+        {% if site.linkedin %}
+        <a href="https://www.linkedin.com/in/{{ site.linkedin }}/" class="social-link" target="_blank" 
+           rel="noopener noreferrer" aria-label="LinkedIn" title="Visit my LinkedIn profile">
+            <i class="fab fa-linkedin"></i>
+        </a>
+        {% endif %}
+
+        {% if site.github %}
+        <a href="https://github.com/{{ site.github }}" class="social-link" target="_blank" 
+           rel="noopener noreferrer" aria-label="GitHub" title="Visit my GitHub profile">
+            <i class="fab fa-github"></i>
+        </a>
+        {% endif %}
+
+        {% if site.twitter %}
+        <a href="https://x.com/{{ site.twitter }}" class="social-link" target="_blank" 
+           rel="noopener noreferrer" aria-label="Twitter" title="Visit my Twitter profile">
+            <i class="fab fa-twitter"></i>
+        </a>
+        {% endif %}
+    </div>
+</div>
