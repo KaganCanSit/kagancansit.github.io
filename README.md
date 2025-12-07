@@ -10,21 +10,18 @@ This repository contains the source code for my personal portfolio website. The 
 
 > I'm not a web developer by trade - my focus is on C++ and security-related development. This site is a learning project, and I'm always open to feedback and contributions!
 
-## Important Notice
-
-Before using this repository as a template, please review the following:
-
-1. **Remove Personal Content**  
-   This repository contains my personal information, blog posts, and images. If you fork or clone this project, ensure you replace all personal content with your own before publishing.
-
-2. **Update Configuration**  
-   Modify the following files with your own information:
-   - `_config.yml` - Site title, description, social links
-   - `_includes/head.html` - Google Analytics ID or remove the tracking code
-   - `assets/images/` - Replace personal images
-
-3. **Publish Only After Customization**  
-   Do not publish the cloned repository until you have completed the above steps to avoid displaying someone else's personal information.
+> [!WARNING]
+> ## Important Notice
+> Before using this repository as a template, please review the following:
+> 1. **Remove Personal Content**
+>   This repository contains my personal information, blog posts, and images. If you fork or clone this project, ensure you replace all personal content with your own before publishing.
+> 2. **Update Configuration**
+>   Modify the following files with your own information:
+>   - `_config.yml` - Site title, description, social links
+>   - `_includes/head.html` - Google Analytics ID or remove the tracking code
+>   - `assets/images/` - Replace personal images
+> 3. **Publish Only After Customization**
+>   Do not publish the cloned repository until you have completed the above steps to avoid displaying someone else's personal information.
 
 ### Features
 
