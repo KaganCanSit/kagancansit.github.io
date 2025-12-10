@@ -3,19 +3,17 @@ layout: default
 ---
 
 <section class="full-screen">
-    <div class="container">
-            <div class="row">
-            {% if page.header_image %}
-            <div class="col-12">
-                <img src="{{ page.header_image | relative_url }}" class="img-fluid blog-header-image"  alt="{{ page.title }} Header Image">
-            </div>
-            {% endif %}
+    <div class="container row">
+        {% if page.header_image %}
+        <img src="{{ page.header_image | relative_url }}" class="img-fluid blog-header-image" 
+             alt="{{ page.title }} Header Image">
+        {% endif %}
+        
+        <article class="article-content mx-auto">
+            <h2>{{ page.title }}</h2>
+            <p><small>{{ page.date | date: "%B %d, %Y" }}</small></p>
             
-            <div class="col-lg-12 mx-auto">
-                <h2>{{ page.title }}</h2>
-                <p><small>{{ page.date | date: "%B %d, %Y" }}</small></p>
-                {{ content }}
-            </div>
-        </div>
+            {{ content }}
+        </article>
     </div>
 </section>
