@@ -27,7 +27,7 @@
 
 html {
     font-family: 'Inter', 'Maven Pro', Arial, sans-serif;
-    font-size: 18px;
+    font-size: clamp(16px, 2.5vw, 18px);
     line-height: 1.5;
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
@@ -1580,13 +1580,13 @@ button::-moz-focus-inner {
 }
 
 @media (max-width: 768px) {
-    .card__title {
-        font-size: 75%;
+    .full-screen {
+        padding: 5rem 0 3rem 0;
     }
-
-    .card__date {
-        font-size: 50%;
-        color: var(--headers-dark);
+    
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 }
 
@@ -1675,6 +1675,17 @@ p {
     font-size: 18px;
     font-weight: 300;
     line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .full-screen {
+        padding: 5rem 0 3rem 0;
+    }
+    
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 }
 
 /* COLOR MODE TOGGLE */
@@ -2587,5 +2598,107 @@ th {
     .article-content {
         padding-left: 1rem;
         padding-right: 1rem;
+    }
+}
+
+/* MOBILE READING EXPERIENCE */
+.article-content {
+    max-width: 720px;
+    width: 100%;
+    padding: 0 1.5rem;
+    margin: 0 auto;
+}
+
+.article-content p,
+.article-content li {
+    line-height: 1.8;
+    margin-bottom: 1.5em;
+    letter-spacing: 0.01em;
+}
+
+.article-content h2,
+.article-content h3,
+.article-content h4 {
+    margin-top: 2em;
+    margin-bottom: 0.75em;
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+
+    .article-content {
+        padding: 0 1rem;
+    }
+
+    .article-content p,
+    .article-content li {
+        line-height: 1.75;
+        margin-bottom: 1.25em;
+        text-align: left;
+        hyphens: auto;
+        -webkit-hyphens: auto;
+        word-wrap: break-word;
+    }
+
+    .article-content h2 {
+        font-size: 1.5rem;
+        margin-top: 1.75em;
+    }
+
+    .article-content h3 {
+        font-size: 1.25rem;
+    }
+
+    .article-content h4 {
+        font-size: 1.1rem;
+    }
+
+    .article-content pre {
+        font-size: 0.85rem;
+        padding: 1rem;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .article-content code {
+        font-size: 0.9em;
+        word-break: break-word;
+    }
+
+    .article-content img {
+        margin: 1.5rem -1rem;
+        width: calc(100% + 2rem);
+        max-width: calc(100% + 2rem);
+    }
+
+    .article-content blockquote {
+        margin: 1.5rem 0;
+        padding: 1rem 1.25rem;
+        font-size: 1rem;
+    }
+
+    .article-content ul,
+    .article-content ol {
+        padding-left: 1.25rem;
+    }
+
+    .article-content li {
+        margin-bottom: 0.5em;
+    }
+}
+
+@media (max-width: 375px) {
+    html {
+        font-size: 15px;
+    }
+
+    .article-content {
+        padding: 0 0.875rem;
+    }
+
+    .article-content h2 {
+        font-size: 1.35rem;
     }
 }
