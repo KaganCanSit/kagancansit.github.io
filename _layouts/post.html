@@ -3,13 +3,13 @@ layout: default
 ---
 
 <section class="full-screen">
-    <div class="container row">
+    <div class="container mx-auto">
         {% if page.header_image %}
-        <img src="{{ page.header_image | relative_url }}" class="img-fluid blog-header-image" 
+        <img src="{{ page.header_image | relative_url }}" class="blog-header-image" 
              alt="{{ page.title }} Header Image">
         {% endif %}
         
-        <article class="article-content mx-auto">
+        <article class="article-content">
             <h2>{{ page.title }}</h2>
             <p><small>{{ page.date | date: "%B %d, %Y" }}</small></p>
             
