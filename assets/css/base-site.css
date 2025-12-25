@@ -16,6 +16,9 @@
     --space-md: 2rem;
     --space-lg: 4rem;
     --space-xl: 8rem;
+
+    --text-color: var(--text-light);
+    --bg-color: var(--background-light);
 }
 
 /* RESET & BASE */
@@ -1724,6 +1727,8 @@ p {
 /* DARK MODE */
 .dark-mode {
     background: var(--background-dark);
+    --text-color: var(--text-dark);
+    --bg-color: var(--background-dark);
 }
 
 .dark-mode .navbar-light .navbar-nav .nav-link {
@@ -2375,7 +2380,6 @@ body.dark-mode .dark-logo {
 ::-webkit-scrollbar-thumb {
     background: var(--text-light);
     border-radius: 8px;
-    a
 }
 
 ::-webkit-scrollbar-thumb:hover {
