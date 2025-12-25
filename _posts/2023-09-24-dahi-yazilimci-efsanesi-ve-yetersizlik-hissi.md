@@ -97,7 +97,7 @@ Günümüzde Open Source projeler, Github gibi platformlar sayesinde çok daha k
 
 "Başkalarının hatalarından öğrenmek, yaşamınızı daha kolay ve daha verimli hale getirebilir." - Bill Gates
 
-#### Bu `dahi` yazılımları `dahi` kabul etmemizi sağlayan ne?
+#### Bu `dahi` yazılımcıları `dahi` kabul etmemizi sağlayan ne?
 
 Yukarıda örneklerde de verilen Linus Torvalds, Bill Gates, Guido gibi kişiler elbette teknik becerilerini belirli bir seviyenin üzerine çıkarmış geliştiricilerdir. Fakat sanılanın aksine tamamıyla kendileri bütün projeleri tek başlarına geliştirmemişlerdir. Örneğin, Linus Torvalds Linux çekirdeğini tek başına geliştirmemiştir. Veya Bill Gates Microsoft'u tek başına kurmamıştır. Bu kişilerin ortak noktası ise ekip çalışması ve paylaşım üzerine kurulu olmasıdır. Başardıkları ve ulaştıkları popülariteyle birlikte atfettiklerimizden biri de 'dahi' tutumudur. Topluluğa liderlik eden, düşüncelerini paylaşan, fikirlerini aktaran ve birçok kişinin faydalanmasını sağlayan kişilerdir.
 
