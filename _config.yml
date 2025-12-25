@@ -27,6 +27,12 @@ kramdown:
   hard_wrap: false
   syntax_highlighter: rouge
 
+# Sass/SCSS Settings
+sass:
+  style: compressed
+  sass_dir: assets/css
+  sourcemap: never # If require CSS debug remove this
+
 # Exclude from build
 exclude:
   - Gemfile
