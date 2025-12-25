@@ -1704,26 +1704,39 @@ p {
 
 .color-mode-icon {
     cursor: pointer;
-    font-size: 115%;
-    width: 20px;
-    height: 20px;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-}
-
-.color-mode-icon:after {
-    font-family: 'Font Awesome 6 Free';
-    content: '\f186';
-    font-size: 115%;
     width: 20px;
     height: 20px;
+    position: relative;
 }
 
-.color-mode-icon.active:after {
-    content: '\f185';
-    font-size: 115%;
-    width: 20px;
-    height: 20px;
+.color-mode-icon .theme-icon {
+    position: absolute;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Light mode: show moon (for switching to dark) */
+.color-mode-icon .moon-icon {
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+.color-mode-icon .sun-icon {
+    opacity: 0;
+    transform: rotate(90deg);
+}
+
+/* Dark mode: show sun (for switching to light) */
+.color-mode-icon.active .moon-icon {
+    opacity: 0;
+    transform: rotate(90deg);
+}
+
+.color-mode-icon.active .sun-icon {
+    opacity: 1;
+    transform: rotate(0deg);
 }
 
 /* DARK MODE */
@@ -1806,24 +1819,28 @@ p {
     opacity: 0;
 }
 
+.social-link svg {
+    transition: all 0.3s ease;
+}
+
 .social-link:hover {
-    color: var(--bg-color);
     transform: translateY(-3px);
 }
 
-.social-link:hover i.fa-envelope {
+.social-link[href*="mailto"]:hover {
     color: #EA4335;
 }
 
-.social-link:hover i.fa-linkedin {
+.social-link[href*="linkedin"]:hover {
     color: #0A66C2;
 }
 
-.social-link:hover i.fa-github {
+.social-link[href*="github"]:hover {
     color: #171515;
 }
 
-.social-link:hover i.fa-twitter {
+.social-link[href*="x.com"]:hover,
+.social-link[href*="twitter"]:hover {
     color: #1DA1F2;
 }
 
@@ -2394,10 +2411,6 @@ body.dark-mode .dark-logo {
         padding-bottom: 4rem;
     }
 
-    .color-mode {
-        display: none;
-    }
-
     .about-image {
         margin-top: 4em;
         object-fit: cover;
@@ -2423,9 +2436,18 @@ body.dark-mode .dark-logo {
     }
 
     .navbar-collapse {
-        background: #ffffff;
+        background: var(--background-light);
         text-align: center;
         padding-bottom: 20px;
+    }
+
+    .dark-mode .navbar-collapse {
+        background: var(--background-dark);
+    }
+
+    /* Center align theme toggle on mobile */
+    .navbar-nav {
+        align-items: center;
     }
 
     .navbar-expand-sm .navbar-nav .nav-link {
