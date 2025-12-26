@@ -1,10 +1,9 @@
 ---
 ---
-/* IMPORTS & CSS VARIABLES */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
+/* CSS VARIABLES */
 :root {
     --themeColor: #42EABD;
+    --themeColor-text: #00a884;
     --link-color-light-theme: #00c28e;
     --link-color-dark-theme: #00ffbb;
     --background-light: #FFFFFF;
@@ -2258,7 +2257,7 @@ p {
 
 .timeline-details summary {
     cursor: pointer;
-    color: var(--themeColor);
+    color: var(--themeColor-text);
     font-weight: 500;
     outline: none;
     padding: 0.5rem 0;
