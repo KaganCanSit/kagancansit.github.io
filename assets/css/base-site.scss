@@ -70,7 +70,6 @@ body p {
     margin-bottom: 1.5rem;
     line-height: 1.6;
     color: var(--text-light);
-    hyphens: auto;
 }
 
 body.dark-mode p {
@@ -1963,11 +1962,21 @@ p {
 
 /* COLOR MODE TOGGLE */
 .color-mode {
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    outline: none;
+
     font-weight: bold;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 5px;
+    overflow: visible !important;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
 }
 
 .color-mode-icon {
