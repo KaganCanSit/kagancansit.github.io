@@ -4,8 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const body = document.body;
 
   // Initialize dark mode
-  if (localStorage.getItem('dark-mode-state') === '1') {
-    colorModeIcon.classList.add('active');
+  const darkModeState = localStorage.getItem('dark-mode-state');
+  if (darkModeState === '1') {
+    colorModeIcon?.classList.add('active');
     body.classList.add('dark-mode');
     setTheme();
   }
@@ -13,16 +14,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Theme toggle
   colorModeToggle?.addEventListener('click', () => {
-    colorModeIcon.classList.toggle('active');
+    colorModeIcon?.classList.toggle('active');
     body.classList.toggle('dark-mode');
     setTheme();
 
-    if (localStorage.getItem('dark-mode-state') !== null) {
-      const temp = localStorage.getItem('dark-mode-state') === '1' ? '0' : '1';
-      localStorage.setItem('dark-mode-state', temp);
-    } else {
-      localStorage.setItem('dark-mode-state', '1');
-    }
+    const currentState = localStorage.getItem('dark-mode-state');
+    const nextState = currentState === '1' ? '0' : '1';
+    localStorage.setItem('dark-mode-state', nextState);
   });
 
   // Mobile Sidebar functionality
@@ -32,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const sidebarOverlay = document.getElementById('sidebarOverlay');
 
   function openSidebar() {
+    if (!mobileSidebar || !mobileMenuToggle) return;
     mobileSidebar.classList.add('active');
     mobileSidebar.setAttribute('aria-hidden', 'false');
     mobileMenuToggle.classList.add('active');
@@ -40,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function closeSidebar() {
+    if (!mobileSidebar || !mobileMenuToggle) return;
     mobileSidebar.classList.remove('active');
     mobileSidebar.setAttribute('aria-hidden', 'true');
     mobileMenuToggle.classList.remove('active');
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Toggle sidebar
   mobileMenuToggle?.addEventListener('click', () => {
-    if (mobileSidebar.classList.contains('active')) {
+    if (mobileSidebar?.classList.contains('active')) {
       closeSidebar();
     } else {
       openSidebar();
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Close sidebar on ESC key
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && mobileSidebar.classList.contains('active')) {
+    if (e.key === 'Escape' && mobileSidebar?.classList.contains('active')) {
       closeSidebar();
     }
   });
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const navbarToggler = document.querySelector('.navbar-toggler');
   const navbarNav = document.getElementById('navbarNav');
   navbarToggler?.addEventListener('click', () => {
-    navbarNav.classList.toggle('show');
+    navbarNav?.classList.toggle('show');
   });
 
   // Smooth scroll for anchor links

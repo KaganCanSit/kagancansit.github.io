@@ -1,9 +1,7 @@
 <!-- Preconnect for Performance -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://github.com">
-<link rel="preconnect" href="https://github.githubassets.com">
-<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="preconnect" href="https://www.googletagmanager.com">
 
 <!-- Non-blocking Font Loading -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
@@ -18,7 +16,7 @@
 
 <!-- Title and Favicon -->
 <title>{% if page.title %}{{ page.title }} {% endif %}{{ site.title }}</title>
-<link rel="icon" href="{{ '/assets/images/base_site_images/icon.webp' | relative_url }}" type="image/x-icon" />
+<link rel="icon" href="{{ '/assets/images/base_site_images/icon.webp' | relative_url }}" type="image/webp" />
 <link rel="canonical" href="{{ page.url | absolute_url }}">
 
 <!-- SEO Plugin -->
@@ -40,7 +38,9 @@
     gtag('js', new Date());
     gtag('config', '{{ site.google_analytics }}', {
         'anonymize_ip': true,
-        'cookie_flags': 'SameSite=None;Secure'
+        'allow_google_signals': false,
+        'allow_ad_personalization_signals': false,
+        'cookie_flags': 'Secure'
     });
 </script>
 {% endif %}
