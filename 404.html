@@ -24,14 +24,14 @@ hide_footer: true
                 
                 <h3>What Can You Do?</h3>
                 <p>
-                    By accessing the <a href="/">Home Page</a>, you can start again, or if it's content
-                    you're looking for, you can browse and explore pages like <a href="/#blog">Blog</a>,
-                    <a href="/#project">Projects</a>, etc.
+                    By accessing the <a href="{{ '/' | relative_url }}">Home Page</a>, you can start again, or if it's content
+                    you're looking for, you can browse and explore pages like <a href="{{ '/#blog' | relative_url }}">Blog</a>,
+                    <a href="{{ '/#project' | relative_url }}">Projects</a>, etc.
                 </p>
             </div>
             <div class="col-lg-6">
                 <a href="https://www.freepik.com/free-vector/404-error-with-cute-animal-concept-illustration_7938322.htm">
-                    <img src="/assets/images/base_site_images/404-error.webp" loading="lazy" class="img-fluid" alt="404 Error Images">
+                    <img src="{{ '/assets/images/base_site_images/404-error.webp' | relative_url }}" width="800" height="800" loading="lazy" class="img-fluid" alt="404 Error Images">
                 </a>
             </div>
         </div>

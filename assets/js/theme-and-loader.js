@@ -33,13 +33,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function openSidebar() {
     mobileSidebar.classList.add('active');
+    mobileSidebar.setAttribute('aria-hidden', 'false');
     mobileMenuToggle.classList.add('active');
+    mobileMenuToggle.setAttribute('aria-expanded', 'true');
     body.classList.add('sidebar-open');
   }
 
   function closeSidebar() {
     mobileSidebar.classList.remove('active');
+    mobileSidebar.setAttribute('aria-hidden', 'true');
     mobileMenuToggle.classList.remove('active');
+    mobileMenuToggle.setAttribute('aria-expanded', 'false');
     body.classList.remove('sidebar-open');
   }
 
@@ -80,10 +84,15 @@ document.addEventListener('DOMContentLoaded', () => {
   // Smooth scroll for anchor links
   document.querySelectorAll('.nav-link, .sidebar-link, .custom-btn-link').forEach(anchor => {
     anchor.addEventListener('click', function (event) {
-      const target = this.getAttribute('href');
-      if (target && target.startsWith('#') && target.length > 1) {
+      const href = this.getAttribute('href');
+      if (!href) return;
+
+      const parsedUrl = new URL(href, window.location.origin);
+      const isSamePage = parsedUrl.pathname === window.location.pathname;
+
+      if (isSamePage && parsedUrl.hash && parsedUrl.hash.length > 1) {
         event.preventDefault();
-        const el = document.querySelector(target);
+        const el = document.querySelector(parsedUrl.hash);
         if (el) {
           el.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
