@@ -127,7 +127,7 @@ _posts/YYYY-MM-DD-post-slug.md
 
 ## Contributing
 
-Contributions are welcome. For bug reports or feature suggestions, please open an [issue](https://github.com/KaganCanSit/kagancansit.github.io/issues). Pull requests should target the `main` branch.s
+Contributions are welcome. For bug reports or feature suggestions, please open an [issue](https://github.com/KaganCanSit/kagancansit.github.io/issues). Pull requests should target the `main` branch.
 
 ## License
 
