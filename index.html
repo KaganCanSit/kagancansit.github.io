@@ -23,22 +23,18 @@ pagination: true
       <div class="col-lg-7">
         <h2>About Me</h2>
         <p>
-          I'm a Software Engineer at TÜBİTAK BİLGEM – UEKAE, developing server-side cryptographic software using modern C++. 
-          My work involves implementing and optimizing cryptographic operations (signing, verification, and encryption),
-          along with secure key management and system-level security mechanisms.
+          Software Engineer specializing in security-critical server-side software,
+          built in modern C++ on Linux-based systems.
         </p>
         <p>
-          I contribute to systems aligned with international standards including  PCI, ISO 19790 Level-3, and Common Criteria
-          EAL4+. My focus areas  are memory efficiency, deterministic behavior, and low-level system  characteristics in
-          Linux-based environments.
+          At TÜBİTAK BİLGEM – UEKAE, I develop cryptographic components covering
+          signing, verification, encryption, and secure key management. Code reviews,
+          low-level diagnostics, and compiler hardening are part of daily practice,
+          guided by SEI CERT and NIST secure coding standards.
         </p>
         <p>
-          I also contribute to open source C++ projects such as Botan, fmtlib/fmt, and spdlog, and build tooling to automate
-          development and build workflows.
-        </p>
-        <p>
-          I'm open to connecting with engineers working on C++ systems and  low-level software — whether in cryptography,
-          systems security, or any domain where performance and correctness matter.
+          I contribute to systems certified under PCI, ISO 19790 Level-3, and Common
+          Criteria EAL4+, and maintain active contributions to open source C++ projects.
         </p>
         {% include social-links.html %}
       </div>
@@ -75,27 +71,12 @@ pagination: true
                   <div class="details-section">
                     <p class="section-title">Key Areas</p>
                     <ul class="details-list">
-                      <li>Developing and integrating modular, self-contained C++ components into large-scale systems.</li>
-                      <li>Diagnosing and resolving low-level issues including memory errors and race conditions using GDB, Valgrind, and sanitizers, improving system stability and reliability.</li>
-                      <li>Applying secure coding practices and compiler hardening techniques aligned with SEI CERT and NIST guidelines.</li>
-                      <li>Performing code reviews with a focus on modern C++ practices, memory safety, and side-channel attack resistance.</li>
-                      <li>Optimizing existing codebases by reducing technical debt, eliminating warnings, and resolving performance bottlenecks.</li>
-                      <li>Designing and automating development and build workflows using Bash and CI pipelines.</li>
-                      <li>Contributing to the design and security of high-assurance modules operating in controlled environments.</li>
-                      <li>Supporting certification processes for <b>PCI, ISO 19790 Level-3, and Common Criteria EAL4+</b> compliance.</li>
-                    </ul>
-                  </div>
-
-                  <div class="details-section">
-                    <p class="section-title">Tools and Technologies</p>
-                    <ul class="details-list">
-                      <li>Language: Modern C++ (C++11/17/20)</li>
-                      <li>Cryptography Libraries: Botan, GnuTLS, OpenSSL</li>
-                      <li>Debugging & Analysis: GDB, Valgrind, Sanitizers, CppCheck, ShellCheck, clang-tidy, IWYU</li>
-                      <li>Build Systems: CMake, Ninja</li>
-                      <li>Platform: Linux (primary), Windows</li>
-                      <li>CI/CD: Jenkins, GitHub Actions</li>
-                      <li>Collaboration: Atlassian ecosystem (Bitbucket, Jira, Confluence)</li>
+                      <li>Design and develop modular C++ components integrated into large-scale, security-critical server systems.</li>
+                      <li>Implement cryptographic operations including signing, verification, encryption, and key management using Botan, GnuTLS, and OpenSSL.</li>
+                      <li>Diagnose and resolve memory errors, undefined behavior, and race conditions using GDB, Valgrind, and ASan/TSan sanitizers.</li>
+                      <li>Apply SEI CERT and NIST secure coding guidelines and enforce compiler hardening flags including stack canaries, RELRO, and PIE. Conduct code reviews with focus on modern C++ practices, memory safety, and side-channel attack resistance.</li>
+                      <li>Automate build and development workflows using Bash and CI pipelines (Jenkins, GitHub Actions).</li>
+                      <li>Contribute to PCI, ISO 19790 Level-3, and Common Criteria EAL4+ certification processes — including assigned task execution and documentation.</li>
                     </ul>
                   </div>
                 </div>
@@ -211,21 +192,22 @@ pagination: true
     </div>
 
     <div class="col-lg-7">
-      <h2>Technologies</h2>
+      <h2>Tools and Technologies</h2>
       <p>
         My work focuses on system-level software in modern C++ on Linux-based systems, 
         with emphasis on security, performance, and correctness in high-assurance environments.
       </p>
-      <p>
-        I use tools such as GDB, Valgrind, sanitizers, and clang-tidy to diagnose 
-        memory issues, undefined behavior, and race conditions, with CMake and Ninja 
-        for build systems.
-      </p>
-      <p>
-        Secure coding practices follow SEI CERT and NIST guidelines, supported by 
-        compiler hardening techniques. I also contribute to open source projects 
-        including Botan, fmtlib/fmt, and spdlog.
-      </p>
+      <div class="details-section">
+        <ul class="details-list">
+          <li>Language: Modern C++ (C++11/17/20)</li>
+          <li>Debugging & Analysis: GDB, Valgrind, Sanitizers, CppCheck, clang-tidy, IWYU, ShellCheck</li>
+          <li>Build Systems: CMake, Ninja</li>
+          <li>Cryptography Libraries: Botan, OpenSSL, GnuTLS, libsodium</li>
+          <li>Platform: Linux (primary), Windows</li>
+          <li>CI/CD: Jenkins, GitHub Actions</li>
+          <li>Collaboration: Atlassian ecosystem (Bitbucket, Jira, Confluence)</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -291,10 +273,12 @@ pagination: true
         </p>
         <p>
           The software world has always attracted me with its open source and free software principles, forums based
-          on knowledge sharing, and globally accessible educational resources. Especially platforms like GitHub, Stack
-          Overflow and Reddit have inspired me to learn and contribute to the community. People around the world are
-          sharing knowledge to make life easier by developing projects with limited resources. As an engineer, I
-          embrace this sharing and inclusive aspect of software and develop my own projects, which I share on GitHub.
+          on knowledge sharing, and globally accessible educational resources.
+        </p>
+        <p>
+          People around the world are sharing knowledge to make life easier by developing projects with limited resources.
+          As an engineer, I embrace this sharing and inclusive aspect of software and develop my own projects, which I
+          share on GitHub.
         </p>
         <p class="social-links text-center">
           <a href="https://github.com/{{ site.github }}" class="social-link" target="_blank" rel="noopener noreferrer"
@@ -323,18 +307,21 @@ pagination: true
     <div class="col-lg-7 mx-auto">
       <h2><span>Open Source</span></h2>
       <p>
-        Open source is a space where people from diverse cultures, languages, and backgrounds come together around shared goals. As an engineer, collaborating with others to
+        Open source is a space where people from diverse cultures, languages, and backgrounds
+        come together around shared goals. As an engineer, collaborating with others to
         build common solutions and tackle challenges is both inspiring and fulfilling.
       </p>
-      <p>Below is a list of open source projects I've contributed to, along with brief descriptions.
-        <i>
-          Click on a project name to view my contributions on GitHub. You can also use the merge icon on the right to see all contributions in one place. The projects are sorted
-          by contribution count, from highest to lowest.
-        </i>
+      <p>
+        I contribute to production C++ projects used in security-critical and
+        high-performance systems. Contributions span cryptographic library internals,
+        logging infrastructure, and formatting library correctness.
       </p>
       <p>
-        I look forward to contributing to many more open source initiatives. If you'd like to support my work, you can do so through GitHub Sponsors. Thank you in advance for
-        your support.
+        <i>
+          Click on a project name to view my contributions on GitHub. You can also use the merge icon
+          on the right to see all contributions in one place. The projects are sorted by contribution
+          count, from highest to lowest.
+        </i>
       </p>
 
       <div class="social-links text-center">
