@@ -65,7 +65,7 @@ pagination:
   enabled: true
   per_page: 9
   permalink: '/:num/'
-  title: ':title - Sayfa :num'
+  title: ':title - Page :num'
   sort_field: 'date'
   sort_reverse: true
   trail:
