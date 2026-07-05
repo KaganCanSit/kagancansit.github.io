@@ -1,7 +1,6 @@
 ---
 layout: default
 title: ""
-pagination: true
 ---
 
 <!-- Hero Section -->
@@ -571,14 +570,17 @@ pagination: true
 </section>
 
 <!-- Blog Cards -->
-<section class="container" style="margin-top: 2%;">
+<section class="container blog-teaser">
   <div class="row" id="blog_content_area">
-    {% for post in site.posts %}
+    {% for post in site.posts limit: 6 %}
     {% include blog-card.html post=post %}
     {% endfor %}
   </div>
-  <!-- Pagination Link -->
-  <div style="text-align: center;" id="pagination"></div>
+  {% if site.posts.size > 6 %}
+  <p class="text-center">
+    <a href="{{ '/blog/' | relative_url }}" class="custom-btn d-inline-block">Tüm Yazılar</a>
+  </p>
+  {% endif %}
 </section>
 
 <!-- Design -->

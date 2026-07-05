@@ -1,0 +1,19 @@
+---
+layout: default
+title: "Blog"
+permalink: /blog/
+pagination:
+  enabled: true
+---
+
+<section class="container blog-page">
+  <h1 class="section-title mb-4">Blog</h1>
+
+  <div class="row" id="blog_content_area">
+    {% for post in paginator.posts %}
+    {% include blog-card.html post=post %}
+    {% endfor %}
+  </div>
+
+  {% include pagination-nav.html %}
+</section>
