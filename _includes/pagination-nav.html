@@ -3,7 +3,7 @@
   <ul class="pagination justify-content-center">
     <li class="page-item{% unless paginator.previous_page %} disabled{% endunless %}">
       {% if paginator.previous_page %}
-      <a class="page-link" href="{{ paginator.previous_page_path | relative_url }}" aria-label="Önceki sayfa">&laquo;</a>
+      <a class="page-link" href="{{ paginator.previous_page_path | relative_url }}" aria-label="Previous page">&laquo;</a>
       {% else %}
       <span class="page-link" aria-hidden="true">&laquo;</span>
       {% endif %}
@@ -21,7 +21,7 @@
 
     <li class="page-item{% unless paginator.next_page %} disabled{% endunless %}">
       {% if paginator.next_page %}
-      <a class="page-link" href="{{ paginator.next_page_path | relative_url }}" aria-label="Sonraki sayfa">&raquo;</a>
+      <a class="page-link" href="{{ paginator.next_page_path | relative_url }}" aria-label="Next page">&raquo;</a>
       {% else %}
       <span class="page-link" aria-hidden="true">&raquo;</span>
       {% endif %}
