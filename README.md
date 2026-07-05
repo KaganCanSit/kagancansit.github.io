@@ -37,10 +37,11 @@ This repository contains the source code for my personal portfolio website. The 
 |----------|------------|
 | Static Site Generator | Jekyll 4.4.x |
 | Hosting | GitHub Pages |
-| Styling | Custom CSS (Bootstrap 4 based) |
-| Icons | Font Awesome 6 |
+| Styling | Bootstrap 5 (CDN) + custom CSS |
+| Icons | Inline SVG |
 | Analytics | Google Analytics |
 | SEO | jekyll-seo-tag, jekyll-sitemap |
+| Pagination | jekyll-paginate-v2 |
 
 ## Project Structure
 
