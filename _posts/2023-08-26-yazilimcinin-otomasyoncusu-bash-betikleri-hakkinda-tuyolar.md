@@ -214,11 +214,11 @@ Yazmış olduğunuz betik içeriklerini kontrol edebilmek için [ShellCheck webs
 
 ShellCheck websitesi üzerinden örnek
 
-![ShellCheck Website](/assets/images/blogs/yazilimcinin_otomasyoncusu_bash_betikleri_hakkinda_tuyolar/shellCheck_install.webp)
+![ShellCheck Website](/assets/images/blogs/yazilimcinin_otomasyoncusu_bash_betikleri_hakkinda_tuyolar/shellcheck_install.webp)
 
 `apt-get install shellcheck` komutuyla shellCheck paketi kurulumu
 
-![ShellCheck Website](/assets/images/blogs/yazilimcinin_otomasyoncusu_bash_betikleri_hakkinda_tuyolar/shellCheck_terminal.webp)
+![ShellCheck Website](/assets/images/blogs/yazilimcinin_otomasyoncusu_bash_betikleri_hakkinda_tuyolar/shellcheck_terminal.webp)
 
 ShellCheck için hatalı bir script dosyasının kontrolü örneği
 
