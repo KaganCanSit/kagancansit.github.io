@@ -57,3 +57,17 @@ defaults:
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-paginate-v2
+
+# Blog pagination (jekyll-paginate-v2). Only pages with a `pagination:`
+# front-matter block (see blog.html) are actually paginated.
+pagination:
+  enabled: true
+  per_page: 9
+  permalink: '/:num/'
+  title: ':title - Sayfa :num'
+  sort_field: 'date'
+  sort_reverse: true
+  trail:
+    before: 2
+    after: 2

@@ -2663,6 +2663,19 @@ body.dark-mode .dark-logo {
     border-color: #dee2e6;
 }
 
+.blog-pagination {
+    margin-top: var(--space-lg);
+}
+
+/* BLOG PAGE & HOMEPAGE TEASER */
+.blog-page {
+    padding: var(--space-lg) 0;
+}
+
+.blog-teaser {
+    margin-top: var(--space-md);
+}
+
 /* SCROLLBAR */
 ::-webkit-scrollbar {
     width: 8px;
