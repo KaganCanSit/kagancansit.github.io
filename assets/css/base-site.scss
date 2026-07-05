@@ -2669,7 +2669,8 @@ body.dark-mode .dark-logo {
 
 /* BLOG PAGE & HOMEPAGE TEASER */
 .blog-page {
-    padding: var(--space-lg) 0;
+    padding-top: var(--space-lg);
+    padding-bottom: var(--space-lg);
 }
 
 .blog-teaser {
