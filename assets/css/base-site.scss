@@ -901,13 +901,10 @@ body.sidebar-open {
     justify-content: center;
     align-items: center;
     z-index: 1000;
-}
-
-.loader-light {
     background: var(--background-light);
 }
 
-.loader-dark {
+body.dark-mode #loader {
     background: var(--background-dark);
 }
 
@@ -1202,7 +1199,7 @@ p {
 
 .timeline-item {
     display: grid;
-    grid-template-columns: auto 2fr;
+    grid-template-columns: 1fr;
     align-items: center;
     gap: 10px;
     padding: 2% 4%;

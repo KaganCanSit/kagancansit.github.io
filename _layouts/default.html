@@ -6,6 +6,11 @@
 </head>
 
 <body>
+    <script>
+        if (localStorage.getItem('dark-mode-state') === '1') {
+            document.body.classList.add('dark-mode');
+        }
+    </script>
     {% include loader.html %}
     {% include nav.html %}
 

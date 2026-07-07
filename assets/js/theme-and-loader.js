@@ -3,19 +3,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const colorModeToggle = document.querySelector('.color-mode');
   const body = document.body;
 
-  // Initialize dark mode
-  const darkModeState = localStorage.getItem('dark-mode-state');
-  if (darkModeState === '1') {
+  // Sync the toggle icon with the dark-mode class applied by the
+  // blocking init script in the <body> (see _layouts/default.html),
+  // which already ran before this deferred script.
+  if (body.classList.contains('dark-mode')) {
     colorModeIcon?.classList.add('active');
-    body.classList.add('dark-mode');
   }
-  setLoaderBackground();
 
   // Theme toggle
   colorModeToggle?.addEventListener('click', () => {
     colorModeIcon?.classList.toggle('active');
     body.classList.toggle('dark-mode');
-    setLoaderBackground();
 
     const currentState = localStorage.getItem('dark-mode-state');
     const nextState = currentState === '1' ? '0' : '1';
@@ -99,15 +97,3 @@ window.addEventListener('load', () => {
     loader.style.display = 'none';
   }
 });
-
-function setLoaderBackground() {
-  const loader = document.getElementById('loader');
-  if (!loader) return;
-  if (document.body.classList.contains('dark-mode')) {
-    loader.classList.remove('loader-light');
-    loader.classList.add('loader-dark');
-  } else {
-    loader.classList.remove('loader-dark');
-    loader.classList.add('loader-light');
-  }
-}
