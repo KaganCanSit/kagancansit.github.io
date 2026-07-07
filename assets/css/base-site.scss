@@ -3,6 +3,7 @@
 /* CSS VARIABLES */
 :root {
     --themeColor: #42EABD;
+    --themeColor-rgb: 66, 234, 189;
     --themeColor-text: #00a884;
     --link-color-light-theme: #00c28e;
     --link-color-dark-theme: #00ffbb;
@@ -20,6 +21,8 @@
 
     --text-color: var(--text-light);
     --bg-color: var(--background-light);
+    --headers-color: var(--headers-light);
+    --border-color: rgba(var(--themeColor-rgb), 0.15);
 }
 
 /* RESET & BASE */
@@ -1046,6 +1049,7 @@ p {
     background: var(--background-dark);
     --text-color: var(--text-dark);
     --bg-color: var(--background-dark);
+    --headers-color: var(--headers-dark);
 }
 
 .dark-mode .small-text {
@@ -1148,11 +1152,11 @@ p {
     animation-delay: 0.4s;
 }
 
-[data-theme="dark"] .social-link {
+.dark-mode .social-link {
     border-color: rgba(255, 255, 255, 0.2);
 }
 
-[data-theme="dark"] .social-link:hover {
+.dark-mode .social-link:hover {
     border-color: rgba(255, 255, 255, 0.5);
 }
 
@@ -1321,11 +1325,11 @@ p {
     color: var(--themeColor);
 }
 
-[data-theme="dark"] .timeline-content {
+.dark-mode .timeline-content {
     border-color: rgba(255, 255, 255, 0.1);
 }
 
-[data-theme="dark"] .timeline-content:hover {
+.dark-mode .timeline-content:hover {
     border-color: rgba(255, 255, 255, 0.2);
 }
 
@@ -1386,14 +1390,6 @@ body.dark-mode .light-logo {
 
 body.dark-mode .dark-logo {
     display: inline;
-}
-
-[data-theme="dark"] .dark-logo {
-    display: block;
-}
-
-[data-theme="dark"] .light-logo {
-    display: none;
 }
 
 .companies-section {
