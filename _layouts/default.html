@@ -20,8 +20,12 @@
             if (icon) icon.classList.toggle('active', isDark);
         };
         window.applyStoredTheme();
-        window.addEventListener('pageshow', function (event) {
-            if (event.persisted) window.applyStoredTheme();
+        // Re-sync on every pageshow, not just when event.persisted is true:
+        // persisted-flag support for bfcache restores is inconsistent across
+        // browsers/versions, and re-running this is a cheap no-op on a
+        // regular (non-cached) load.
+        window.addEventListener('pageshow', function () {
+            window.applyStoredTheme();
         });
     </script>
     {% include loader.html %}
