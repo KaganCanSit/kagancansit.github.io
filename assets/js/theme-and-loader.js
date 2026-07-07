@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (darkModeState === '1') {
     colorModeIcon?.classList.add('active');
     body.classList.add('dark-mode');
-    setTheme();
   }
   setLoaderBackground();
 
@@ -16,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   colorModeToggle?.addEventListener('click', () => {
     colorModeIcon?.classList.toggle('active');
     body.classList.toggle('dark-mode');
-    setTheme();
+    setLoaderBackground();
 
     const currentState = localStorage.getItem('dark-mode-state');
     const nextState = currentState === '1' ? '0' : '1';
@@ -74,13 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Old navbar toggle (for backwards compatibility)
-  const navbarToggler = document.querySelector('.navbar-toggler');
-  const navbarNav = document.getElementById('navbarNav');
-  navbarToggler?.addEventListener('click', () => {
-    navbarNav?.classList.toggle('show');
-  });
-
   // Smooth scroll for anchor links
   document.querySelectorAll('.nav-link, .sidebar-link, .custom-btn-link').forEach(anchor => {
     anchor.addEventListener('click', function (event) {
@@ -96,7 +88,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (el) {
           el.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
-        if (navbarNav) navbarNav.classList.remove('show');
       }
     });
   });
@@ -108,25 +99,6 @@ window.addEventListener('load', () => {
     loader.style.display = 'none';
   }
 });
-
-function setTheme() {
-  const body = document.body;
-  const navbar = document.querySelector('.navbar, .modern-navbar');
-  const texts = document.querySelectorAll('p, strong, em, blockquote');
-
-  if (body.classList.contains('dark-mode')) {
-    if (navbar) navbar.style.backgroundColor = 'var(--background-dark)';
-    body.style.backgroundColor = 'var(--background-dark)';
-    body.style.color = 'var(--text-dark)';
-    texts.forEach(el => el.style.color = 'var(--text-dark)');
-  } else {
-    if (navbar) navbar.style.backgroundColor = '#fff';
-    body.style.backgroundColor = 'var(--background-light)';
-    body.style.color = 'var(--text-light)';
-    texts.forEach(el => el.style.color = 'var(--text-light)');
-  }
-  setLoaderBackground();
-}
 
 function setLoaderBackground() {
   const loader = document.getElementById('loader');
