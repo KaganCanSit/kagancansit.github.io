@@ -3,6 +3,7 @@
 /* CSS VARIABLES */
 :root {
     --themeColor: #42EABD;
+    --themeColor-rgb: 66, 234, 189;
     --themeColor-text: #00a884;
     --link-color-light-theme: #00c28e;
     --link-color-dark-theme: #00ffbb;
@@ -20,6 +21,8 @@
 
     --text-color: var(--text-light);
     --bg-color: var(--background-light);
+    --headers-color: var(--headers-light);
+    --border-color: rgba(var(--themeColor-rgb), 0.15);
 }
 
 /* RESET & BASE */
@@ -898,13 +901,10 @@ body.sidebar-open {
     justify-content: center;
     align-items: center;
     z-index: 1000;
-}
-
-.loader-light {
     background: var(--background-light);
 }
 
-.loader-dark {
+body.dark-mode #loader {
     background: var(--background-dark);
 }
 
@@ -1046,6 +1046,7 @@ p {
     background: var(--background-dark);
     --text-color: var(--text-dark);
     --bg-color: var(--background-dark);
+    --headers-color: var(--headers-dark);
 }
 
 .dark-mode .small-text {
@@ -1148,11 +1149,11 @@ p {
     animation-delay: 0.4s;
 }
 
-[data-theme="dark"] .social-link {
+.dark-mode .social-link {
     border-color: rgba(255, 255, 255, 0.2);
 }
 
-[data-theme="dark"] .social-link:hover {
+.dark-mode .social-link:hover {
     border-color: rgba(255, 255, 255, 0.5);
 }
 
@@ -1197,10 +1198,10 @@ p {
 }
 
 .timeline-item {
-    display: grid;
-    grid-template-columns: auto 2fr;
-    align-items: center;
-    gap: 10px;
+    /* .timeline-year (the rotated year label) is position:absolute and
+       therefore not a layout participant here - .timeline-content is the
+       only in-flow child, so this is a plain block, not a grid/flex
+       container. */
     padding: 2% 4%;
     background: transparent;
     border: none;
@@ -1251,6 +1252,14 @@ p {
 .timeline-content small {
     display: block;
     margin-bottom: 10px;
+}
+
+/* Open Source PR cards: the description <small> sits inside an <a> and
+   should keep reading as a link (matching .timeline-details summary),
+   not fall back to the muted body.dark-mode small/p/strong/em/blockquote
+   color. */
+body.dark-mode .timeline-content a small {
+    color: var(--themeColor-text);
 }
 
 .timeline-content h3 {
@@ -1321,11 +1330,11 @@ p {
     color: var(--themeColor);
 }
 
-[data-theme="dark"] .timeline-content {
+.dark-mode .timeline-content {
     border-color: rgba(255, 255, 255, 0.1);
 }
 
-[data-theme="dark"] .timeline-content:hover {
+.dark-mode .timeline-content:hover {
     border-color: rgba(255, 255, 255, 0.2);
 }
 
@@ -1386,14 +1395,6 @@ body.dark-mode .light-logo {
 
 body.dark-mode .dark-logo {
     display: inline;
-}
-
-[data-theme="dark"] .dark-logo {
-    display: block;
-}
-
-[data-theme="dark"] .light-logo {
-    display: none;
 }
 
 .companies-section {
@@ -1844,8 +1845,15 @@ th {
 .article-content p,
 .article-content li {
     line-height: 1.8;
-    margin-bottom: 1.5em;
     letter-spacing: 0.01em;
+}
+
+.article-content p {
+    margin-bottom: 1.5em;
+}
+
+.article-content li {
+    margin-bottom: 0.5em;
 }
 
 .article-content h2,
