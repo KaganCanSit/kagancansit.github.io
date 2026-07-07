@@ -7,9 +7,22 @@
 
 <body>
     <script>
-        if (localStorage.getItem('dark-mode-state') === '1') {
-            document.body.classList.add('dark-mode');
-        }
+        // Single source of truth for applying the stored theme. Called on
+        // first paint (here), once the toggle icon exists in the DOM
+        // (theme-and-loader.js), on user toggle, and on bfcache restores
+        // (`pageshow` with persisted=true skips all other script execution,
+        // so without this the page could show a stale theme after
+        // back/forward navigation).
+        window.applyStoredTheme = function () {
+            var isDark = localStorage.getItem('dark-mode-state') === '1';
+            document.body.classList.toggle('dark-mode', isDark);
+            var icon = document.querySelector('.color-mode-icon');
+            if (icon) icon.classList.toggle('active', isDark);
+        };
+        window.applyStoredTheme();
+        window.addEventListener('pageshow', function (event) {
+            if (event.persisted) window.applyStoredTheme();
+        });
     </script>
     {% include loader.html %}
     {% include nav.html %}

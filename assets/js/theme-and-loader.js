@@ -1,23 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const colorModeIcon = document.querySelector('.color-mode-icon');
   const colorModeToggle = document.querySelector('.color-mode');
   const body = document.body;
 
-  // Sync the toggle icon with the dark-mode class applied by the
-  // blocking init script in the <body> (see _layouts/default.html),
-  // which already ran before this deferred script.
-  if (body.classList.contains('dark-mode')) {
-    colorModeIcon?.classList.add('active');
-  }
+  // Re-run the single theme-application function now that the toggle
+  // icon exists in the DOM (it didn't yet when the blocking init script
+  // in _layouts/default.html made its first call).
+  window.applyStoredTheme?.();
 
   // Theme toggle
   colorModeToggle?.addEventListener('click', () => {
-    colorModeIcon?.classList.toggle('active');
-    body.classList.toggle('dark-mode');
-
-    const currentState = localStorage.getItem('dark-mode-state');
-    const nextState = currentState === '1' ? '0' : '1';
-    localStorage.setItem('dark-mode-state', nextState);
+    const isDark = localStorage.getItem('dark-mode-state') === '1';
+    localStorage.setItem('dark-mode-state', isDark ? '0' : '1');
+    window.applyStoredTheme?.();
   });
 
   // Mobile Sidebar functionality
