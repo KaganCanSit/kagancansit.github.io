@@ -1,26 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const colorModeIcon = document.querySelector('.color-mode-icon');
   const colorModeToggle = document.querySelector('.color-mode');
   const body = document.body;
 
-  // Initialize dark mode
-  const darkModeState = localStorage.getItem('dark-mode-state');
-  if (darkModeState === '1') {
-    colorModeIcon?.classList.add('active');
-    body.classList.add('dark-mode');
-    setTheme();
-  }
-  setLoaderBackground();
+  // Re-run the single theme-application function now that the toggle
+  // icon exists in the DOM (it didn't yet when the blocking init script
+  // in _layouts/default.html made its first call).
+  window.applyStoredTheme?.();
 
   // Theme toggle
   colorModeToggle?.addEventListener('click', () => {
-    colorModeIcon?.classList.toggle('active');
-    body.classList.toggle('dark-mode');
-    setTheme();
-
-    const currentState = localStorage.getItem('dark-mode-state');
-    const nextState = currentState === '1' ? '0' : '1';
-    localStorage.setItem('dark-mode-state', nextState);
+    const isDark = localStorage.getItem('dark-mode-state') === '1';
+    localStorage.setItem('dark-mode-state', isDark ? '0' : '1');
+    window.applyStoredTheme?.();
   });
 
   // Mobile Sidebar functionality
@@ -74,13 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Old navbar toggle (for backwards compatibility)
-  const navbarToggler = document.querySelector('.navbar-toggler');
-  const navbarNav = document.getElementById('navbarNav');
-  navbarToggler?.addEventListener('click', () => {
-    navbarNav?.classList.toggle('show');
-  });
-
   // Smooth scroll for anchor links
   document.querySelectorAll('.nav-link, .sidebar-link, .custom-btn-link').forEach(anchor => {
     anchor.addEventListener('click', function (event) {
@@ -96,7 +80,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (el) {
           el.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
-        if (navbarNav) navbarNav.classList.remove('show');
       }
     });
   });
@@ -108,34 +91,3 @@ window.addEventListener('load', () => {
     loader.style.display = 'none';
   }
 });
-
-function setTheme() {
-  const body = document.body;
-  const navbar = document.querySelector('.navbar, .modern-navbar');
-  const texts = document.querySelectorAll('p, strong, em, blockquote');
-
-  if (body.classList.contains('dark-mode')) {
-    if (navbar) navbar.style.backgroundColor = 'var(--background-dark)';
-    body.style.backgroundColor = 'var(--background-dark)';
-    body.style.color = 'var(--text-dark)';
-    texts.forEach(el => el.style.color = 'var(--text-dark)');
-  } else {
-    if (navbar) navbar.style.backgroundColor = '#fff';
-    body.style.backgroundColor = 'var(--background-light)';
-    body.style.color = 'var(--text-light)';
-    texts.forEach(el => el.style.color = 'var(--text-light)');
-  }
-  setLoaderBackground();
-}
-
-function setLoaderBackground() {
-  const loader = document.getElementById('loader');
-  if (!loader) return;
-  if (document.body.classList.contains('dark-mode')) {
-    loader.classList.remove('loader-light');
-    loader.classList.add('loader-dark');
-  } else {
-    loader.classList.remove('loader-dark');
-    loader.classList.add('loader-light');
-  }
-}

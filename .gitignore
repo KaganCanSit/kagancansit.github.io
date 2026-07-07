@@ -8,5 +8,3 @@ settings.json
 # Jekyll & Gems
 _site
 .jekyll-cache
-
-Gemfile.lock
