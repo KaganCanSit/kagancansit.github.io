@@ -2,6 +2,9 @@
     <div class="card">
         <a href="{{ include.post.url | relative_url }}">
             <div class="card__image-container">
+                {% if include.post.lang %}
+                <span class="card__lang">{{ include.post.lang | upcase }}</span>
+                {% endif %}
                 <img src="{{ include.post.image | relative_url }}" width="1368" height="768" loading="lazy"
                     class="card__image" alt="{{ include.post.title }}" />
                 <div class="card__overlay">
