@@ -31,7 +31,7 @@ kontrol edebilmek için GİT sistemini de geliştirmiştir. Doğru okudun! Vazge
 “Burada açık kaynak nedir?” gibi soruları bu konu içerisinde derinlemesine dahil etmek istemiyorum.
 Fakat buradan okuyabilirsiniz.
 
-[Açık Kaynak Kavramı ve Açık Kaynağa Katkıda Bulunmaya Dair İlk Adımlar](03.acik_kaynaga_katkida_bulunmaya_dair_ilk_adimlar.html)
+[Açık Kaynak Kavramı ve Açık Kaynağa Katkıda Bulunmaya Dair İlk Adımlar]({% post_url 2022-07-04-acik-kaynaga-katkida-bulunmaya-dair-ilk-adimlar %})
 
 Kabaca “Açık Kaynak Yazılım”, geliştirilmekte olan veya yeni başlayan bir yazılım içeriğinin
 herkesin erişimine açılarak doğrudan katkıda bulunabileceği, ücretsiz olarak kullanabileceği bir yazılım felsefesi
@@ -602,7 +602,7 @@ Yararlandığım kaynakları aşağıya ekliyorum. Lütfen incelemekten çekinme
 
 ## Kaynakça
 
-* [Wiki-SSH](http://tr.wikipedia.org/wiki/SSH)
+* [Wiki-SSH](https://tr.wikipedia.org/wiki/SSH)
 * [Linux — Vikipedi (wikipedia.org)](https://tr.wikipedia.org/wiki/Linux#:~:text=Linux)
 * [Linux Dersleri](https://linux-dersleri.github.io/index.html)
 * [Telnet Komutu](https://networkkampus.com/centos-telnet-komutu/)
