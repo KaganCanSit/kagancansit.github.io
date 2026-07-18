@@ -1,0 +1,36 @@
+{% comment %}
+  Renders one experience/education entry from _data/experience.yml or
+  _data/education.yml. Usage: {% include timeline-item.html item=entry %}
+{% endcomment %}
+<div class="timeline-item">
+    <div class="timeline-year">{{ include.item.year }}</div>
+    <div class="timeline-content">
+        <h3>{{ include.item.title }}</h3>
+        <small>{{ include.item.org }} | <i>{{ include.item.period }}</i></small>
+        {% if include.item.gpa %}
+        <small>GPA: {{ include.item.gpa }}</small>
+        {% endif %}
+
+        {% if include.item.details or include.item.key_areas %}
+        <details class="timeline-details">
+            <summary>Learn More</summary>
+            <div class="details-content">
+                {% for paragraph in include.item.details %}
+                <p>{{ paragraph }}</p>
+                {% endfor %}
+
+                {% if include.item.key_areas %}
+                <div class="details-section">
+                    <p class="section-title">{{ include.item.key_areas_title | default: "Key Areas" }}</p>
+                    <ul class="details-list">
+                        {% for area in include.item.key_areas %}
+                        <li>{{ area }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+            </div>
+        </details>
+        {% endif %}
+    </div>
+</div>

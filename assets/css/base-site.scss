@@ -959,6 +959,21 @@ body.dark-mode #loader {
     align-items: center;
 }
 
+/* HOMEPAGE SECTION HELPERS */
+.about-portrait {
+    width: 80%;
+    height: 80%;
+}
+
+.design-section {
+    margin-top: 10%;
+}
+
+.sponsor-frame {
+    border: 0;
+    border-radius: 6px;
+}
+
 .small-text {
     color: #5b5b5b;
     font-size: 14px;
@@ -1266,10 +1281,6 @@ body.dark-mode .timeline-content a small {
     font-size: 1.25rem;
     margin-bottom: 0.5rem;
     color: var(--headers-color);
-}
-
-.timeline-header {
-    margin-bottom: 1rem;
 }
 
 .timeline-details {

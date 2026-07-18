@@ -1,0 +1,27 @@
+# Education shown in the "Education" timeline on the homepage.
+# Rendered by _includes/timeline-item.html — newest entry first.
+- year: "2023"
+  title: "Software Engineering"
+  org: "Manisa Celal Bayar University"
+  period: "September 2020 - June 2023"
+  gpa: "3.69 / 4.00"
+  details:
+    - >-
+      I completed my undergraduate degree in Software Engineering at Manisa
+      Celal Bayar University. Throughout my education, I engaged in various side
+      projects to enhance my software skills.
+
+- year: "2019"
+  title: "Mechatronics Engineering"
+  org: "Düzce University"
+  period: "November 2019 - June 2020"
+  gpa: "3.60 / 4.00"
+  details:
+    - >-
+      I participated in many events such as Python training and cyber security
+      training given by HAVELSAN by taking part in the UAV team in Düzce Mekatek
+      community.
+    - >-
+      After completing the 1st year of Mechatronics Engineering at Düzce
+      University, I transferred to Manisa Celal Bayar University, Software
+      Engineering Department.
