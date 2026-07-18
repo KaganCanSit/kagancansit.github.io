@@ -3,7 +3,7 @@ layout: post
 title: "Açık Kaynak Kavramı ve Açık Kaynağa Katkıda Bulunmaya Dair İlk Adımlar"
 date: 2022-07-04
 lang: tr
-image: "/assets/images/blogs/acik_kaynaga_katikida_bulunmak/header_iamge.webp"
+image: "/assets/images/blogs/acik_kaynaga_katkida_bulunmak/header_image.webp"
 description: "Açık kaynak nedir, neden katkıda bulunmalıyız ve nasıl başlamalıyız?"
 ---
 
@@ -19,7 +19,7 @@ Bu durum birkaç somut örnek vermek gerekirse;
 
 [Nvidia kendi ekran kartlarının çekirdek yazılımlarını](https://github.com/NVIDIA/open-gpu-kernel-modules) Github üzerinde paylaşmaktadır. Hepimizin yakından bildiği [Microsoft'un firmasının birçok yazılımı](https://github.com/microsoft) da açık kaynak olarak kullanıcılara sunulmaktadır. Ayrıca var olan [issue](https://github.com/microsoft/PowerToys/issues)'ları da açıkça inceleyebilirsiniz.
 
-![Elinde Soru İşareti Tutan Bir Kadın Figürün Illustrasyon Çizimi](/assets/images/blogs/acik_kaynaga_katikida_bulunmak/01.AcikKaynagaKatki.webp)
+![Elinde Soru İşareti Tutan Bir Kadın Figürün Illustrasyon Çizimi](/assets/images/blogs/acik_kaynaga_katkida_bulunmak/01.AcikKaynagaKatki.webp)
 
 ### Peki! Açık Kaynağa Neden Katkıda Bulunmalıyım?
 
@@ -55,13 +55,13 @@ Açık kaynak yazılımları kapsamlı ekipler veya topluluklar tarafından yön
 
 Bu durum için kendimden örnek vermek istiyorum. İlk defa bir içeriğe katkıda bulunmak istediğimde issue aracılığıyla bir güncelleme iletmek istemiştim. Fakat bunun doğrultusunda açık kaynak noktasında katkısı olan [Erhan Yakut](https://github.com/yakuter) bana basit bir yol gösterme ile düzenleme biçimini iletmiş hatta bu konu hakkında daha sonradan uzunca bir açıklama göndermişti. O zamandan sonra görmezden geldiğim bu konu üzerine daha fazla içerik tüketmeye ve okumalar yapmaya başladım. Kaynakça kısmına bu içeriklerin bir kısmını bırakıyorum. Kendisine de buradan ayrıca tekrardan teşekkür ederim.
 
-![Github'da Yer Alan Comment İçeriklerinin Ekran Alıntısı](/assets/images/blogs/acik_kaynaga_katikida_bulunmak/02.AcikKaynagaKatki.webp)
+![Github'da Yer Alan Comment İçeriklerinin Ekran Alıntısı](/assets/images/blogs/acik_kaynaga_katkida_bulunmak/02.AcikKaynagaKatki.webp)
 
 ### Network
 
 Yazmış olduğunuz kodların kalitesi ve analiz yeteneğiniz geliştikçe birçok projenin altına imzanızı ve katkınızı ekleyebilirsiniz. Bu durum olası bir iş değişikliğinde sizlere büyük ölçekte yardımcı olacaktır. Elbette buradaki durum uzun vade için geçerli, ama örnek vermek gerekirse Microsoft Doc içerisinde yer alan dokümanların Markdown dosyalarını Github üzerinde düzenleyebilir ve istek iletebilirsiniz. Kabul edilen istekler katkı sağlayanlar kısmında yer alarak içerik kaldırılmadığı sürece sergilenir.
 
-![Microsoft Dokümanlarına Katkı Sağlayanların Bulunduğu Listenin Ekran Alıntısı](/assets/images/blogs/acik_kaynaga_katikida_bulunmak/03.AcikKaynagaKatki.webp)
+![Microsoft Dokümanlarına Katkı Sağlayanların Bulunduğu Listenin Ekran Alıntısı](/assets/images/blogs/acik_kaynaga_katkida_bulunmak/03.AcikKaynagaKatki.webp)
 
 ### Motivasyon ve İstek
 
@@ -80,7 +80,7 @@ Yazılım alanı içerisinde kapsamlı projeleri yalnız başınıza geliştirme
 - Karşınızdaki de bir insan unutmayın!
 - Sabır ve sürekli iletişim
 
-![Github'ın Resmi Açık Kaynak Rehberleri Sayfasının Ekran Alıntısı](/assets/images/blogs/acik_kaynaga_katikida_bulunmak/04.AcikKaynagaKatki.webp)
+![Github'ın Resmi Açık Kaynak Rehberleri Sayfasının Ekran Alıntısı](/assets/images/blogs/acik_kaynaga_katkida_bulunmak/04.AcikKaynagaKatki.webp)
 
 Bu kısımda bahsetmiş olduğum bu maddeleri daha kapsamlı olarak buradaki [doküman](https://opensource.guide/tr/how-to-contribute/) içerisinde bulabilirsiniz.
 
@@ -102,11 +102,11 @@ Yukarıda maddeler ışığında kendinize katkı sağlayabildiğiniz bir proje 
 
 Projenin sayfası içerisinde sağ üstte yer alan menü içerisinden "Fork" kısmına tıklıyoruz.
 
-![Github'da Yer Alan Bir Deponun Sağ Üst Barının Ekran Alıntısı - Fork Butonu Gösteriliyor](/assets/images/blogs/acik_kaynaga_katikida_bulunmak/05.AcikKaynagaKatki.webp)
+![Github'da Yer Alan Bir Deponun Sağ Üst Barının Ekran Alıntısı - Fork Butonu Gösteriliyor](/assets/images/blogs/acik_kaynaga_katkida_bulunmak/05.AcikKaynagaKatki.webp)
 
 Çıkan kısımdan "Create Fork" butonuna tıklayarak devam ediyoruz.
 
-![Fork İşleminin İlk Ekranının Alıntısı](/assets/images/blogs/acik_kaynaga_katikida_bulunmak/06.AcikKaynagaKatki.webp)
+![Fork İşleminin İlk Ekranının Alıntısı](/assets/images/blogs/acik_kaynaga_katkida_bulunmak/06.AcikKaynagaKatki.webp)
 
 Bu aşamadan sonra incelemiş olduğunuz projenin bir kopyası sizin profiliniz altında yer alan "Repository" kısmına kopyalanır. Burada yapacak olduğunuz güncelleme ve değişiklikler sadece sizin çalışmanızı etkiler. Projeyi baz aldığınız "Repository"i etkilemez. Kendi kopyanız üzerinde istediğiniz değişiklikleri gerçekleştirerek, düzenlemeleri sağlayabilirsiniz. Fakat burada belirtmem gereken birkaç madde var.
 
@@ -119,11 +119,11 @@ Bu aşamadan sonra incelemiş olduğunuz projenin bir kopyası sizin profiliniz 
 
 Bütün güncellemerinizi gerçekleştirdikten sonra sizin profiliniz altında yer proje reponuzun içerisine giriniz. Ve sağ üstte yer alan "Contribute" butonuna tıklayarak "Pull Request" isteği oluşturun.
 
-![Github'da Yer Alan Contribute Butonunun Ekran Alıntısı](/assets/images/blogs/acik_kaynaga_katikida_bulunmak/07.AcikKaynagaKatki.webp)
+![Github'da Yer Alan Contribute Butonunun Ekran Alıntısı](/assets/images/blogs/acik_kaynaga_katkida_bulunmak/07.AcikKaynagaKatki.webp)
 
 Açılan pencere içerisinde "Pull Request" isteğinizi göndermeden önce uygun bir başlık belirleyin ve yapmış olduğunuz değişikliklere dair kısa, net bir açıklama ekleyin. Bu sayede karşınızdaki kişinin değerlendirmesini hızlandırmış ve kendi düşüncesiniz hızlıca iletmiş olursunuz.
 
-![Github'da Kabul Edilmiş Bir PR İsteğinin Ekran Alıntısı](/assets/images/blogs/acik_kaynaga_katikida_bulunmak/08.AcikKaynagaKatki.webp)
+![Github'da Kabul Edilmiş Bir PR İsteğinin Ekran Alıntısı](/assets/images/blogs/acik_kaynaga_katkida_bulunmak/08.AcikKaynagaKatki.webp)
 
 Yapmış olduğunuz isteğin kabul edilmeme ihtimalini olduğunu lütfen unutmayın. Bu şekilde gerçekleşen bir durum için karşınızdaki kişiye uygun bir dil ile sebebini sorabilirsiniz. Bu sayede sizlerde bilgi edinebilir, kendinizi geliştirebilirsiniz.
 

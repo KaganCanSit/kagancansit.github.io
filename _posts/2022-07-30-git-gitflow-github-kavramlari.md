@@ -110,7 +110,7 @@ Genel olarak geliştirme süreci Master, Hotfix, Develop, Remove olmak üzere 4 
 
 **!** Yukarıdaki şekilde developer ve feature dallarının (branch) kullanımı develop branch’ının her daim testleri ve içeriği ile hazır durumda olmasını, sürüme çıkmaya hazır bir şekilde bulunması sağlar. Çünkü yazılım geliştirme, özellik ekleme süreçlerinde kademeli olarak birden fazla kişinin kontrolü, ek olarak bilgi birikim desteği bulunur.
 
-![Branch Yapısı](/assets/images/blogs/git_gitflow_github_kavramlari_ve_bazi_git_komutlari/02.jfif)
+![Branch Yapısı](/assets/images/blogs/git_gitflow_github_kavramlari_ve_bazi_git_komutlari/02.webp)
 
 ---
 
