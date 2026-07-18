@@ -879,6 +879,21 @@ body.sidebar-open {
     color: var(--headers-dark);
 }
 
+/* Always-visible language badge (TR/EN) in the card corner */
+.card__lang {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    z-index: 1;
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: var(--headers-dark);
+    background-color: rgba(0, 0, 0, 0.55);
+}
+
 @media (max-width: 768px) {
     .full-screen {
         padding: 5rem 0 3rem 0;
@@ -1872,6 +1887,55 @@ th {
 .article-content h4 {
     margin-top: 2em;
     margin-bottom: 0.75em;
+}
+
+/* Post title (h1) and meta line rendered by _layouts/post.html */
+.post-title {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--headers-color);
+}
+
+.post-meta {
+    margin-bottom: 2rem;
+}
+
+/* Previous / next post navigation at the end of a post */
+.post-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(var(--themeColor-rgb), 0.3);
+}
+
+.post-nav__link {
+    display: flex;
+    flex-direction: column;
+    max-width: 40%;
+    text-decoration: none;
+}
+
+.post-nav__next {
+    text-align: right;
+    margin-left: auto;
+}
+
+.post-nav__all {
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .post-nav__link {
+        max-width: 100%;
+    }
+
+    .post-title {
+        font-size: 1.6rem;
+    }
 }
 
 @media (max-width: 768px) {

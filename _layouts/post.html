@@ -8,12 +8,33 @@ layout: default
         <img src="{{ page.image | relative_url }}" class="blog-header-image"
              alt="{{ page.title }} Header Image">
         {% endif %}
-        
+
         <article class="article-content">
-            <h2>{{ page.title }}</h2>
-            <p><small>{{ page.date | date: "%B %d, %Y" }}</small></p>
-            
+            <h1 class="post-title">{{ page.title }}</h1>
+            <p class="post-meta"><small>
+                <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
+                &middot;
+                {% assign reading_time = content | strip_html | number_of_words | divided_by: 200 | at_least: 1 %}
+                {{ reading_time }} min read
+            </small></p>
+
             {{ content }}
         </article>
+
+        <nav class="post-nav article-content" aria-label="Post navigation">
+            {% if page.previous %}
+            <a class="post-nav__link post-nav__prev" href="{{ page.previous.url | relative_url }}">
+                <small>&larr; Previous</small>
+                <span>{{ page.previous.title }}</span>
+            </a>
+            {% endif %}
+            <a class="post-nav__link post-nav__all" href="{{ '/blog/' | relative_url }}">All posts</a>
+            {% if page.next %}
+            <a class="post-nav__link post-nav__next" href="{{ page.next.url | relative_url }}">
+                <small>Next &rarr;</small>
+                <span>{{ page.next.title }}</span>
+            </a>
+            {% endif %}
+        </nav>
     </div>
 </section>
