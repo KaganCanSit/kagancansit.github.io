@@ -3,7 +3,7 @@ layout: post
 title: "Linux Kavramı ve Temel Linux Terminal Komutları"
 date: 2022-07-23
 lang: tr
-header_image: "/assets/images/blogs/linux_kavrami_ve_temel_linux_komutlari/header_image.webp"
+image: "/assets/images/blogs/linux_kavrami_ve_temel_linux_komutlari/header_image.webp"
 description: "Linux Kavramı ve Temel Linux Terminal Komutları"
 ---
 

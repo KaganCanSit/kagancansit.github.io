@@ -3,7 +3,7 @@ layout: post
 title: "Github Profili İçin Readme Dosyası Oluşturma ve Özelleştirme"
 date: 2022-07-06
 lang: tr
-header_image: "/assets/images/blogs/github_profili_icin_readme_olusturma/header_image.webp"
+image: "/assets/images/blogs/github_profili_icin_readme_olusturma/header_image.webp"
 description: "GitHub profiliniz için özel README dosyası oluşturma ve özelleştirme rehberi"
 ---
 

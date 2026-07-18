@@ -3,7 +3,7 @@ layout: post
 title: "Açık Kaynak Kavramı ve Açık Kaynağa Katkıda Bulunmaya Dair İlk Adımlar"
 date: 2022-07-04
 lang: tr
-header_image: "/assets/images/blogs/acik_kaynaga_katikida_bulunmak/header_iamge.webp"
+image: "/assets/images/blogs/acik_kaynaga_katikida_bulunmak/header_iamge.webp"
 description: "Açık kaynak nedir, neden katkıda bulunmalıyız ve nasıl başlamalıyız?"
 ---
 

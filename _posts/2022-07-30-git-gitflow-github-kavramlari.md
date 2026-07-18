@@ -3,7 +3,7 @@ layout: post
 title: "Git, Git Flow, Github Kavramları ve Bazı Git Komutları"
 date: 2022-07-30
 lang: tr
-header_image: "/assets/images/blogs/git_gitflow_github_kavramlari_ve_bazi_git_komutlari/header_image.webp"
+image: "/assets/images/blogs/git_gitflow_github_kavramlari_ve_bazi_git_komutlari/header_image.webp"
 description: "Git versiyon kontrol sistemi, Git Flow ve temel Git komutları rehberi"
 ---
 

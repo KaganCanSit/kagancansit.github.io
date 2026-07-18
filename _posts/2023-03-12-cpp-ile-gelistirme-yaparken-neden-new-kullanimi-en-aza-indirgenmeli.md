@@ -3,7 +3,7 @@ layout: post
 title: "C++ İle Geliştirme Yapılırken Neden 'new' Kullanımı En Aza İndirgenmeli?"
 date: 2023-03-12
 lang: tr
-header_image: "/assets/images/blogs/C++_Ile_Gelistirme_Yap._Neden_new_En_Aza_Ind/header_image.webp"
+image: "/assets/images/blogs/C++_Ile_Gelistirme_Yap._Neden_new_En_Aza_Ind/header_image.webp"
 description: "C++ dilinde new kullanımı, bellek yönetimi ve Smart Pointer'lar hakkında rehber"
 ---
 

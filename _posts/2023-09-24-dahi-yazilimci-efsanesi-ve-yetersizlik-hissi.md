@@ -3,7 +3,7 @@ layout: post
 title: "Dahi Programcı Efsanesi ve Yetersizlik Hissi"
 date: 2023-09-24
 lang: tr
-header_image: "/assets/images/blogs/dahi_yazilimci_efsanesi_ve_yetersizlik_hissi/header_image.webp"
+image: "/assets/images/blogs/dahi_yazilimci_efsanesi_ve_yetersizlik_hissi/header_image.webp"
 description: "Yazılım dünyasında dahi programcı miti, ekip çalışması ve yetersizlik hissiyle başa çıkma"
 ---
 

@@ -3,7 +3,7 @@ layout: post
 title: "Yazılımcının Otomasyoncusu Bash Betikleri Hakkında Tüyolar"
 date: 2023-08-26
 lang: tr
-header_image: "/assets/images/blogs/yazilimcinin_otomasyoncusu_bash_betikleri_hakkinda_tuyolar/header_image.webp"
+image: "/assets/images/blogs/yazilimcinin_otomasyoncusu_bash_betikleri_hakkinda_tuyolar/header_image.webp"
 description: "Bash betikleri ile otomasyon, dikkat edilmesi gerekenler ve ShellCheck kullanımı"
 ---
 
