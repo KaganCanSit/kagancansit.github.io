@@ -283,11 +283,11 @@ title: ""
 <!-- Blog Cards -->
 <section class="container blog-teaser">
   <div class="row" id="blog_content_area">
-    {% for post in site.posts limit: 6 %}
+    {% for post in site.posts limit: 10 %}
     {% include blog-card.html post=post %}
     {% endfor %}
   </div>
-  {% if site.posts.size > 6 %}
+  {% if site.posts.size > 10 %}
   <p class="text-center">
     <a href="{{ '/blog/' | relative_url }}" class="custom-btn d-inline-block">All Blogs</a>
   </p>
