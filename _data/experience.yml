@@ -1,0 +1,63 @@
+# Work experience shown in the "Experience" timeline on the homepage.
+# Rendered by _includes/timeline-item.html — newest entry first.
+- year: "2023"
+  title: "Software Engineer"
+  org: "TÜBİTAK BİLGEM - UEKAE"
+  period: "June 2023 - Present"
+  details:
+    - >-
+      I design and develop server-side software using modern C++, focusing on
+      performance, correctness, and security.
+  key_areas_title: "Key Areas"
+  key_areas:
+    - >-
+      Design and develop modular C++ components integrated into large-scale,
+      security-critical server systems.
+    - >-
+      Implement cryptographic operations including signing, verification,
+      encryption, and key management using Botan, GnuTLS, and OpenSSL.
+    - >-
+      Diagnose and resolve memory errors, undefined behavior, and race
+      conditions using GDB, Valgrind, and ASan/TSan sanitizers.
+    - >-
+      Apply SEI CERT and NIST secure coding guidelines and enforce compiler
+      hardening flags including stack canaries, RELRO, and PIE. Conduct code
+      reviews with focus on modern C++ practices, memory safety, and
+      side-channel attack resistance.
+    - >-
+      Automate build and development workflows using Bash and CI pipelines
+      (Jenkins, GitHub Actions).
+    - >-
+      Contribute to PCI, ISO 19790 Level-3, and Common Criteria EAL4+
+      certification processes — including assigned task execution and
+      documentation.
+
+- year: "2022"
+  title: "Junior Software Engineer"
+  org: "TÜBİTAK BİLGEM - UEKAE"
+  period: "November 2022 - June 2023"
+  details:
+    - >-
+      During my final undergraduate year, I worked full-time at UEKAE, focusing
+      on security-oriented software development. I contributed to code reviews,
+      improved existing components, and gained experience in designing reliable
+      and maintainable C++ systems under real-world and security-critical
+      constraints.
+
+- year: "2022"
+  title: "Candidate Software Engineer"
+  org: "TÜBİTAK BİLGEM - UEKAE"
+  period: "September 2022 - October 2022"
+  details:
+    - >-
+      I joined TÜBİTAK BİLGEM – UEKAE as an intern and continued as a Candidate
+      Engineer for two months.
+
+- year: "2022"
+  title: "Software Engineer Summer Intern"
+  org: "TÜBİTAK BİLGEM - UEKAE"
+  period: "July 2022 - September 2022"
+  details:
+    - >-
+      I completed a 40-day internship at TÜBİTAK BİLGEM – UEKAE, gaining initial
+      exposure to security-oriented software development processes and tooling.

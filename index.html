@@ -38,7 +38,7 @@ title: ""
         {% include social-links.html %}
       </div>
       <div class="col-lg-5">
-        <img src="{{ 'assets/images/base_site_images/potraitImage.webp' | relative_url }}" width="800" height="800" style="height: 80%; width: 80%;" loading="lazy" class="img-fluid" alt="Kağan Can Şit Photo">
+        <img src="{{ 'assets/images/base_site_images/potraitImage.webp' | relative_url }}" width="800" height="800" loading="lazy" class="img-fluid about-portrait" alt="Kağan Can Şit Photo">
       </div>
     </div>
   </div>
@@ -48,131 +48,23 @@ title: ""
 <section class="timeline-section">
   <div class="container">
     <div class="row g-5">
-      <!-- Experience -->
+      <!-- Experience (edit _data/experience.yml) -->
       <div class="col-lg-6">
         <h2 class="section-title mb-4">Experience</h2>
         <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-year">2023</div>
-            <div class="timeline-content">
-              <div class="timeline-header">
-                <h3>Software Engineer</h3>
-                <small>TÜBİTAK BİLGEM - UEKAE | <i>June 2023 - Present</i></small>
-              </div>
-
-              <details class="timeline-details">
-                <summary>Learn More</summary>
-                <div class="details-content">
-                  <p>
-                    I design and develop server-side software using modern C++, focusing on performance, correctness, and security.
-                  </p>
-
-                  <div class="details-section">
-                    <p class="section-title">Key Areas</p>
-                    <ul class="details-list">
-                      <li>Design and develop modular C++ components integrated into large-scale, security-critical server systems.</li>
-                      <li>Implement cryptographic operations including signing, verification, encryption, and key management using Botan, GnuTLS, and OpenSSL.</li>
-                      <li>Diagnose and resolve memory errors, undefined behavior, and race conditions using GDB, Valgrind, and ASan/TSan sanitizers.</li>
-                      <li>Apply SEI CERT and NIST secure coding guidelines and enforce compiler hardening flags including stack canaries, RELRO, and PIE. Conduct code reviews with focus on modern C++ practices, memory safety, and side-channel attack resistance.</li>
-                      <li>Automate build and development workflows using Bash and CI pipelines (Jenkins, GitHub Actions).</li>
-                      <li>Contribute to PCI, ISO 19790 Level-3, and Common Criteria EAL4+ certification processes — including assigned task execution and documentation.</li>
-                    </ul>
-                  </div>
-                </div>
-              </details>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-year">2022</div>
-            <div class="timeline-content">
-              <h3>Junior Software Engineer</h3>
-              <small>TÜBİTAK BİLGEM - UEKAE | <i>November 2022 - June 2023</i></small>
-
-              <details class="timeline-details">
-                <summary>Learn More</summary>
-                <div class="details-content">
-                  <p>
-                    During my final undergraduate year, I worked full-time at UEKAE, focusing on 
-                    security-oriented software development. I contributed to code reviews, 
-                    improved existing components, and gained experience in designing reliable 
-                    and maintainable C++ systems under real-world and security-critical constraints.
-                  </p>
-                </div>
-              </details>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-year">2022</div>
-            <div class="timeline-content">
-              <h3>Candidate Software Engineer</h3>
-              <small>TÜBİTAK BİLGEM - UEKAE | <i>September 2022 - October 2022</i></small>
-              <details class="timeline-details">
-                <summary>Learn More</summary>
-                <div class="details-content">
-                  <p>I joined TÜBİTAK BİLGEM – UEKAE as an intern and continued as a Candidate Engineer for two months.</p>
-                </div>
-              </details>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-year">2022</div>
-            <div class="timeline-content">
-              <h3>Software Engineer Summer Intern</h3>
-              <small>TÜBİTAK BİLGEM - UEKAE | <i>July 2022 - September 2022</i></small>
-
-              <details class="timeline-details">
-                <summary>Learn More</summary>
-                <div class="details-content">
-                  <p>
-                    I completed a 40-day internship at TÜBİTAK BİLGEM – UEKAE, gaining initial exposure to
-                    security-oriented software development processes and tooling.
-                  </p>
-                </div>
-              </details>
-            </div>
-          </div>
+          {% for entry in site.data.experience %}
+          {% include timeline-item.html item=entry %}
+          {% endfor %}
         </div>
       </div>
 
-      <!-- Education -->
+      <!-- Education (edit _data/education.yml) -->
       <div class="col-lg-6">
         <h2 class="section-title mb-4">Education</h2>
         <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-year">2023</div>
-            <div class="timeline-content">
-              <h3>Software Engineering</h3>
-              <small>Manisa Celal Bayar University | <i>September 2020 - June 2023</i></small>
-              <small>GPA: 3.69 / 4.00</small>
-              <details class="timeline-details">
-                <summary>Learn More</summary>
-                <div class="details-content">
-                  <p>
-                    I completed my undergraduate degree in Software Engineering at Manisa Celal Bayar University.
-                    Throughout my education, I engaged in various side projects to enhance my software skills.
-                  </p>
-                </div>
-              </details>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-year">2019</div>
-            <div class="timeline-content">
-              <h3>Mechatronics Engineering</h3>
-              <small>Düzce University | <i>November 2019 - June 2020</i></small>
-              <small>GPA: 3.60 / 4.00</small>
-              <details class="timeline-details">
-                <summary>Learn More</summary>
-                <div class="details-content">
-                  <p>I participated in many events such as Python training and cyber security training given by
-                    HAVELSAN
-                    by taking part in the UAV team in Düzce Mekatek community.</p>
-                  <p>After completing the 1st year of Mechatronics Engineering at Düzce University, I transferred to
-                    Manisa Celal Bayar University, Software Engineering Department.</p>
-                </div>
-              </details>
-            </div>
-          </div>
+          {% for entry in site.data.education %}
+          {% include timeline-item.html item=entry %}
+          {% endfor %}
         </div>
       </div>
     </div>
@@ -198,13 +90,9 @@ title: ""
       </p>
       <div class="details-section">
         <ul class="details-list">
-          <li>Language: Modern C++ (C++11/17/20)</li>
-          <li>Debugging & Analysis: GDB, Valgrind, Sanitizers, CppCheck, clang-tidy, IWYU, ShellCheck</li>
-          <li>Build Systems: CMake, Ninja</li>
-          <li>Cryptography Libraries: Botan, OpenSSL, GnuTLS, libsodium</li>
-          <li>Platform: Linux (primary), Windows</li>
-          <li>CI/CD: Jenkins, GitHub Actions</li>
-          <li>Collaboration: Atlassian ecosystem (Bitbucket, Jira, Confluence)</li>
+          {% for tool in site.data.tools %}
+          <li>{{ tool.category }}: {{ tool.value }}</li>
+          {% endfor %}
         </ul>
       </div>
     </div>
@@ -282,9 +170,7 @@ title: ""
         <p class="social-links text-center">
           <a href="https://github.com/{{ site.github }}" class="social-link" target="_blank" rel="noopener noreferrer"
             aria-label="GitHub" title="Visit GitHub">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-            </svg>
+            {% include icons/github.html %}
           </a>
         </p>
       </div>
@@ -325,11 +211,9 @@ title: ""
 
       <div class="social-links text-center">
         <a href="https://github.com/{{ site.github }}" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="Visit GitHub">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-          </svg>
+          {% include icons/github.html %}
         </a>
-        <iframe src="https://github.com/sponsors/{{ site.github }}/button" height="32" width="114" style="border: 0; border-radius: 6px;" title="Sponsor {{ site.github }}">
+        <iframe src="https://github.com/sponsors/{{ site.github }}/button" height="32" width="114" class="sponsor-frame" title="Sponsor {{ site.github }}">
         </iframe>
         <a href="https://github.com/pulls?q=is%3Apr+author%3A{{ site.github }}+is%3Amerged" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
           title="Show All Contributes">
@@ -347,194 +231,21 @@ title: ""
 
 <section class="container" id="pr-section">
   <div class="row">
+    {% for contribution in site.data.contributions %}
     <div class="col-lg-6">
       <div class="timeline">
         <div class="timeline-item">
           <div class="timeline-year">. . . . . . . . . . . .</div>
           <div class="timeline-content">
-            <a href="https://github.com/randombit/botan/pulls?q=is%3Apr+author%3A{{ site.github }}+is%3Amerged">
-              <h3>Botan</h3>
-              <small>
-                BSD-licensed C++ cryptography library for production systems. Offers TLSv1.3, X.509 PKI, AEAD ciphers, and post-quantum cryptography. Recommended by German
-                BSI for security-critical applications.
-              </small>
+            <a href="https://github.com/{{ contribution.repo }}/pulls?q=is%3Apr+is%3A{{ contribution.state }}+author%3A{{ site.github }}">
+              <h3>{{ contribution.name }}</h3>
+              <small>{{ contribution.description }}</small>
             </a>
           </div>
         </div>
       </div>
     </div>
-
-    <div class="col-lg-6">
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-year">. . . . . . . . . . . .</div>
-          <div class="timeline-content">
-            <a href="https://github.com/gabime/spdlog/pulls?q=is%3Apr+is%3Amerged+author%3A{{ site.github }}">
-              <h3>spdlog</h3>
-              <small>Fast C++ logging library with formatting capabilities, multi-threaded support, and high-performance design for production systems.</small>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-lg-6">
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-year">. . . . . . . . . . . .</div>
-          <div class="timeline-content">
-            <a href="https://github.com/mue/mue/pulls?q=is%3Apr+is%3Amerged+author%3A{{ site.github }}+">
-              <h3>Mue</h3>
-              <small>Fast, customizable browser extension providing fresh tab pages with widgets, minimalist design, and marketplace system for modern browsers.</small>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-lg-6">
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-year">. . . . . . . . . . . .</div>
-          <div class="timeline-content">
-            <a href="https://github.com/mue/marketplace/pulls?q=is%3Apr+is%3Amerged+author%3A{{ site.github }}+">
-              <h3>Mue / Marketplace</h3>
-              <small>Content platform for Mue add-ons, photo packs, and preset settings. Enables community-driven customization through user-generated content.</small>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-lg-6">
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-year">. . . . . . . . . . . .</div>
-          <div class="timeline-content">
-            <a href="https://github.com/LuNiZz/siber-guvenlik-sss/pulls?q=is%3Apr+is%3Aclosed+author%3A{{ site.github }}">
-              <h3>siber-guvenlik-sss</h3>
-              <small>Turkish cybersecurity FAQ resource providing career guidance and learning pathways for Turkish-speaking security professionals and students.</small>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-lg-6">
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-year">. . . . . . . . . . . .</div>
-          <div class="timeline-content">
-            <a href="https://github.com/fmtlib/fmt/pulls?q=is%3Apr+is%3Amerged+author%3A{{ site.github }}">
-              <h3>fmt</h3>
-              <small>Open-source C++ formatting library offering fast, safe replacement for C stdio and C++ iostreams with {}-style syntax.</small>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-lg-6">
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-year">. . . . . . . . . . . .</div>
-          <div class="timeline-content">
-            <a href="https://github.com/hyperledger-cacti/cacti/pulls?q=is%3Apr+is%3Amerged+author%3A{{ site.github }}">
-              <h3>cacti</h3>
-              <small>
-                Hyperledger blockchain interoperability framework enabling cross-network transactions between different distributed ledger technologies without central settlement
-                chains.
-              </small>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-lg-6">
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-year">. . . . . . . . . . . .</div>
-          <div class="timeline-content">
-            <a href="https://github.com/mdisec/mdisec-twitch-yayinlari/pulls?q=is%3Apr+is%3Amerged+author%3A{{ site.github }}">
-              <h3>mdisec-twitch-yayinlari</h3>
-              <small>Archive of Mehmet Ince's live cybersecurity training streams containing code examples and educational content for Turkish security professionals.</small>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-lg-6">
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-year">. . . . . . . . . . . .</div>
-          <div class="timeline-content">
-            <a href="https://github.com/ruby/www.ruby-lang.org/pulls?q=is%3Apr+is%3Amerged+author%3A{{ site.github }}">
-              <h3>Ruby-lang.org</h3>
-              <small>Official Ruby programming language website source code maintaining documentation, downloads, and community resources for global Ruby developers.</small>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-lg-6">
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-year">. . . . . . . . . . . .</div>
-          <div class="timeline-content">
-            <a href="https://github.com/rubytr/ruby-tr/pulls?q=is%3Apr+is%3Amerged+author%3A{{ site.github }}">
-              <h3>ruby-tr</h3>
-              <small>Turkish Ruby community website providing localized resources and support for Turkish-speaking Ruby developers.</small>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-lg-6">
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-year">. . . . . . . . . . . .</div>
-          <div class="timeline-content">
-            <a href="https://github.com/mdisec/topluluk-makale/pulls?q=is%3Apr+is%3Amerged+author%3A{{ site.github }}">
-              <h3>topluluk-makale</h3>
-              <small>Community article management platform for MDISEC members facilitating collaborative writing and knowledge sharing in Turkish security community.</small>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-lg-6">
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-year">. . . . . . . . . . . .</div>
-          <div class="timeline-content">
-            <a href="https://github.com/fatihacet/turkcekaynaklar-com/pulls?q=is%3Apr+is%3Amerged+author%3A{{ site.github }}">
-              <h3>turkcekaynaklar-com</h3>
-              <small>Curated directory of Turkish programming resources covering multiple languages and frameworks for Turkish-speaking developers.</small>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-lg-6">
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-year">. . . . . . . . . . . .</div>
-          <div class="timeline-content">
-            <a href="https://github.com/Mastercard/pkcs11-tools/pulls?q=is%3Apr+is%3Amerged+author%3A{{ site.github }}">
-              <h3>pkcs11-tools</h3>
-              <small>PKCS#11 object management toolkit compatible with major HSM brands, NSS, and softoken. Provides utilities for cryptographic token operations across multiple library implementations.</small>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-
+    {% endfor %}
   </div>
 </section>
 
@@ -584,7 +295,7 @@ title: ""
 </section>
 
 <!-- Design -->
-<section class="full-screen" style="margin-top: 10%;" id="design">
+<section class="full-screen design-section" id="design">
   <div class="container">
     <div class="row align-items-center">
       <div class="col-lg-5 mx-auto text-center">

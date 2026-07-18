@@ -1,0 +1,98 @@
+# Open source contribution cards on the homepage, sorted by contribution
+# count (highest first). Each card links to the PRs authored by site.github
+# on that repository: https://github.com/<repo>/pulls filtered by <state>.
+# state is "merged" unless noted otherwise.
+- name: "Botan"
+  repo: "randombit/botan"
+  state: "merged"
+  description: >-
+    BSD-licensed C++ cryptography library for production systems. Offers
+    TLSv1.3, X.509 PKI, AEAD ciphers, and post-quantum cryptography.
+    Recommended by German BSI for security-critical applications.
+
+- name: "spdlog"
+  repo: "gabime/spdlog"
+  state: "merged"
+  description: >-
+    Fast C++ logging library with formatting capabilities, multi-threaded
+    support, and high-performance design for production systems.
+
+- name: "Mue"
+  repo: "mue/mue"
+  state: "merged"
+  description: >-
+    Fast, customizable browser extension providing fresh tab pages with
+    widgets, minimalist design, and marketplace system for modern browsers.
+
+- name: "Mue / Marketplace"
+  repo: "mue/marketplace"
+  state: "merged"
+  description: >-
+    Content platform for Mue add-ons, photo packs, and preset settings.
+    Enables community-driven customization through user-generated content.
+
+- name: "siber-guvenlik-sss"
+  repo: "LuNiZz/siber-guvenlik-sss"
+  state: "closed"
+  description: >-
+    Turkish cybersecurity FAQ resource providing career guidance and learning
+    pathways for Turkish-speaking security professionals and students.
+
+- name: "fmt"
+  repo: "fmtlib/fmt"
+  state: "merged"
+  description: >-
+    Open-source C++ formatting library offering fast, safe replacement for C
+    stdio and C++ iostreams with {}-style syntax.
+
+- name: "cacti"
+  repo: "hyperledger-cacti/cacti"
+  state: "merged"
+  description: >-
+    Hyperledger blockchain interoperability framework enabling cross-network
+    transactions between different distributed ledger technologies without
+    central settlement chains.
+
+- name: "mdisec-twitch-yayinlari"
+  repo: "mdisec/mdisec-twitch-yayinlari"
+  state: "merged"
+  description: >-
+    Archive of Mehmet Ince's live cybersecurity training streams containing
+    code examples and educational content for Turkish security professionals.
+
+- name: "Ruby-lang.org"
+  repo: "ruby/www.ruby-lang.org"
+  state: "merged"
+  description: >-
+    Official Ruby programming language website source code maintaining
+    documentation, downloads, and community resources for global Ruby
+    developers.
+
+- name: "ruby-tr"
+  repo: "rubytr/ruby-tr"
+  state: "merged"
+  description: >-
+    Turkish Ruby community website providing localized resources and support
+    for Turkish-speaking Ruby developers.
+
+- name: "topluluk-makale"
+  repo: "mdisec/topluluk-makale"
+  state: "merged"
+  description: >-
+    Community article management platform for MDISEC members facilitating
+    collaborative writing and knowledge sharing in Turkish security community.
+
+- name: "turkcekaynaklar-com"
+  repo: "fatihacet/turkcekaynaklar-com"
+  state: "merged"
+  description: >-
+    Curated directory of Turkish programming resources covering multiple
+    languages and frameworks for Turkish-speaking developers.
+
+- name: "pkcs11-tools"
+  repo: "Mastercard/pkcs11-tools"
+  state: "merged"
+  description: >-
+    PKCS#11 object management toolkit compatible with major HSM brands, NSS,
+    and softoken. Provides utilities for cryptographic token operations across
+    multiple library implementations.
