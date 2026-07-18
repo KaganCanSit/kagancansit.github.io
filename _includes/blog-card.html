@@ -2,7 +2,7 @@
     <div class="card">
         <a href="{{ include.post.url | relative_url }}">
             <div class="card__image-container">
-                <img src="{{ include.post.header_image | relative_url }}" width="1368" height="768" loading="lazy"
+                <img src="{{ include.post.image | relative_url }}" width="1368" height="768" loading="lazy"
                     class="card__image" alt="{{ include.post.title }}" />
                 <div class="card__overlay">
                     <h3 class="card__title">{{ include.post.title }}</h3>

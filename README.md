@@ -108,7 +108,7 @@ layout: post
 title: "Post Title"
 date: YYYY-MM-DD
 lang: en
-header_image: "/assets/images/blogs/folder/header.webp"
+image: "/assets/images/blogs/folder/header.webp"
 description: "Brief description for SEO"
 ---
 
