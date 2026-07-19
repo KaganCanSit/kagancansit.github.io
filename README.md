@@ -1,11 +1,5 @@
 # kagancansit.github.io
 
-Personal portfolio and technical blog built with Jekyll, hosted on GitHub Pages.
-
-**Live Site:** [https://kagancansit.github.io](https://kagancansit.github.io)
-
-## Overview
-
 This repository contains the source code for my personal portfolio website. The site showcases my professional experience, technical projects, open source contributions, and blog posts focused on software engineering topics including C++, Linux, cryptography, and security.
 
 > I'm not a web developer by trade - my focus is on C++ and security-related development. This site is a learning project, and I'm always open to feedback and contributions!
@@ -20,16 +14,19 @@ This repository contains the source code for my personal portfolio website. The 
 >   - `_config.yml` - Site title, description, social links
 >   - `_includes/head.html` - Google Analytics ID or remove the tracking code
 >   - `assets/images/` - Replace personal images
+>   - `_data/*.yml` - Replace Experience and Open Source Contributes
 > 3. **Publish Only After Customization**
 >   Do not publish the cloned repository until you have completed the above steps to avoid displaying someone else's personal information.
 
 ### Features
 
-- Responsive design with dark/light theme support
-- Blog system with Markdown-based posts
+- Responsive design with dark/light theme support (persisted via `localStorage`, flicker-free on load)
+- Blog system with Markdown-based posts, pagination, and a dedicated `/blog/` archive
+- Homepage content (experience, education, tools, open source contributions) driven by `_data/*.yml`
 - Project showcase and open source contribution tracking
-- SEO optimized with sitemap generation
-- Fast loading with optimized assets
+- SEO optimized via `jekyll-seo-tag` and `jekyll-sitemap` (canonical URLs, Open Graph, sitemap.xml)
+- Fast loading with optimized (WebP, lazy-loaded) assets and CDN Subresource Integrity
+- CI quality gate (Jekyll build + HTML-Proofer link/image/script checks) on every branch and PR
 
 ## Technology Stack
 
@@ -47,25 +44,36 @@ This repository contains the source code for my personal portfolio website. The 
 
 ```
 kagancansit.github.io/
-├── _config.yml              # Jekyll configuration
-├── _includes/               # Reusable components
-│   ├── head.html            # Meta tags, stylesheets
-│   ├── nav.html             # Navigation bar
-│   ├── footer.html          # Footer section
-│   └── ...
-├── _layouts/                # Page templates
-│   ├── default.html         # Base layout
-│   ├── post.html            # Blog post layout
-│   ├── page.html            # Static page layout
-├── _posts/                  # Blog posts (Markdown)
+├── .github/
+│   ├── workflows/            # CI (build + HTML-Proofer) and Pages deploy
+│   └── dependabot.yml        # Automated dependency updates
+├── _config.yml               # Jekyll configuration
+├── _data/                    # Homepage content (experience, education, tools, contributions)
+├── _includes/                # Reusable components
+│   ├── head.html             # Meta tags, stylesheets, SEO
+│   ├── nav.html              # Navigation bar + theme toggle
+│   ├── footer.html           # Footer section
+│   ├── blog-card.html        # Blog post preview card
+│   ├── timeline-item.html    # Experience/education timeline entry
+│   ├── pagination-nav.html   # Blog pagination controls
+│   ├── social-links.html     # Social/contact links
+│   ├── loader.html           # Page loading overlay
+│   ├── scripts.html          # Deferred JS includes
+│   └── icons/                # Inline SVG icon partials
+├── _layouts/                 # Page templates
+│   ├── default.html          # Base layout
+│   ├── post.html             # Blog post layout
+│   └── page.html             # Generic static page layout
+├── _posts/                   # Blog posts (Markdown)
 ├── assets/
-│   ├── css/                 # Stylesheets
-│   ├── js/                  # JavaScript
-│   └── images/              # Media files
-├── index.html               # Homepage
-├── 404.html                 # Error page
-├── robots.txt               # Search engine directives
-├── Gemfile                  # Ruby dependencies
+│   ├── css/                  # Stylesheets (Sass)
+│   ├── js/                   # JavaScript
+│   └── images/               # Media files (WebP)
+├── index.html                # Homepage
+├── blog.html                 # Paginated blog archive (/blog/)
+├── 404.html                  # Error page
+├── robots.txt                # Search engine directives
+├── Gemfile                   # Ruby dependencies
 └── README.md
 ```
 
