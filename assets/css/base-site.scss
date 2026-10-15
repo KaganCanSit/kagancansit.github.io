@@ -13,19 +13,24 @@
     --heading: #111111;
     --muted: #6b6b6b;
     --accent: #0b7a5a;
+    --code: #c7266e;
 
     --footer-bg: #000000;
     --footer-text: #a3a3a3;
     --footer-heading: #ffffff;
     --footer-border: #262626;
 
-    --font-sans: 'Manrope', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    /* Humanist body face for comfortable reading; geometric Manrope is
+       kept for headings only. */
+    --font-sans: 'Nunito Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    --font-heading: 'Manrope', var(--font-sans);
     --font-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
     --radius: 16px;
     --gutter: 1.25rem;
     --content-max: 1200px;
-    --section-space: clamp(3rem, 2rem + 4vw, 6rem);
+    --section-space: clamp(4.5rem, 2.5rem + 6vw, 10rem);
+    --header-height: 4.75rem;
 
     /* Legacy values, referenced only by the unused rules at the end of
        this file. */
@@ -41,6 +46,7 @@
     --heading: #ffffff;
     --muted: #a0a0a0;
     --accent: #42eabd;
+    --code: #f06ba3;
 }
 
 /* RESET & BASE */
@@ -55,6 +61,8 @@ html {
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
     scroll-behavior: smooth;
+    /* Anchor targets (#about, #blog, ...) stop below the sticky header. */
+    scroll-padding-top: var(--header-height);
 }
 
 article,
@@ -108,7 +116,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: inherit;
+    font-family: var(--font-heading);
     font-weight: 700;
     line-height: 1.2;
     margin-top: 0;
@@ -128,6 +136,7 @@ h2 {
     font-weight: 800;
     line-height: 1.15;
     letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
 }
 
 h3 {
@@ -148,10 +157,10 @@ h6 {
 
 p {
     font-size: 1.125rem;
-    font-weight: 300;
-    line-height: 1.6;
+    font-weight: 400;
+    line-height: 1.7;
     margin-top: 0;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.4rem;
     color: var(--text);
 }
 
@@ -264,13 +273,19 @@ a:hover {
     color: var(--accent);
 }
 
-/* Inline links inside running text are underlined, as in the reference
-   design; component links (cards, nav, buttons, icons) are not. */
+/* Inline links inside running text are underlined and take the accent
+   color; component links (cards, nav, buttons, icons) are not. */
 p a,
 li a {
+    color: var(--accent);
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 0.2em;
+}
+
+p a:hover,
+li a:hover {
+    color: var(--heading);
 }
 
 a:not([href]):not([tabindex]) {
@@ -297,9 +312,11 @@ samp {
     font-size: 1em;
 }
 
+/* Posts use inline code for emphasis too (e.g. `dahi`), so it keeps the
+   site's historical pink tone. */
 code {
     font-size: 0.875em;
-    color: inherit;
+    color: var(--code);
     background-color: var(--surface);
     padding: 0.125em 0.375em;
     border-radius: 4px;
@@ -319,7 +336,7 @@ kbd {
 }
 
 pre {
-    color: var(--text);
+    color: var(--code);
     background-color: var(--surface);
     border: 1px solid var(--border);
     border-radius: 8px;
@@ -465,7 +482,7 @@ button::-moz-focus-inner {
 .navbar-container {
     width: 100%;
     margin: 0 auto;
-    padding: 2rem var(--gutter);
+    padding: 1rem var(--gutter);
 }
 
 @media (min-width: 576px) {
@@ -511,7 +528,7 @@ main> :first-child {
     font-size: clamp(1.75rem, 1.25rem + 2vw, 2.75rem);
     font-weight: 800;
     letter-spacing: -0.02em;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
 }
 
 /* NAVBAR */
@@ -520,6 +537,7 @@ main> :first-child {
     padding-top: .3125rem;
     padding-bottom: .3125rem;
     margin-right: 1rem;
+    font-family: var(--font-heading);
     font-size: 1.25rem;
     font-weight: 800;
     letter-spacing: -0.01em;
@@ -551,9 +569,17 @@ main> :first-child {
     transition: transform 0.3s;
 }
 
-/* Static header without border or shadow, as in the reference design. */
+/* Sticky header: stays reachable while scrolling. No backdrop-filter or
+   transform here, as either would become the containing block of the
+   position: fixed mobile sidebar inside it. z-index stays below the
+   loader (1000). */
 .modern-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 999;
     background-color: var(--bg);
+    border-bottom: 1px solid var(--border);
+    transition: background-color 0.3s, border-color 0.3s;
 }
 
 .navbar-container {
@@ -615,7 +641,7 @@ main> :first-child {
 
 .desktop-nav .nav-link {
     color: var(--text);
-    font-weight: 300;
+    font-weight: 400;
     font-size: 1.0625rem;
     padding: 0.5rem 0.75rem;
 }
@@ -692,6 +718,7 @@ main> :first-child {
 }
 
 .sidebar-brand {
+    font-family: var(--font-heading);
     font-size: 1.25rem;
     font-weight: 800;
     color: var(--heading);
@@ -749,10 +776,6 @@ main> :first-child {
 
     .desktop-nav {
         display: none;
-    }
-
-    .navbar-container {
-        padding-block: 1.25rem;
     }
 }
 
@@ -951,7 +974,7 @@ body.sidebar-open {
        only in-flow child, so this is a plain block, not a grid/flex
        container. */
     position: relative;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 /* Dot centered on the 1px timeline line, level with the entry title. */
@@ -1059,8 +1082,8 @@ body.sidebar-open {
     padding-left: 1rem;
     margin-bottom: 0.5rem;
     font-size: 1.0625rem;
-    font-weight: 300;
-    line-height: 1.6;
+    font-weight: 400;
+    line-height: 1.7;
 }
 
 .details-list li::before {
@@ -1103,12 +1126,15 @@ body.sidebar-open {
     }
 }
 
-/* COMPANY LOGOS */
+/* COMPANY LOGOS
+   Fixed width: a percentage width inside the shrink-to-fit .company-link
+   resolves to 0 until the lazy image loads, and the late resize pushed
+   every section below it (anchor jumps landed ~170px off). */
 .company-logo {
-    width: 100%;
+    width: 200px;
+    max-width: 100%;
     height: auto;
     object-fit: contain;
-    max-width: 200px;
     display: block;
 }
 
@@ -1172,13 +1198,13 @@ body.dark-mode .dark-logo {
 
 @media (max-width: 768px) {
     .company-logo {
-        max-width: 150px;
+        width: 150px;
     }
 }
 
 @media (max-width: 480px) {
     .company-logo {
-        max-width: 120px;
+        width: 120px;
     }
 }
 
@@ -1187,7 +1213,7 @@ body.dark-mode .dark-logo {
    used to appear only on :hover, so touch devices never showed them. */
 .card {
     position: relative;
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem;
     border: none;
     border-radius: 0;
     background-color: transparent;
@@ -1334,8 +1360,8 @@ body.dark-mode .dark-logo {
 .article-content p,
 .article-content li {
     font-size: 1em;
-    font-weight: 300;
-    line-height: 1.6;
+    font-weight: 400;
+    line-height: 1.7;
 }
 
 .article-content p {
