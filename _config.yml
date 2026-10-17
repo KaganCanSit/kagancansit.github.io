@@ -1,36 +1,30 @@
 # Site settings
 title: "Kağan Can Şit"
 description: "Software Engineer - Projects, blog posts and more..."
-author: Kağan Can Şit
 url: "https://kagancansit.github.io"
 baseurl: ""
 lang: en
 
-# Social Links
+# Author: jekyll-seo-tag uses it for the author and X (Twitter) card tags
+author:
+  name: "Kağan Can Şit"
+  twitter: "kagancansit"
+
+# Social links (icons on the homepage and in the footer)
 email: "kagancansit@hotmail.com"
 linkedin: "kagancansit"
 github: "KaganCanSit"
-twitter: "kagancansit"
+twitter:
+  username: "kagancansit"
 
 # Google Analytics
 google_analytics: "G-2BLQV2M3JL"
 
-# Build Settings
-markdown: kramdown
-highlighter: rouge
+# Build settings (Markdown, code highlighting and encoding use Jekyll's defaults)
 permalink: /blog/:title/
-encoding: utf-8
 
-# Kramdown settings
-kramdown:
-  input: GFM
-  hard_wrap: false
-  syntax_highlighter: rouge
-
-# Sass/SCSS Settings
 sass:
   style: compressed
-  sass_dir: assets/css
   sourcemap: never # If require CSS debug remove this
 
 # Exclude from build
@@ -39,7 +33,7 @@ exclude:
   - Gemfile.lock
   - node_modules
   - README.md
-  - notes.md # Notes for me 
+  - notes.md # Notes for me
 
 # Default front matter
 defaults:
@@ -48,7 +42,6 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      author: "Kağan Can Şit"
   - scope:
       path: ""
     values:

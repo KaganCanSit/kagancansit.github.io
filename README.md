@@ -34,7 +34,7 @@ This repository contains the source code for my personal portfolio website. The 
 |----------|------------|
 | Static Site Generator | Jekyll 4.4.x |
 | Hosting | GitHub Pages |
-| Styling | Bootstrap 5 (CDN) + custom CSS |
+| Styling | Bootstrap 5 grid + reboot (CDN) + custom CSS |
 | Icons | Inline SVG |
 | Analytics | Google Analytics |
 | SEO | jekyll-seo-tag, jekyll-sitemap |
@@ -48,7 +48,7 @@ kagancansit.github.io/
 │   ├── workflows/            # CI (build + HTML-Proofer) and Pages deploy
 │   └── dependabot.yml        # Automated dependency updates
 ├── _config.yml               # Jekyll configuration
-├── _data/                    # Homepage content (experience, education, tools, contributions)
+├── _data/                    # Menu links and homepage content (experience, education, tools, contributions)
 ├── _includes/                # Reusable components
 │   ├── head.html             # Meta tags, stylesheets, SEO
 │   ├── nav.html              # Navigation bar + theme toggle
@@ -58,12 +58,10 @@ kagancansit.github.io/
 │   ├── pagination-nav.html   # Blog pagination controls
 │   ├── social-links.html     # Social/contact links
 │   ├── loader.html           # Page loading overlay
-│   ├── scripts.html          # Deferred JS includes
 │   └── icons/                # Inline SVG icon partials
 ├── _layouts/                 # Page templates
 │   ├── default.html          # Base layout
-│   ├── post.html             # Blog post layout
-│   └── page.html             # Generic static page layout
+│   └── post.html             # Blog post layout
 ├── _posts/                   # Blog posts (Markdown)
 ├── assets/
 │   ├── css/                  # Stylesheets (Sass)
@@ -123,10 +121,17 @@ description: "Brief description for SEO"
 Post content here...
 ```
 
+The header `image` should be 1368×768 px (WebP): blog cards and the post page reserve space for that size before the image loads.
+
 ### File Naming Convention
 ```
 _posts/YYYY-MM-DD-post-slug.md
 ```
+
+### Where to Edit
+- Menu links: `_data/navigation.yml`
+- Homepage lists (experience, education, tools, contributions): `_data/*.yml`
+- Colors, fonts and sizes: the variables at the top of `assets/css/base-site.scss`
 
 ## Acknowledgments
 

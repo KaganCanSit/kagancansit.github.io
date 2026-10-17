@@ -15,17 +15,18 @@ layout: default
         </header>
 
         {% if page.image %}
-        <img src="{{ page.image | relative_url }}" class="blog-header-image"
-             alt="{{ page.title }} Header Image">
+        <img src="{{ page.image | relative_url }}" width="1368" height="768" fetchpriority="high"
+             class="blog-header-image" alt="{{ page.title }} Header Image">
         {% endif %}
 
+        {% comment %} Images and videos inside the post load only when scrolled near. {% endcomment %}
         <article class="article-content">
-            {{ content }}
+            {{ content | replace: '<img ', '<img loading="lazy" ' | replace: '<iframe ', '<iframe loading="lazy" ' }}
         </article>
 
         <nav class="post-nav article-content" aria-label="Post navigation">
             {% if page.previous %}
-            <a class="post-nav__link post-nav__prev" href="{{ page.previous.url | relative_url }}">
+            <a class="post-nav__link" href="{{ page.previous.url | relative_url }}">
                 <small>&larr; Previous</small>
                 <span>{{ page.previous.title }}</span>
             </a>

@@ -1,3 +1,9 @@
+{% comment %}
+  Blog post card, used on the homepage and on /blog/.
+  Usage: {% include blog-card.html post=post %}
+  Add eager=true for a card that is visible on load: its image is then
+  fetched first instead of lazily.
+{% endcomment %}
 <div class="col-lg-6">
     <div class="card">
         <a href="{{ include.post.url | relative_url }}">
@@ -5,8 +11,8 @@
                 {% if include.post.lang %}
                 <span class="card__lang">{{ include.post.lang | upcase }}</span>
                 {% endif %}
-                <img src="{{ include.post.image | relative_url }}" width="1368" height="768" loading="lazy"
-                    class="card__image" alt="{{ include.post.title }}" />
+                <img src="{{ include.post.image | relative_url }}" width="1368" height="768"
+                    {% if include.eager %}fetchpriority="high"{% else %}loading="lazy"{% endif %} class="card__image" alt="{{ include.post.title }}">
                 <div class="card__overlay">
                     <h3 class="card__title">{{ include.post.title }}</h3>
                     <time class="card__date">{{ include.post.date | date: "%B %d, %Y" }}</time>
