@@ -7,9 +7,9 @@ pagination:
 ---
 
 <section class="container blog-page">
-  <h1 class="section-title mb-4">Blogs</h1>
+  <h1 class="section-title">Blogs</h1>
 
-  <div class="row" id="blog_content_area">
+  <div class="row">
     {% for post in paginator.posts %}
     {% include blog-card.html post=post %}
     {% endfor %}
