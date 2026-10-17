@@ -1,41 +1,48 @@
 ---
 ---
-/* DESIGN TOKENS
-   Light theme on :root, dark theme on body.dark-mode (toggled by
-   window.applyStoredTheme in _layouts/default.html). Every rule below
-   reads colors from these variables, so a theme is defined in one place.
-   Text/background pairs are kept at WCAG AA contrast (>= 4.5:1). */
+/* ==========================================================================
+   SITE STYLESHEET
+
+   How to edit
+   - Colors, fonts and sizes live in section 1 (variables). Light theme
+     values are in :root, dark theme values in .dark-mode. Change a value
+     there and it applies everywhere.
+   - Every other section styles one part of the site; its title names the
+     HTML file it belongs to.
+   - Page grid (container, row, col-lg-*, g-*, text-center, mt-*) comes from
+     Bootstrap 5, loaded in _includes/head.html. This file only adds the
+     site's own look on top of it.
+   ========================================================================== */
+
+
+/* 1. VARIABLES ------------------------------------------------------------ */
 :root {
+    /* Colors - light theme. Text colors keep >= 4.5:1 contrast (WCAG AA). */
     --bg: #ffffff;
-    --surface: #f5f5f5;
+    --surface: #f5f5f5;        /* code, quotes, hover backgrounds */
     --border: #e5e5e5;
     --text: #111111;
     --heading: #111111;
-    --muted: #6b6b6b;
-    --accent: #0b7a5a;
-    --code: #c7266e;
+    --muted: #6b6b6b;          /* dates and secondary text */
+    --accent: #0b7a5a;         /* links and highlights */
+    --code: #c7266e;           /* inline code and code blocks */
 
+    /* Footer - same in both themes */
     --footer-bg: #000000;
     --footer-text: #a3a3a3;
     --footer-heading: #ffffff;
     --footer-border: #262626;
 
-    /* Humanist body face for comfortable reading; geometric Manrope is
-       kept for headings only. */
-    --font-sans: 'Nunito Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-    --font-heading: 'Manrope', var(--font-sans);
-    --font-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    /* Fonts - loaded in _includes/head.html */
+    --font-body: 'Nunito Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    --font-heading: 'Manrope', var(--font-body);
+    --font-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
 
-    --radius: 16px;
-    --gutter: 1.25rem;
-    --content-max: 1200px;
-    --section-space: clamp(4.5rem, 2.5rem + 6vw, 10rem);
-    --header-height: 4.75rem;
-
-    /* Legacy values, referenced only by the unused rules at the end of
-       this file. */
-    --themeColor: #42EABD;
-    --text-light: #666565ec;
+    /* Sizes */
+    --radius: 16px;            /* rounded corners of images and cards */
+    --gutter: 1.25rem;         /* empty space at the left/right page edge */
+    --content-max: 1200px;     /* page width on large screens */
+    --header-height: 4.75rem;  /* height of the sticky menu bar */
 }
 
 .dark-mode {
@@ -49,54 +56,23 @@
     --code: #f06ba3;
 }
 
-/* RESET & BASE */
-*,
-::after,
-::before {
-    box-sizing: border-box;
-}
 
+/* 2. BASE: text, links, code, images -------------------------------------- */
 html {
-    font-size: 100%;
-    -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: transparent;
     scroll-behavior: smooth;
-    /* Anchor targets (#about, #blog, ...) stop below the sticky header. */
+    /* Menu links (#about, #blog, ...) stop below the sticky header. */
     scroll-padding-top: var(--header-height);
 }
 
-article,
-aside,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-section {
-    display: block;
-}
-
-/* Overrides Bootstrap's reboot, which would otherwise render the body in
-   the system font regardless of the font loaded in head.html. */
+/* Overrides Bootstrap's body font and colors. */
 body {
-    margin: 0;
-    overflow-x: hidden;
-    font-family: var(--font-sans);
+    font-family: var(--font-body);
     font-size: 1rem;
-    font-weight: 400;
     line-height: 1.6;
     color: var(--text);
     background-color: var(--bg);
+    overflow-x: hidden;
     transition: background-color 0.3s, color 0.3s;
-}
-
-[tabindex="-1"]:focus {
-    outline: 0 !important;
-}
-
-[hidden] {
-    display: none !important;
 }
 
 :focus-visible {
@@ -109,7 +85,6 @@ body {
     color: var(--bg);
 }
 
-/* TYPOGRAPHY */
 h1,
 h2,
 h3,
@@ -119,8 +94,7 @@ h6 {
     font-family: var(--font-heading);
     font-weight: 700;
     line-height: 1.2;
-    margin-top: 0;
-    margin-bottom: 1rem;
+    margin: 0 0 1rem;
     color: var(--heading);
 }
 
@@ -155,184 +129,73 @@ h6 {
     font-size: 0.875rem;
 }
 
+/* Running text is light (300) so that bold and italic words stand out. */
 p {
-    font-size: 1.125rem;
-    font-weight: 400;
-    line-height: 1.7;
-    margin-top: 0;
-    margin-bottom: 1.4rem;
-    color: var(--text);
-}
-
-/* Text Elements */
-hr {
-    box-sizing: content-box;
-    height: 0;
-    overflow: visible;
-    margin: 2rem 0;
-    border: 0;
-    border-top: 1px solid var(--border);
-    opacity: 1;
+    font-size: 1.0625rem;
+    font-weight: 300;
+    line-height: 1.75;
+    margin: 0 0 1.25rem;
 }
 
 b,
 strong {
     font-weight: 700;
+    color: var(--heading);
 }
 
-small,
-.small {
-    font-size: 0.875em;
+small {
     font-weight: 400;
 }
 
-sub,
-sup {
-    position: relative;
-    font-size: 75%;
-    line-height: 0;
-    vertical-align: baseline;
+hr {
+    margin: 2rem 0;
+    border-top-color: var(--border);
+    opacity: 1;
 }
 
-sub {
-    bottom: -.25em;
-}
-
-sup {
-    top: -.5em;
-}
-
-abbr[data-original-title],
-abbr[title] {
-    text-decoration: underline dotted;
-    cursor: help;
-    border-bottom: 0;
-}
-
-address {
-    margin-bottom: 1rem;
-    font-style: normal;
-    line-height: inherit;
-}
-
-/* Lists */
-dl,
-ol,
-ul {
-    margin-top: 0;
-    margin-bottom: 1rem;
-    color: var(--text);
-}
-
-li {
-    color: inherit;
-}
-
-ol ol,
-ol ul,
-ul ol,
-ul ul {
-    margin-bottom: 0;
-}
-
-dt {
-    font-weight: 700;
-}
-
-dd {
-    margin-bottom: .5rem;
-    margin-left: 0;
-}
-
-/* Blockquote */
 blockquote {
     margin: 0 0 1.5rem;
-    padding: 0.25rem 0 0.25rem 1.5rem;
-    border-left: 3px solid var(--heading);
-    font-style: normal;
-    text-align: left;
-}
-
-blockquote p {
-    font-size: inherit;
-    margin-bottom: 0.75rem;
+    padding: 1rem 1.5rem;
+    border-left: 4px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    background-color: var(--surface);
+    font-style: italic;
 }
 
 blockquote p:last-child {
     margin-bottom: 0;
 }
 
-/* Links */
 a {
-    color: var(--heading);
+    color: var(--accent);
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
 a:hover {
-    color: var(--accent);
+    color: var(--heading);
 }
 
-/* Inline links inside running text are underlined and take the accent
-   color; component links (cards, nav, buttons, icons) are not. */
+/* Links inside sentences are also underlined. */
 p a,
 li a {
-    color: var(--accent);
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 0.2em;
 }
 
-p a:hover,
-li a:hover {
-    color: var(--heading);
-}
-
-a:not([href]):not([tabindex]) {
-    color: inherit;
-    text-decoration: none;
-}
-
-a:not([href]):not([tabindex]):focus,
-a:not([href]):not([tabindex]):hover {
-    color: inherit;
-    text-decoration: none;
-}
-
-a:not([href]):not([tabindex]):focus {
-    outline: 0;
-}
-
-/* Code */
 code,
-kbd,
-pre,
-samp {
+pre {
     font-family: var(--font-mono);
-    font-size: 1em;
 }
 
-/* Posts use inline code for emphasis too (e.g. `dahi`), so it keeps the
-   site's historical pink tone. */
+/* Posts use inline code for emphasis too (e.g. `dahi`). */
 code {
     font-size: 0.875em;
     color: var(--code);
     background-color: var(--surface);
     padding: 0.125em 0.375em;
     border-radius: 4px;
-    word-break: break-word;
-}
-
-a>code {
-    color: inherit;
-}
-
-kbd {
-    padding: .2rem .4rem;
-    font-size: 87.5%;
-    color: var(--bg);
-    background-color: var(--heading);
-    border-radius: .2rem;
 }
 
 pre {
@@ -341,43 +204,21 @@ pre {
     border: 1px solid var(--border);
     border-radius: 8px;
     padding: 1rem 1.25rem;
-    margin: 0 0 1.5rem;
-    overflow: auto;
     font-size: 0.875rem;
     line-height: 1.6;
 }
 
 pre code {
     font-size: inherit;
-    color: inherit;
     background: none;
     padding: 0;
-    border-radius: 0;
-    word-break: normal;
 }
 
-/* IMAGES & FIGURES */
-img {
-    vertical-align: middle;
-    border-style: none;
-}
-
-svg {
-    overflow: hidden;
-    vertical-align: middle;
-}
-
-figure {
-    margin: 0 0 1rem;
-}
-
-/* Homepage illustrations, portrait and footer icon. Capped so they no
-   longer outweigh the text column next to them. */
+/* Illustrations, portrait and footer icon: capped so text stays dominant. */
 .img-fluid {
-    max-width: min(100%, 380px);
-    height: auto;
     display: block;
-    margin: 2rem auto;
+    max-width: min(100%, 380px);
+    margin-inline: auto;
 }
 
 @media (max-width: 991.98px) {
@@ -386,193 +227,37 @@ figure {
     }
 }
 
-/* BUTTONS (Minimal) */
-button {
-    border-radius: 0;
-}
 
-button:focus {
-    outline: 1px dotted;
-    outline: 5px auto -webkit-focus-ring-color;
-}
-
-button,
-input,
-optgroup,
-select,
-textarea {
-    margin: 0;
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
-}
-
-button,
-input {
-    overflow: visible;
-}
-
-button,
-select {
-    text-transform: none;
-}
-
-select {
-    word-wrap: normal;
-}
-
-[type=button],
-[type=reset],
-[type=submit],
-button {
-    -webkit-appearance: button;
-    appearance: button;
-}
-
-[type=button]:not(:disabled),
-[type=reset]:not(:disabled),
-[type=submit]:not(:disabled),
-button:not(:disabled) {
-    cursor: pointer;
-}
-
-[type=button]::-moz-focus-inner,
-[type=reset]::-moz-focus-inner,
-[type=submit]::-moz-focus-inner,
-button::-moz-focus-inner {
-    padding: 0;
-    border-style: none;
-}
-
-.custom-btn {
-    display: inline-block;
-    background-color: var(--heading);
-    color: var(--bg);
-    font-weight: 500;
-    font-size: 0.9375rem;
-    line-height: 1;
-    border-radius: 999px;
-    padding: 0.875rem 1.75rem;
-    margin: 10px 0;
-    text-align: center;
-    text-decoration: none;
-    transition: opacity 0.2s ease;
-}
-
-.custom-btn:hover {
-    color: var(--bg);
-    opacity: 0.85;
-}
-
-/* LAYOUT
-   One content width shared by Bootstrap's .container and the navbar so
-   the header lines up with the page content at every breakpoint. */
+/* 3. LAYOUT --------------------------------------------------------------- */
+/* Page width and side padding (Bootstrap .container). */
 .container {
     --bs-gutter-x: calc(var(--gutter) * 2);
 }
 
-/* Some homepage sections put .container and .row on the same element;
-   its columns already carry the gutter, so the container padding would
-   double the side spacing. */
-.container.row {
-    padding-left: 0;
-    padding-right: 0;
-}
-
-.navbar-container {
-    width: 100%;
-    margin: 0 auto;
-    padding: 1rem var(--gutter);
-}
-
-@media (min-width: 576px) {
-    .navbar-container {
-        max-width: 540px;
-    }
-}
-
-@media (min-width: 768px) {
-    .navbar-container {
-        max-width: 720px;
-    }
-}
-
-@media (min-width: 992px) {
-    .navbar-container {
-        max-width: 960px;
-    }
-}
-
 @media (min-width: 1200px) {
-
-    .container,
-    .navbar-container {
+    .container {
         max-width: var(--content-max);
     }
 }
 
-/* Sections size to their content with a consistent vertical rhythm
-   (previously each one was forced to min-height: 100vh). Each section
-   carries half of the spacing on both sides, so two neighbours are
-   exactly --section-space apart. */
-.full-screen,
-.timeline-section {
-    padding-block: calc(var(--section-space) / 2);
-}
-
-main> :first-child {
-    padding-top: clamp(2.5rem, 1rem + 6vw, 8rem);
+/* A block at least one screen tall (below the menu bar), with its content
+   centered vertically: each homepage part starts like a new page. */
+.full-screen {
+    display: flex;
+    align-items: center;
+    min-height: calc(100vh - var(--header-height));
+    min-height: calc(100svh - var(--header-height)); /* phones: excludes browser bars */
+    padding-block: clamp(1.5rem, 4vh, 3rem);
 }
 
 .section-title {
-    font-size: clamp(1.75rem, 1.25rem + 2vw, 2.75rem);
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
 }
 
-/* NAVBAR */
-.navbar-brand {
-    display: inline-block;
-    padding-top: .3125rem;
-    padding-bottom: .3125rem;
-    margin-right: 1rem;
-    font-family: var(--font-heading);
-    font-size: 1.25rem;
-    font-weight: 800;
-    letter-spacing: -0.01em;
-    line-height: inherit;
-    white-space: nowrap;
-    color: var(--heading);
-}
 
-.navbar-brand:focus,
-.navbar-brand:hover {
-    text-decoration: none;
-}
-
-.nav-link {
-    display: block;
-    padding: .5rem 1rem;
-    overflow: hidden;
-    text-decoration: none;
-}
-
-.nav-link:focus,
-.nav-link:hover {
-    text-decoration: none;
-}
-
-.nav-link span {
-    position: relative;
-    display: inline-block;
-    transition: transform 0.3s;
-}
-
-/* Sticky header: stays reachable while scrolling. No backdrop-filter or
-   transform here, as either would become the containing block of the
-   position: fixed mobile sidebar inside it. z-index stays below the
-   loader (1000). */
+/* 4. MENU BAR - _includes/nav.html ---------------------------------------- */
+/* Sticky: stays visible while scrolling. Avoid transform/filter here, they
+   would break the position: fixed mobile menu inside it. */
 .modern-navbar {
     position: sticky;
     top: 0;
@@ -582,25 +267,95 @@ main> :first-child {
     transition: background-color 0.3s, border-color 0.3s;
 }
 
+/* Fixed height (minus the 1px border) so --header-height is exact. */
 .navbar-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 1.5rem;
+    min-height: calc(var(--header-height) - 1px);
 }
 
-/* Mobile Menu Toggle (Hamburger) */
+.navbar-brand {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: var(--heading);
+}
+
+.navbar-brand:hover {
+    color: var(--accent);
+}
+
+.desktop-nav {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.25rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    color: var(--text);
+    font-size: 1.0625rem;
+}
+
+.desktop-nav .nav-link:hover {
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.3em;
+}
+
+/* Theme toggle button (moon / sun) */
+.color-mode {
+    display: inline-flex;
+    align-items: center;
+    background: none;
+    border: none;
+    color: var(--heading);
+}
+
+.color-mode-icon {
+    position: relative;
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+
+.theme-icon {
+    position: absolute;
+    inset: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.sun-icon,
+.color-mode-icon.active .moon-icon {
+    opacity: 0;
+    transform: rotate(90deg);
+}
+
+.color-mode-icon.active .sun-icon {
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+/* Hamburger button and slide-in menu (small screens) */
 .mobile-menu-toggle {
     display: none;
     flex-direction: column;
     justify-content: space-between;
     width: 24px;
     height: 18px;
+    padding: 0;
     background: transparent;
     border: none;
-    cursor: pointer;
-    padding: 0;
-    z-index: 1000;
 }
 
 .hamburger-line {
@@ -623,50 +378,9 @@ main> :first-child {
     transform: translateY(-8px) rotate(-45deg);
 }
 
-/* Desktop Navigation */
-.desktop-nav {
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    flex: 1;
-    justify-content: flex-end;
-}
-
-.desktop-nav .nav-item {
-    list-style: none;
-}
-
-.desktop-nav .nav-link {
-    color: var(--text);
-    font-weight: 400;
-    font-size: 1.0625rem;
-    padding: 0.5rem 0.75rem;
-}
-
-.desktop-nav .nav-link:hover {
-    color: var(--heading);
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 0.3em;
-}
-
-/* Navbar Actions (Theme Toggle) */
-.navbar-actions {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-/* Mobile Sidebar */
 .mobile-sidebar {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     z-index: 999998;
     pointer-events: none;
 }
@@ -677,17 +391,10 @@ main> :first-child {
 
 .sidebar-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background-color: rgba(0, 0, 0, 0.5);
     opacity: 0;
     transition: opacity 0.3s ease;
-}
-
-.mobile-sidebar.active .sidebar-overlay {
-    opacity: 1;
 }
 
 .sidebar-content {
@@ -696,14 +403,16 @@ main> :first-child {
     left: 0;
     width: 280px;
     height: 100%;
+    overflow-y: auto;
     background-color: var(--bg);
     transform: translateX(-100%);
-    transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
-    overflow-y: auto;
+    transition: transform 0.3s ease;
 }
 
-/* Shadow only while open: on the off-screen panel it leaked into the left
-   edge of the viewport. */
+.mobile-sidebar.active .sidebar-overlay {
+    opacity: 1;
+}
+
 .mobile-sidebar.active .sidebar-content {
     transform: translateX(0);
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
@@ -722,24 +431,13 @@ main> :first-child {
     font-size: 1.25rem;
     font-weight: 800;
     color: var(--heading);
-    text-decoration: none;
 }
 
 .sidebar-close {
+    padding: 0.5rem;
     background: transparent;
     border: none;
-    cursor: pointer;
-    padding: 0.5rem;
     color: var(--text);
-    transition: color 0.2s ease;
-}
-
-.sidebar-close:hover {
-    color: var(--accent);
-}
-
-.sidebar-close svg {
-    display: block;
 }
 
 .sidebar-links {
@@ -748,25 +446,23 @@ main> :first-child {
     padding: 1rem 0;
 }
 
-.sidebar-item {
-    list-style: none;
-}
-
 .sidebar-link {
     display: block;
     padding: 1rem 1.5rem;
     color: var(--text);
-    text-decoration: none;
     font-size: 1.125rem;
-    font-weight: 400;
-    transition: all 0.2s ease;
     border-left: 3px solid transparent;
 }
 
 .sidebar-link:hover {
-    color: var(--heading);
+    color: var(--accent);
     background-color: var(--surface);
     border-left-color: var(--accent);
+}
+
+/* Prevents page scroll while the mobile menu is open. */
+body.sidebar-open {
+    overflow: hidden;
 }
 
 @media (max-width: 768px) {
@@ -779,33 +475,41 @@ main> :first-child {
     }
 }
 
-/* Prevent body scroll when sidebar is open */
-body.sidebar-open {
-    overflow: hidden;
-}
 
-/* HERO TITLE (Terminal Style) */
+/* 5. HOMEPAGE INTRO - index.html ------------------------------------------ */
+/* Terminal-style greeting. Size and spacing follow the screen height too,
+   so the greeting and About Me fit on one screen on laptops. */
 .hero-title {
+    position: relative;
+    margin-bottom: clamp(1.5rem, 4vh, 3rem);
+    padding: 2.75rem 2rem 1.75rem;
     font-family: var(--font-mono);
-    font-size: clamp(1rem, 0.75rem + 1.25vw, 1.75rem);
+    font-size: clamp(1rem, 0.6rem + 1.2vmin, 1.5rem);
     font-weight: 400;
     line-height: 1.6;
     letter-spacing: 0;
-    background: #111111;
     color: #eeeeee;
-    padding: 3.25rem 2.5rem 2.25rem;
+    background: #111111;
     border: 1px solid transparent;
     border-radius: var(--radius);
-    position: relative;
-    min-width: 40%;
-    max-width: 100%;
-    margin: auto;
-    overflow: hidden;
 }
 
 .dark-mode .hero-title {
     background: var(--surface);
     border-color: var(--border);
+}
+
+/* Window buttons (red, yellow, green) */
+.hero-title::before {
+    content: '';
+    position: absolute;
+    left: 24px;
+    top: 20px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #fa625c;
+    box-shadow: 18px 0 0 #fdbc40, 36px 0 0 #34c749;
 }
 
 .hero-title .keyword {
@@ -820,17 +524,16 @@ body.sidebar-open {
     color: #b5cea8;
 }
 
-.hero-title::before {
-    content: '';
-    display: block;
-    position: absolute;
-    left: 24px;
-    top: 20px;
-    width: 10px;
-    height: 10px;
-    background: #fa625c;
-    border-radius: 50%;
-    box-shadow: 18px 0 0 #fdbc40, 36px 0 0 #34c749;
+/* Blinking cursor */
+.terminal-write {
+    border-right: 3px solid #fff;
+    animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+    50% {
+        border-color: transparent;
+    }
 }
 
 @media (max-width: 600px) {
@@ -839,37 +542,9 @@ body.sidebar-open {
     }
 }
 
-.terminal-write {
-    white-space: pre;
-    border-right: 3px solid #fff;
-    animation: typing 2.5s steps(35, end), blink-caret 0.75s step-end infinite;
-}
-
-@keyframes typing {
-    from {
-        width: 0;
-    }
-
-    to {
-        width: 100%;
-    }
-}
-
-@keyframes blink-caret {
-
-    0%,
-    100% {
-        border-color: transparent;
-    }
-
-    50% {
-        border-color: #fff;
-    }
-}
-
-/* HOMEPAGE SECTION HELPERS */
 .about-portrait {
     width: 100%;
+    max-width: min(100%, 340px);
     border-radius: var(--radius);
 }
 
@@ -877,212 +552,19 @@ body.sidebar-open {
     justify-content: flex-start;
 }
 
-.sponsor-frame {
-    border: 0;
-    border-radius: 6px;
-}
-
-/* SOCIAL LINKS */
-.social-links-container {
-    margin-top: 2rem;
-}
-
-.social-links {
-    display: flex;
-    gap: 0.75rem;
-    justify-content: center;
-    align-items: center;
-}
-
-.social-link {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    color: var(--text);
-    background-color: transparent;
-    border: 1px solid var(--border);
-    text-decoration: none;
-    transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
-    animation: fadeInUp 0.5s ease forwards;
-    opacity: 0;
-}
-
-.social-link:hover {
-    color: var(--heading);
-    border-color: var(--heading);
-    transform: translateY(-2px);
-}
-
-.social-link:nth-child(1) {
-    animation-delay: 0.1s;
-}
-
-.social-link:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.social-link:nth-child(3) {
-    animation-delay: 0.3s;
-}
-
-.social-link:nth-child(4) {
-    animation-delay: 0.4s;
-}
-
-@media (max-width: 768px) {
-    .social-link {
-        width: 40px;
-        height: 40px;
-    }
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* TIMELINE */
-.timeline {
-    position: relative;
-    padding-left: 2rem;
-}
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 1px;
-    background-color: var(--border);
-}
-
-.timeline-item {
-    /* .timeline-year (the rotated year label) is position:absolute and
-       therefore not a layout participant here - .timeline-content is the
-       only in-flow child, so this is a plain block, not a grid/flex
-       container. */
-    position: relative;
-    margin-bottom: 2rem;
-}
-
-/* Dot centered on the 1px timeline line, level with the entry title. */
-.timeline-item::before {
-    content: '';
-    position: absolute;
-    left: calc(-2rem - 5px);
-    top: 1.9rem;
-    width: 11px;
-    height: 11px;
-    background-color: var(--accent);
-    border-radius: 50%;
-    border: 2px solid var(--bg);
-}
-
-.timeline-year {
-    writing-mode: vertical-rl;
-    color: var(--muted);
-    font-weight: 500;
-    font-size: 0.8125rem;
-    /* In vertical writing the box width is the line height. */
-    line-height: 1;
-    position: absolute;
-    left: -3.5rem;
-}
-
-.timeline-content {
-    background-color: transparent;
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 1.5rem;
-    transition: border-color 0.2s ease;
-}
-
-.timeline-content:hover {
-    border-color: var(--muted);
-}
-
-.timeline-content small {
-    display: block;
-    margin-bottom: 10px;
-    color: var(--muted);
-}
-
-.timeline-content h3 {
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
-    color: var(--heading);
-}
-
-/* Open Source PR cards are links: the title takes the link hover color. */
-.timeline-content a:hover h3 {
-    color: var(--accent);
-}
-
-.timeline-details {
-    margin-top: 1rem;
-}
-
-.timeline-details summary {
-    cursor: pointer;
-    color: var(--heading);
-    font-weight: 500;
-    font-size: 0.9375rem;
-    outline: none;
-    padding: 0.5rem 0;
-}
-
-.timeline-details summary:hover {
-    color: var(--accent);
-}
-
-.details-content {
-    margin-top: 1rem;
-    padding-left: 1rem;
-    border-left: 2px solid var(--border);
-}
-
-.details-section {
-    margin-bottom: 1.5rem;
-}
-
-.details-section:last-child {
-    margin-bottom: 0;
-}
-
-/* Small uppercase label ("Key Areas"), like "MORE POSTS" in the reference. */
-.details-section .section-title {
-    font-size: 0.8125rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-    color: var(--heading);
-}
-
+/* Bulleted list (Tools and Technologies, timeline "Key Areas") */
 .details-list {
     list-style: none;
-    padding-left: 1rem;
     margin: 0;
+    padding-left: 1rem;
 }
 
 .details-list li {
     position: relative;
-    padding-left: 1rem;
     margin-bottom: 0.5rem;
+    padding-left: 1rem;
     font-size: 1.0625rem;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 1.7;
 }
 
@@ -1093,16 +575,180 @@ body.sidebar-open {
     color: var(--accent);
 }
 
-@media (max-width: 991.98px) {
+/* Company logos: separate images for light and dark theme */
+.company-link {
+    display: inline-flex;
+    transition: transform 0.3s ease;
+}
 
-    /* g-5 (3rem) gutters overflow the container padding on small screens. */
-    .timeline-section .row {
-        --bs-gutter-x: calc(var(--gutter) * 2);
+.company-link:hover {
+    transform: translateY(-5px);
+}
+
+/* Fixed width keeps the logo's space reserved before the image loads. */
+.company-logo {
+    width: 200px;
+    max-width: 100%;
+    height: auto;
+}
+
+.dark-logo,
+.dark-mode .light-logo {
+    display: none;
+}
+
+.dark-mode .dark-logo {
+    display: inline;
+}
+
+.sponsor-frame {
+    border: 0;
+    border-radius: 6px;
+}
+
+@media (max-width: 768px) {
+    .company-logo {
+        width: 150px;
     }
 }
 
-/* Small screens have no gutter to the left of the timeline, so the line
-   moves right and the year label sits between the column edge and it. */
+
+/* 6. SOCIAL ICONS - _includes/social-links.html --------------------------- */
+.social-links-container {
+    margin-top: 1.5rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    color: var(--text);
+    transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.social-link:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+
+/* 7. TIMELINE - _includes/timeline-item.html and Open Source cards -------- */
+.timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+/* Vertical line */
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 1px;
+    background-color: var(--border);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+/* Dot on the line, level with the entry title */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: calc(-2rem - 5px);
+    top: 1.9rem;
+    width: 11px;
+    height: 11px;
+    background-color: var(--accent);
+    border: 2px solid var(--bg);
+    border-radius: 50%;
+}
+
+/* Rotated year label, left of the line */
+.timeline-year {
+    position: absolute;
+    left: -3.5rem;
+    writing-mode: vertical-rl;
+    color: var(--muted);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    line-height: 1; /* in vertical text the line height is the box width */
+}
+
+.timeline-content {
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    transition: border-color 0.2s ease;
+}
+
+.timeline-content:hover {
+    border-color: var(--muted);
+}
+
+.timeline-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content small {
+    display: block;
+    margin-bottom: 0.625rem;
+    color: var(--muted);
+}
+
+/* Open Source cards are links: green description, title turns green on hover */
+.timeline-content a small {
+    color: var(--accent);
+}
+
+.timeline-content a:hover h3 {
+    color: var(--accent);
+}
+
+/* "Learn More" */
+.timeline-details summary {
+    padding: 0.5rem 0;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.timeline-details summary:hover {
+    color: var(--heading);
+}
+
+.details-content {
+    margin-top: 1rem;
+    padding-left: 1rem;
+    border-left: 2px solid var(--accent);
+}
+
+.details-section .section-title {
+    margin-bottom: 1rem;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--heading);
+}
+
+/* Small screens: no room left of the line, so the line moves right and the
+   year sits between the column edge and the line. */
 @media (max-width: 768px) {
     .timeline {
         padding-left: 2.25rem;
@@ -1126,93 +772,9 @@ body.sidebar-open {
     }
 }
 
-/* COMPANY LOGOS
-   Fixed width: a percentage width inside the shrink-to-fit .company-link
-   resolves to 0 until the lazy image loads, and the late resize pushed
-   every section below it (anchor jumps landed ~170px off). */
-.company-logo {
-    width: 200px;
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-    display: block;
-}
 
-.light-logo {
-    display: inline;
-}
-
-.dark-logo {
-    display: none;
-}
-
-body.dark-mode .light-logo {
-    display: none;
-}
-
-body.dark-mode .dark-logo {
-    display: inline;
-}
-
-.companies-section {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-}
-
-.companies-section .container {
-    flex: 1;
-}
-
-.companies-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-}
-
-.companies-section .section-title {
-    text-align: center;
-}
-
-.company-grid {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
-.company-link {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.3s ease;
-}
-
-.company-link:hover {
-    transform: translateY(-5px);
-}
-
-@media (max-width: 768px) {
-    .company-logo {
-        width: 150px;
-    }
-}
-
-@media (max-width: 480px) {
-    .company-logo {
-        width: 120px;
-    }
-}
-
-/* CARD (Blog Card)
-   The title and date sit below the image and are always visible; they
-   used to appear only on :hover, so touch devices never showed them. */
+/* 8. BLOG CARDS & PAGES - _includes/blog-card.html, blog.html ------------- */
 .card {
-    position: relative;
     margin-bottom: 3rem;
     border: none;
     border-radius: 0;
@@ -1222,7 +784,6 @@ body.dark-mode .dark-logo {
 
 .card a {
     color: inherit;
-    text-decoration: none;
 }
 
 .card__image-container {
@@ -1242,17 +803,16 @@ body.dark-mode .dark-logo {
     opacity: 0.7;
 }
 
+/* Title and date below the image, always visible (also on touch screens) */
 .card__overlay {
     padding-top: 1rem;
 }
 
 .card__title {
+    margin-bottom: 0.375rem;
     font-size: 1.25rem;
-    font-weight: 700;
     line-height: 1.3;
     letter-spacing: -0.01em;
-    margin-bottom: 0.375rem;
-    color: var(--heading);
     transition: color 0.2s ease;
 }
 
@@ -1265,7 +825,7 @@ body.dark-mode .dark-logo {
     color: var(--muted);
 }
 
-/* Always-visible language badge (TR/EN) in the image corner */
+/* TR / EN badge on the image */
 .card__lang {
     position: absolute;
     top: 0.75rem;
@@ -1280,24 +840,33 @@ body.dark-mode .dark-logo {
     background-color: rgba(0, 0, 0, 0.6);
 }
 
-#blog_content_area {
-    --bs-gutter-x: calc(var(--gutter) * 2);
+.custom-btn {
+    display: inline-block;
+    padding: 0.875rem 1.75rem;
+    border-radius: 999px;
+    font-weight: 600;
+    color: var(--bg);
+    background-color: var(--heading);
 }
 
-/* PAGINATION (Bootstrap component, themed through its variables) */
+.custom-btn:hover {
+    color: var(--bg);
+    opacity: 0.85;
+}
+
+.blog-page {
+    padding-block: 3rem 6rem;
+}
+
+/* Page numbers (Bootstrap pagination, themed through its variables) */
 .pagination {
-    --bs-pagination-padding-x: 1rem;
-    --bs-pagination-padding-y: 0.5rem;
-    --bs-pagination-font-size: 1rem;
     --bs-pagination-color: var(--text);
     --bs-pagination-bg: transparent;
     --bs-pagination-border-color: var(--border);
     --bs-pagination-border-radius: 999px;
-    --bs-pagination-hover-color: var(--heading);
+    --bs-pagination-hover-color: var(--accent);
     --bs-pagination-hover-bg: var(--surface);
     --bs-pagination-hover-border-color: var(--border);
-    --bs-pagination-focus-color: var(--heading);
-    --bs-pagination-focus-bg: var(--surface);
     --bs-pagination-focus-box-shadow: 0 0 0 2px var(--accent);
     --bs-pagination-active-color: var(--bg);
     --bs-pagination-active-bg: var(--heading);
@@ -1311,32 +880,27 @@ body.dark-mode .dark-logo {
     margin-top: 3rem;
 }
 
-/* BLOG PAGE & HOMEPAGE TEASER */
-.blog-page {
-    padding-bottom: var(--section-space);
-}
 
-/* POST PAGE (_layouts/post.html) */
+/* 9. BLOG POST - _layouts/post.html --------------------------------------- */
 .post-header {
     max-width: 60rem;
     margin: 0 auto clamp(2rem, 1.5rem + 2vw, 3.5rem);
+    padding-top: clamp(0rem, 4vw, 4rem);
     text-align: center;
 }
 
 .post-title {
+    margin-bottom: 1.25rem;
     font-size: clamp(2.25rem, 1.25rem + 4vw, 4.5rem);
-    font-weight: 800;
     line-height: 1.08;
     letter-spacing: -0.025em;
-    margin-bottom: 1.25rem;
-    color: var(--heading);
     text-wrap: balance;
 }
 
 .post-meta {
+    margin: 0;
     font-size: 1rem;
     font-weight: 400;
-    margin: 0;
     color: var(--muted);
 }
 
@@ -1346,22 +910,21 @@ body.dark-mode .dark-logo {
     max-height: 560px;
     object-fit: cover;
     border-radius: var(--radius);
-    margin: 0 auto clamp(2.5rem, 2rem + 2vw, 4rem);
+    margin-bottom: clamp(2.5rem, 2rem + 2vw, 4rem);
 }
 
-/* ARTICLE CONTENT - Reading Width */
+/* Reading column */
 .article-content {
     max-width: 42em;
-    width: 100%;
     margin: 0 auto;
-    font-size: clamp(1.0625rem, 1rem + 0.35vw, 1.25rem);
+    font-size: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
 }
 
 .article-content p,
 .article-content li {
     font-size: 1em;
-    font-weight: 400;
-    line-height: 1.7;
+    font-weight: 300;
+    line-height: 1.75;
 }
 
 .article-content p {
@@ -1374,8 +937,8 @@ body.dark-mode .dark-logo {
 
 .article-content ul,
 .article-content ol {
-    padding-left: 1.5em;
     margin-bottom: 1.4em;
+    padding-left: 1.5em;
 }
 
 .article-content h2,
@@ -1400,31 +963,25 @@ body.dark-mode .dark-logo {
 
 .article-content img {
     display: block;
-    margin: 2rem auto;
     max-width: 100%;
     height: auto;
+    margin: 2rem auto;
     border-radius: 8px;
 }
 
-/* Responsive video embeds: the iframe is absolutely positioned inside an
-   inline-styled 16:9 wrapper, so spacing belongs on the wrapper. */
+/* Video embeds: the iframe sits in an inline-styled 16:9 wrapper. */
 .article-content div:has(> iframe) {
     margin: 2rem 0;
     border-radius: 8px;
 }
 
-.article-content iframe {
-    display: block;
-    max-width: 100%;
-}
-
-/* Previous / next post navigation at the end of a post */
+/* Previous / next post links */
 .post-nav {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
     gap: 1rem;
-    flex-wrap: wrap;
     margin-top: 4rem;
     padding-top: 1.5rem;
     border-top: 1px solid var(--border);
@@ -1435,23 +992,16 @@ body.dark-mode .dark-logo {
     flex-direction: column;
     gap: 0.25rem;
     max-width: 40%;
-    font-weight: 500;
-    text-decoration: none;
+    font-weight: 600;
 }
 
 .post-nav__link small {
     color: var(--muted);
 }
 
-.post-nav__link span {
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 0.2em;
-}
-
 .post-nav__next {
-    text-align: right;
     margin-left: auto;
+    text-align: right;
 }
 
 .post-nav__all {
@@ -1470,36 +1020,30 @@ body.dark-mode .dark-logo {
     .article-content pre {
         font-size: 0.8125rem;
         padding: 1rem;
-        -webkit-overflow-scrolling: touch;
     }
 
-    /* Full-bleed images on small screens (cancels the container gutter). */
+    /* Edge-to-edge images on phones (cancels the page side padding). */
     .article-content img {
-        margin: 1.5rem calc(var(--gutter) * -1);
         width: calc(100% + var(--gutter) * 2);
-        max-width: calc(100% + var(--gutter) * 2);
+        max-width: none;
+        margin: 1.5rem calc(var(--gutter) * -1);
         border-radius: 0;
     }
 
     .article-content p,
     .article-content li {
         hyphens: auto;
-        -webkit-hyphens: auto;
         overflow-wrap: break-word;
     }
 }
 
-/* CONTACT & FOOTER (#contact in _includes/footer.html)
-   Black band with light text, as in the reference footer. */
+
+/* 10. FOOTER - _includes/footer.html -------------------------------------- */
 #contact {
-    margin-top: var(--section-space);
-    padding-bottom: 2.5rem;
+    margin-top: 3rem;
+    padding-block: clamp(3.5rem, 2.5rem + 4vw, 6rem) 2.5rem;
     background-color: var(--footer-bg);
     color: var(--footer-text);
-}
-
-#contact>.container {
-    padding-top: clamp(0.5rem, 3vw, 3rem);
 }
 
 #contact h3 {
@@ -1527,54 +1071,33 @@ body.dark-mode .dark-logo {
     border-color: var(--footer-heading);
 }
 
-.contact-form {
-    position: relative;
-}
-
-.contact-form h3 span {
-    display: block;
-}
-
 .copyright-text {
-    display: block;
-    font-size: 0.875rem;
-    font-weight: 400;
     margin: 3rem 0 0;
     padding-top: 1.5rem;
     border-top: 1px solid var(--footer-border);
+    font-size: 0.875rem;
+    font-weight: 400;
 }
 
-@media (max-width: 991px) {
-    .contact-form {
-        margin-top: 2em;
-    }
-}
 
-/* LOADER */
+/* 11. PAGE LOADER - _includes/loader.html --------------------------------- */
 #loader {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
+    z-index: 1000;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
     background: var(--bg);
 }
 
 .dot {
     width: 10px;
     height: 10px;
-    background-color: var(--text);
-    border-radius: 50%;
     margin: 0 5px;
-    animation: dotJump 1s infinite;
-}
-
-.dot:nth-child(1) {
-    animation-delay: 0s;
+    border-radius: 50%;
+    background-color: var(--text);
+    animation: dot-jump 1s infinite;
 }
 
 .dot:nth-child(2) {
@@ -1589,336 +1112,19 @@ body.dark-mode .dark-logo {
     animation-delay: 0.3s;
 }
 
-@keyframes dotJump {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
+@keyframes dot-jump {
     50% {
         transform: translateY(-20px);
     }
 }
 
-/* COLOR MODE TOGGLE */
-.color-mode {
-    background: none;
-    border: none;
-    font-family: inherit;
-    font-size: inherit;
-    outline: none;
-    color: var(--heading);
 
-    font-weight: bold;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    overflow: visible !important;
-    border-radius: 8px;
-    transition: background-color 0.2s ease;
-}
-
-.color-mode-icon {
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 20px;
-    height: 20px;
-    position: relative;
-}
-
-.color-mode-icon .theme-icon {
-    position: absolute;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-/* Light mode: show moon (for switching to dark) */
-.color-mode-icon .moon-icon {
-    opacity: 1;
-    transform: rotate(0deg);
-}
-
-.color-mode-icon .sun-icon {
-    opacity: 0;
-    transform: rotate(90deg);
-}
-
-/* Dark mode: show sun (for switching to light) */
-.color-mode-icon.active .moon-icon {
-    opacity: 0;
-    transform: rotate(90deg);
-}
-
-.color-mode-icon.active .sun-icon {
-    opacity: 1;
-    transform: rotate(0deg);
-}
-
-/* SCROLLBAR */
+/* 12. SCROLLBAR (Chrome, Edge, Safari) ------------------------------------ */
 ::-webkit-scrollbar {
     width: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
     background: var(--muted);
     border-radius: 8px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--heading);
-}
-
-/* TABLE (Basic - for blog content) */
-table {
-    border-collapse: collapse;
-}
-
-caption {
-    padding-top: .75rem;
-    padding-bottom: .75rem;
-    color: var(--muted);
-    text-align: left;
-    caption-side: bottom;
-}
-
-th {
-    text-align: inherit;
-}
-
-/* UNUSED RULES
-   No template, post or script references the selectors below. They are
-   kept unchanged and can be deleted safely. */
-.small-text {
-    color: #5b5b5b;
-    font-size: 14px;
-    font-weight: bold;
-    padding: 8px 16px;
-    border-radius: 50px;
-    letter-spacing: 0.2px;
-}
-
-.dark-mode .small-text {
-    background: #0d0c15;
-    color: var(--text-light);
-}
-
-.custom-btn.custom-btn-bg {
-    background: #474559;
-    color: #ffffff;
-}
-
-.custom-btn.custom-btn-bg:hover {
-    background: var(--themeColor);
-    color: #ffffff !important;
-}
-
-.copy-button {
-    background: none;
-    border: none;
-    color: #e83e8c;
-}
-
-.blog-content-image {
-    max-width: 90%;
-    border-radius: 8px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-}
-
-@media (max-width: 768px) {
-    .blog-content-image {
-        max-width: 100%;
-        margin: 1.5rem auto;
-    }
-}
-
-.line {
-    width: 80px;
-    height: 2px;
-    background-color: #333;
-    margin-left: 5px;
-}
-
-.company-logos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin: 2rem 0;
-}
-
-.company-logo-container {
-    flex: 1 1 auto;
-    max-width: 150px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-}
-
-.company-logo-container:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px transparent;
-}
-
-.animated {
-    position: relative;
-}
-
-.animated-info {
-    display: inline-block;
-    vertical-align: top;
-    margin-top: 5px;
-    min-width: 380px;
-    position: relative;
-}
-
-.animated-item {
-    color: var(--themeColor);
-    font-size: 38px;
-    line-height: inherit;
-    display: block;
-    opacity: 0;
-    overflow: hidden;
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    animation: BottomTotop 6s linear infinite 0s;
-}
-
-.animated-item:nth-child(2n+2) {
-    animation-delay: 2s;
-}
-
-.animated-item:nth-child(3n+3) {
-    animation-delay: 4s;
-}
-
-@keyframes BottomTotop {
-    0% {
-        opacity: 0;
-    }
-
-    5% {
-        opacity: 0;
-        transform: translateY(5px);
-    }
-
-    10% {
-        opacity: 1;
-        transform: translateY(0px);
-    }
-
-    25% {
-        opacity: 1;
-        transform: translateY(0px);
-    }
-
-    30% {
-        opacity: 0;
-        transform: translateY(5px);
-    }
-
-    80% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 0;
-    }
-}
-
-.page-transition {
-    animation: fadeIn 0.5s ease-in;
-}
-
-.interactive-element {
-    transition: all 0.3s ease;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-.table {
-    width: 100%;
-    margin-bottom: 1rem;
-}
-
-.table td,
-.table th {
-    padding: .75rem;
-    vertical-align: top;
-}
-
-.table thead th {
-    vertical-align: bottom;
-    border-bottom: 2px solid #dee2e6;
-}
-
-.table tbody+tbody {
-    border-top: 2px solid #dee2e6;
-}
-
-@media (max-width: 991px) {
-    .about-image {
-        margin-top: 4em;
-        object-fit: cover;
-    }
-
-    .mobile-mt-2 {
-        margin-top: 2em;
-    }
-}
-
-@media (max-width: 767px) {
-    .animated-item {
-        font-size: 28px;
-    }
-}
-
-@media (max-width: 580px) {
-    .animated-info {
-        min-width: 200px;
-    }
-
-    .animated-item {
-        font-size: 30px;
-    }
-
-    .timeline-info small {
-        display: block;
-        margin: 10px 0 0 0;
-    }
-}
-
-@media (max-width: 320px) {
-    .animated-text {
-        margin-top: 0;
-    }
-
-    .about-text {
-        text-align: center;
-    }
-
-    .mobile-block {
-        display: block;
-    }
-
-    .social-links li {
-        display: inline-block;
-        vertical-align: top;
-    }
 }

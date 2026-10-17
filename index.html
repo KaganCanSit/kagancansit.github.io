@@ -3,22 +3,28 @@ layout: default
 title: ""
 ---
 
-<!-- Hero Section -->
-<section class="full-screen container">
-  <div class="col-lg-12">
+<!--
+  Homepage. Every part follows the same pattern:
+
+    <section class="full-screen">        at least one screen tall, content centered
+      <div class="container">            page width
+        <div class="row g-4 g-lg-5">     Bootstrap grid with spacing between columns
+          <div class="col-lg-7">         side by side on large screens, stacked on phones
+
+  Lists are edited in _data/: experience.yml, education.yml, tools.yml,
+  contributions.yml.
+-->
+
+<!-- Intro: terminal greeting and About Me share the first screen -->
+<section class="full-screen" id="about">
+  <div class="container">
     <h1 class="hero-title">
       <span class="keyword">git add</span> <span class="string">"Kağan Can Şit.txt"</span><br>
       <span class="keyword">git commit -m</span> <span class="string">"Software Engineer"</span><br>
-      <span class="keyword">git push origin</span> <span class="branch">developer</span><span
-        class="cursor terminal-write"></span>
+      <span class="keyword">git push origin</span> <span class="branch">developer</span><span class="terminal-write"></span>
     </h1>
-  </div>
-</section>
 
-<!-- About Me -->
-<section class="full-screen" id="about">
-  <div class="container">
-    <div class="row align-items-center">
+    <div class="row align-items-center g-4 g-lg-5">
       <div class="col-lg-7">
         <h2>About Me</h2>
         <p>
@@ -38,29 +44,26 @@ title: ""
         {% include social-links.html %}
       </div>
       <div class="col-lg-5">
-        <img src="{{ 'assets/images/base_site_images/potraitImage.webp' | relative_url }}" width="800" height="800" loading="lazy" class="img-fluid about-portrait" alt="Kağan Can Şit Photo">
+        <img src="{{ 'assets/images/base_site_images/potraitImage.webp' | relative_url }}" width="800" height="800" class="img-fluid about-portrait" alt="Kağan Can Şit Photo">
       </div>
     </div>
   </div>
 </section>
 
 <!-- Experience | Education -->
-<section class="timeline-section">
+<section class="full-screen">
   <div class="container">
-    <div class="row g-5">
-      <!-- Experience (edit _data/experience.yml) -->
+    <div class="row g-4 g-lg-5">
       <div class="col-lg-6">
-        <h2 class="section-title mb-4">Experience</h2>
+        <h2 class="section-title">Experience</h2>
         <div class="timeline">
           {% for entry in site.data.experience %}
           {% include timeline-item.html item=entry %}
           {% endfor %}
         </div>
       </div>
-
-      <!-- Education (edit _data/education.yml) -->
       <div class="col-lg-6">
-        <h2 class="section-title mb-4">Education</h2>
+        <h2 class="section-title">Education</h2>
         <div class="timeline">
           {% for entry in site.data.education %}
           {% include timeline-item.html item=entry %}
@@ -71,24 +74,21 @@ title: ""
   </div>
 </section>
 
-<!-- Technology -->
+<!-- Tools and Technologies -->
 <section class="full-screen">
-  <div class="container row align-items-center mx-auto">
-    <div class="col-lg-5 mx-auto text-center">
-      <div class="text-center">
+  <div class="container">
+    <div class="row align-items-center g-4 g-lg-5">
+      <div class="col-lg-5">
         <a href="https://www.freepik.com/designer">
           <img src="{{ '/assets/images/base_site_images/freepik-tools-illustration.webp' | relative_url }}" width="800" height="880" loading="lazy" class="img-fluid" alt="Freepik Illustration">
         </a>
       </div>
-    </div>
-
-    <div class="col-lg-7">
-      <h2>Tools and Technologies</h2>
-      <p>
-        My work focuses on system-level software in modern C++ on Linux-based systems, 
-        with emphasis on security, performance, and correctness in high-assurance environments.
-      </p>
-      <div class="details-section">
+      <div class="col-lg-7">
+        <h2>Tools and Technologies</h2>
+        <p>
+          My work focuses on system-level software in modern C++ on Linux-based systems,
+          with emphasis on security, performance, and correctness in high-assurance environments.
+        </p>
         <ul class="details-list">
           {% for tool in site.data.tools %}
           <li>{{ tool.category }}: {{ tool.value }}</li>
@@ -101,24 +101,23 @@ title: ""
 
 <!-- Goals -->
 <section class="full-screen">
-  <div class="container row align-items-center mx-auto">
-    <div class="col-lg-7">
-      <h2>Goals</h2>
-      <p>
-        Current focus is deepening expertise in modern C++ and its evolving standards
-        (C++23 and beyond), with emphasis on writing efficient, maintainable, and
-        correct software for performance-critical and security-sensitive systems.
-      </p>
-      <p>
-        Areas of ongoing interest include computer architecture, low-level system
-        behavior, and software correctness in Linux-based environments. This extends
-        to expanding open source contributions and engaging with the broader C++
-        community through technical discussions and code review.
-      </p>
-    </div>
-
-    <div class="col-lg-5 mx-auto text-center">
-      <div class="text-center">
+  <div class="container">
+    <div class="row align-items-center g-4 g-lg-5">
+      <div class="col-lg-7">
+        <h2>Goals</h2>
+        <p>
+          Current focus is deepening expertise in modern C++ and its evolving standards
+          (C++23 and beyond), with emphasis on writing efficient, maintainable, and
+          correct software for performance-critical and security-sensitive systems.
+        </p>
+        <p>
+          Areas of ongoing interest include computer architecture, low-level system
+          behavior, and software correctness in Linux-based environments. This extends
+          to expanding open source contributions and engaging with the broader C++
+          community through technical discussions and code review.
+        </p>
+      </div>
+      <div class="col-lg-5">
         <a href="https://www.freepik.com/designer">
           <img src="{{ '/assets/images/base_site_images/freepik-goals-illustration.webp' | relative_url }}" width="800" height="880" loading="lazy" class="img-fluid" alt="Freepik Illustration">
         </a>
@@ -128,31 +127,27 @@ title: ""
 </section>
 
 <!-- Companies -->
-<section class="full-screen companies-section">
+<section class="full-screen text-center">
   <div class="container">
-    <div class="companies-content">
-      <h2 class="section-title mb-5">Companies</h2>
-      <div class="company-grid">
-        <a href="https://bilgem.tubitak.gov.tr/" target="_blank" rel="noopener noreferrer" class="company-link">
-          <img src="{{ '/assets/images/resume/TUBITAK-Bilgem-DarkMode.webp' | relative_url }}" width="1600" height="1340" loading="lazy" alt="Tübitak Bilgem Logo Dark Mode" class="company-logo dark-logo">
-          <img src="{{ '/assets/images/resume/TUBITAK-Bilgem.webp' | relative_url }}" width="1600" height="1340" loading="lazy" alt="Tübitak Bilgem Logo Light Mode" class="company-logo light-logo">
-        </a>
-      </div>
-    </div>
+    <h2 class="section-title">Companies</h2>
+    <a href="https://bilgem.tubitak.gov.tr/" target="_blank" rel="noopener noreferrer" class="company-link">
+      <img src="{{ '/assets/images/resume/TUBITAK-Bilgem-DarkMode.webp' | relative_url }}" width="1600" height="1340" loading="lazy" alt="Tübitak Bilgem Logo Dark Mode" class="company-logo dark-logo">
+      <img src="{{ '/assets/images/resume/TUBITAK-Bilgem.webp' | relative_url }}" width="1600" height="1340" loading="lazy" alt="Tübitak Bilgem Logo Light Mode" class="company-logo light-logo">
+    </a>
   </div>
 </section>
 
 <!-- Project -->
 <section class="full-screen" id="project">
   <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-5 mx-auto text-center">
+    <div class="row align-items-center g-4 g-lg-5">
+      <div class="col-lg-5">
         <a href="https://www.freepik.com/designer">
           <img src="{{ '/assets/images/base_site_images/freepik-project-illustration.webp' | relative_url }}" width="800" height="880" loading="lazy" class="img-fluid" alt="Freepik Illustration">
         </a>
       </div>
       <div class="col-lg-7">
-        <h2><span>Project</span></h2>
+        <h2>Project</h2>
         <p>
           Engineering is a discipline that develops on problem solving skills. The development of this skill requires
           experience, labor and practice. For this reason, I develop many projects and meet with experienced people
@@ -167,94 +162,91 @@ title: ""
           As an engineer, I embrace this sharing and inclusive aspect of software and develop my own projects, which I
           share on GitHub.
         </p>
-        <p class="social-links text-center">
+        <div class="social-links">
           <a href="https://github.com/{{ site.github }}" class="social-link" target="_blank" rel="noopener noreferrer"
             aria-label="GitHub" title="Visit GitHub">
             {% include icons/github.html %}
           </a>
-        </p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Open Source Projects -->
-<section class="container">
-  <div class="row align-items-center">
-    <div class="col-lg-5">
-      <div class="text-center">
+<!-- Open Source -->
+<section class="full-screen">
+  <div class="container">
+    <div class="row align-items-center g-4 g-lg-5">
+      <div class="col-lg-5">
         <a href="https://www.freepik.com/designer">
           <img src="{{ '/assets/images/project/freepik-open-source-project-illustration.webp' | relative_url }}" width="1000" height="1100" loading="lazy" class="img-fluid" alt="Freepik Illustration">
         </a>
       </div>
-    </div>
-
-    <div class="col-lg-7 mx-auto">
-      <h2><span>Open Source</span></h2>
-      <p>
-        Open source is a space where people from diverse cultures, languages, and backgrounds
-        come together around shared goals. As an engineer, collaborating with others to
-        build common solutions and tackle challenges is both inspiring and fulfilling.
-      </p>
-      <p>
-        I contribute to production C++ projects used in security-critical and
-        high-performance systems. Contributions span cryptographic library internals,
-        logging infrastructure, and formatting library correctness.
-      </p>
-      <p>
-        <i>
-          Click on a project name to view my contributions on GitHub. You can also use the merge icon
-          on the right to see all contributions in one place. The projects are sorted by contribution
-          count, from highest to lowest.
-        </i>
-      </p>
-
-      <div class="social-links text-center">
-        <a href="https://github.com/{{ site.github }}" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="Visit GitHub">
-          {% include icons/github.html %}
-        </a>
-        <iframe src="https://github.com/sponsors/{{ site.github }}/button" height="32" width="114" class="sponsor-frame" title="Sponsor {{ site.github }}">
-        </iframe>
-        <a href="https://github.com/pulls?q=is%3Apr+author%3A{{ site.github }}+is%3Amerged" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
-          title="Show All Contributes">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <div class="col-lg-7">
+        <h2>Open Source</h2>
+        <p>
+          Open source is a space where people from diverse cultures, languages, and backgrounds
+          come together around shared goals. As an engineer, collaborating with others to
+          build common solutions and tackle challenges is both inspiring and fulfilling.
+        </p>
+        <p>
+          I contribute to production C++ projects used in security-critical and
+          high-performance systems. Contributions span cryptographic library internals,
+          logging infrastructure, and formatting library correctness.
+        </p>
+        <p>
+          <i>
+            Click on a project name to view my contributions on GitHub. You can also use the merge icon
+            on the right to see all contributions in one place. The projects are sorted by contribution
+            count, from highest to lowest.
+          </i>
+        </p>
+        <div class="social-links">
+          <a href="https://github.com/{{ site.github }}" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="Visit GitHub">
+            {% include icons/github.html %}
+          </a>
+          <iframe src="https://github.com/sponsors/{{ site.github }}/button" height="32" width="114" class="sponsor-frame" title="Sponsor {{ site.github }}">
+          </iframe>
+          <a href="https://github.com/pulls?q=is%3Apr+author%3A{{ site.github }}+is%3Amerged" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
+            title="Show All Contributes">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="18" cy="18" r="3"></circle>
               <circle cx="6" cy="6" r="3"></circle>
               <path d="M13 6h3a2 2 0 0 1 2 2v7"></path>
               <line x1="6" y1="9" x2="6" y2="21"></line>
-          </svg>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="container" id="pr-section">
-  <div class="row">
-    {% for contribution in site.data.contributions %}
-    <div class="col-lg-6">
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-year">. . . . . . . . . . . .</div>
-          <div class="timeline-content">
-            <a href="https://github.com/{{ contribution.repo }}/pulls?q=is%3Apr+is%3A{{ contribution.state }}+author%3A{{ site.github }}">
-              <h3>{{ contribution.name }}</h3>
-              <small>{{ contribution.description }}</small>
-            </a>
-          </div>
+            </svg>
+          </a>
         </div>
       </div>
     </div>
-    {% endfor %}
+
+    <!-- Contribution cards -->
+    <div class="row mt-5">
+      {% for contribution in site.data.contributions %}
+      <div class="col-lg-6">
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-year">. . . . . . . . . . . .</div>
+            <div class="timeline-content">
+              <a href="https://github.com/{{ contribution.repo }}/pulls?q=is%3Apr+is%3A{{ contribution.state }}+author%3A{{ site.github }}">
+                <h3>{{ contribution.name }}</h3>
+                <small>{{ contribution.description }}</small>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
   </div>
 </section>
 
 <!-- Blog -->
 <section class="full-screen" id="blog">
   <div class="container">
-    <div class="row align-items-center">
+    <div class="row align-items-center g-4 g-lg-5">
       <div class="col-lg-7">
-        <h2><span>Blog</span></h2>
+        <h2>Blog</h2>
         <p>
           Life is a journey, sometimes surrounded by challenging obstacles, sometimes with peaceful and serene paths.
           The conditions, the equipment we take with us and the experiences we accumulate along the way are different
@@ -271,25 +263,23 @@ title: ""
           I hope you find something inspiring or useful for your own discoveries...
         </p>
       </div>
-      <div class="col-lg-5 mx-auto text-center">
+      <div class="col-lg-5">
         <a href="https://www.freepik.com/designer">
           <img src="{{ '/assets/images/base_site_images/freepik-blog-illustration.webp' | relative_url }}" width="800" height="880" loading="lazy" class="img-fluid" alt="Freepik Illustration">
         </a>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- Blog Cards -->
-<section class="container blog-teaser">
-  <div class="row" id="blog_content_area">
-    {% for post in site.posts limit: 10 %}
-    {% include blog-card.html post=post %}
-    {% endfor %}
+    <!-- Latest posts (card markup: _includes/blog-card.html) -->
+    <div class="row mt-5">
+      {% for post in site.posts limit: 10 %}
+      {% include blog-card.html post=post %}
+      {% endfor %}
+    </div>
+    {% if site.posts.size > 10 %}
+    <p class="text-center">
+      <a href="{{ '/blog/' | relative_url }}" class="custom-btn">All Blogs</a>
+    </p>
+    {% endif %}
   </div>
-  {% if site.posts.size > 10 %}
-  <p class="text-center">
-    <a href="{{ '/blog/' | relative_url }}" class="custom-btn d-inline-block">All Blogs</a>
-  </p>
-  {% endif %}
 </section>
