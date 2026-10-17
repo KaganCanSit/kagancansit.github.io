@@ -1,0 +1,10 @@
+# Menu links, shown in the top menu bar and in the mobile slide-in menu.
+# Rendered by _includes/nav.html.
+- title: "Project"
+  url: "/#project"
+- title: "Blog"
+  url: "/#blog"
+- title: "About"
+  url: "/#about"
+- title: "Contact"
+  url: "/#contact"

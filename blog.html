@@ -11,7 +11,8 @@ pagination:
 
   <div class="row">
     {% for post in paginator.posts %}
-    {% include blog-card.html post=post %}
+    {% comment %} The first card is visible on load, so its image is not lazy-loaded. {% endcomment %}
+    {% include blog-card.html post=post eager=forloop.first %}
     {% endfor %}
   </div>
 

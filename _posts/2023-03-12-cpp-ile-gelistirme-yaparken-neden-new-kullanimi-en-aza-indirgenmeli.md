@@ -46,7 +46,7 @@ Asla unutmamak gerekir. __C ve C++ kaynak yönetimi için bir Garbage Collector'
 {% raw %}
 <!-- Youtube Video Content -->
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 3%;">
-  <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube-nocookie.com/embed/Rb3NqsrzMKo?si=6lM9Js3VZPIwVWcb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;        picture-in-picture; web-share" allowfullscreen>
+  <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube-nocookie.com/embed/Rb3NqsrzMKo?si=6lM9Js3VZPIwVWcb" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;        picture-in-picture; web-share" allowfullscreen>
   </iframe>
 </div>
 {% endraw %}
@@ -64,7 +64,7 @@ Programınızın performansı ve kaynak yönetimi için bu yol sizlere daha iyi 
 {% raw %}
 <!-- Youtube Video Content -->
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 3%;">
-    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube-nocookie.com/embed/yFzypPU3Q4I?si=hwZozFSsMxmbFcQX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube-nocookie.com/embed/yFzypPU3Q4I?si=hwZozFSsMxmbFcQX" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
     </iframe>
 </div>
 {% endraw %}

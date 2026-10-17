@@ -29,7 +29,7 @@ Peki karşımızda sayısız teknolojik araç ve programlama dili, çözülmesi 
 
 {% raw %}
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-<iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/0SARbwvhupQ" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+<iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/0SARbwvhupQ" title="YouTube video player" allowfullscreen></iframe>
 </div>
 {% endraw %}
 
@@ -158,7 +158,7 @@ Mühendislik için ise bunu bizden yıllarca fazla deneyimli insanları takip ed
 Yazıldığı kadar basit olmadığının bende farkındayım. Fakat örnek aldığımız kişileri kahraman olarak görmektense kendi düşüncülerimiz ile değerlendirerek öğretmen olarak görmek gerekir. Bu kişilerinde geçmişte hatalar yaptığını bilmek, önerilerini dinlemek ve onlardan öğrenmek değerlidir. Kaybolduğunuzda haritanızı geliştirmenizi sağlayan rehberler edinmek gibi düşünülebilir. Kendi adıma bu konuda en çok etkilendiğim kişilerden birisi de [Bilgem Çakır](https://www.youtube.com/@YalinKod)'dır.
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-<iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/EeGpwC5zr4o" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+<iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/EeGpwC5zr4o" title="YouTube video player" allowfullscreen></iframe>
 </div>
 
 #### Pratik Anahtardır

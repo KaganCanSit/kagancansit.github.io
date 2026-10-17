@@ -9,9 +9,10 @@
      there and it applies everywhere.
    - Every other section styles one part of the site; its title names the
      HTML file it belongs to.
-   - Page grid (container, row, col-lg-*, g-*, text-center, mt-*) comes from
-     Bootstrap 5, loaded in _includes/head.html. This file only adds the
-     site's own look on top of it.
+   - Page grid (container, row, col-lg-*, g-*, mt-*, align-items-*) and base
+     element styles come from two Bootstrap 5 files, bootstrap-grid and
+     bootstrap-reboot, loaded in _includes/head.html. This file adds the
+     site's own look on top of them.
    ========================================================================== */
 
 
@@ -176,9 +177,9 @@ a:hover {
     color: var(--heading);
 }
 
-/* Links inside sentences are also underlined. */
+/* Links inside sentences (paragraphs, post lists) are also underlined. */
 p a,
-li a {
+.article-content li a {
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 0.2em;
@@ -218,6 +219,7 @@ pre code {
 .img-fluid {
     display: block;
     max-width: min(100%, 380px);
+    height: auto;
     margin-inline: auto;
 }
 
@@ -254,6 +256,11 @@ pre code {
     margin-bottom: 2rem;
 }
 
+/* Bootstrap's text utilities are not loaded; this is the only one used. */
+.text-center {
+    text-align: center;
+}
+
 
 /* 4. MENU BAR - _includes/nav.html ---------------------------------------- */
 /* Sticky: stays visible while scrolling. Avoid transform/filter here, they
@@ -281,6 +288,7 @@ pre code {
     font-size: 1.25rem;
     font-weight: 800;
     letter-spacing: -0.01em;
+    white-space: nowrap;
     color: var(--heading);
 }
 
@@ -317,6 +325,7 @@ pre code {
 .color-mode {
     display: inline-flex;
     align-items: center;
+    padding: 0.5rem 0.75rem;
     background: none;
     border: none;
     color: var(--heading);
@@ -378,15 +387,19 @@ pre code {
     transform: translateY(-8px) rotate(-45deg);
 }
 
+/* Hidden while closed, so its links cannot be reached with the Tab key.
+   On close, visibility switches only after the 0.3s slide-out. */
 .mobile-sidebar {
     position: fixed;
     inset: 0;
     z-index: 999998;
-    pointer-events: none;
+    visibility: hidden;
+    transition: visibility 0s 0.3s;
 }
 
 .mobile-sidebar.active {
-    pointer-events: auto;
+    visibility: visible;
+    transition-delay: 0s;
 }
 
 .sidebar-overlay {
@@ -477,11 +490,10 @@ body.sidebar-open {
 
 
 /* 5. HOMEPAGE INTRO - index.html ------------------------------------------ */
-/* Terminal-style greeting. Size and spacing follow the screen height too,
-   so the greeting and About Me fit on one screen on laptops. */
+/* Terminal-style greeting (first screen) */
 .hero-title {
     position: relative;
-    margin-bottom: clamp(1.5rem, 4vh, 3rem);
+    margin: 0;
     padding: 2.75rem 2rem 1.75rem;
     font-family: var(--font-mono);
     font-size: clamp(1rem, 0.6rem + 1.2vmin, 1.5rem);
@@ -776,10 +788,6 @@ body.sidebar-open {
 /* 8. BLOG CARDS & PAGES - _includes/blog-card.html, blog.html ------------- */
 .card {
     margin-bottom: 3rem;
-    border: none;
-    border-radius: 0;
-    background-color: transparent;
-    color: inherit;
 }
 
 .card a {
@@ -858,26 +866,38 @@ body.sidebar-open {
     padding-block: 3rem 6rem;
 }
 
-/* Page numbers (Bootstrap pagination, themed through its variables) */
+/* Page numbers - _includes/pagination-nav.html (shown after 9 posts) */
 .pagination {
-    --bs-pagination-color: var(--text);
-    --bs-pagination-bg: transparent;
-    --bs-pagination-border-color: var(--border);
-    --bs-pagination-border-radius: 999px;
-    --bs-pagination-hover-color: var(--accent);
-    --bs-pagination-hover-bg: var(--surface);
-    --bs-pagination-hover-border-color: var(--border);
-    --bs-pagination-focus-box-shadow: 0 0 0 2px var(--accent);
-    --bs-pagination-active-color: var(--bg);
-    --bs-pagination-active-bg: var(--heading);
-    --bs-pagination-active-border-color: var(--heading);
-    --bs-pagination-disabled-color: var(--muted);
-    --bs-pagination-disabled-bg: transparent;
-    --bs-pagination-disabled-border-color: var(--border);
+    display: flex;
+    gap: 0.5rem;
+    margin: 3rem 0 0;
+    padding: 0;
+    list-style: none;
 }
 
-.blog-pagination {
-    margin-top: 3rem;
+.page-link {
+    display: block;
+    min-width: 2.5rem;
+    padding: 0.4rem 0.9rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    text-align: center;
+    color: var(--text);
+}
+
+a.page-link:hover {
+    color: var(--accent);
+    background-color: var(--surface);
+}
+
+.page-item.active .page-link {
+    color: var(--bg);
+    background-color: var(--heading);
+    border-color: var(--heading);
+}
+
+.page-item.disabled .page-link {
+    color: var(--muted);
 }
 
 
@@ -907,6 +927,7 @@ body.sidebar-open {
 .blog-header-image {
     display: block;
     width: 100%;
+    height: auto;
     max-height: 560px;
     object-fit: cover;
     border-radius: var(--radius);
